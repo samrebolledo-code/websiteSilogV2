@@ -22,9 +22,9 @@
   <!-- Preconnect Fonts & Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/main.css?v=1040" />
-  <link rel="stylesheet" href="css/components.css?v=1040" />
-  <link rel="stylesheet" href="css/utilities.css?v=1040" />
+  <link rel="stylesheet" href="css/main.css?v=1042" />
+  <link rel="stylesheet" href="css/components.css?v=1042" />
+  <link rel="stylesheet" href="css/utilities.css?v=1042" />
 
   <style>
     /* Prevención Estricta de Scroll Horizontal en cualquier celular */
@@ -44,7 +44,7 @@
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo" aria-label="Transportes SIL Inicio">
-        <img src="assets/logo.png?v=1040" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+        <img src="assets/logo.png?v=1042" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <span class="brand-title-fallback">TRANSPORTES <span>SIL</span></span>
       </a>
 
@@ -275,7 +275,7 @@
             </div>
 
             <div class="form-group">
-              <label for="calc-destination">Destino (V Región):</label>
+              <label for="calc-destination">Destino (V Región - 36 Comunas):</label>
               <select id="calc-destination" class="form-control" required>
                 <!-- Cargado dinámicamente desde js/config/coverage.js con Valparaíso seleccionado por defecto -->
               </select>
@@ -352,18 +352,18 @@
   </section>
 
   <!-- ==========================================================================
-       7. MAPA INTERACTIVO DE COBERTURA GIS (V REGIÓN - LEAFLET REAL GEOJSON)
+       7. MAPA INTERACTIVO DE COBERTURA GIS (V REGIÓN COMPLETA - 36 COMUNAS LEAFLET REAL GEOJSON)
        ========================================================================== -->
   <section id="cobertura" class="map-section">
     <div class="container">
       <div class="section-subtitle">Zonas de atención</div>
-      <h2 class="section-title">Mapa de Cobertura V Región</h2>
+      <h2 class="section-title">Mapa de Cobertura V Región (36 Comunas)</h2>
       <p class="section-description">
-        Haz clic en cualquier comuna del mapa para revisar los días de atención y cotizar tu envío.
+        Haz clic en cualquiera de las 36 comunas de la 5ta Región de Valparaíso para revisar los días de atención y cotizar tu envío.
       </p>
 
       <div class="map-layout">
-        <!-- Contenedor del Mapa Leaflet GIS Real GeoJSON (Réplica Exacta) -->
+        <!-- Contenedor del Mapa Leaflet GIS Real GeoJSON (Réplica Exacta 36 Comunas) -->
         <div class="map-wrapper">
           <div id="map-vector-container">
             <!-- Renderizado por js/modules/map.js -->
@@ -535,7 +535,7 @@
       <div class="footer-grid">
         <div>
           <div class="brand-logo mb-4">
-            <img src="assets/logo.png?v=1040" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
+            <img src="assets/logo.png?v=1042" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
             <span class="brand-title-fallback" style="color: #ffffff !important;">TRANSPORTES <span style="color: #3b82f6;">SIL</span></span>
           </div>
           <p style="font-size: 0.9rem; color: #94a3b8 !important;">
@@ -571,7 +571,7 @@
   <!-- Leaflet GIS Map Library JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <!-- Entry Script con Query Versioning v1040 para Forzar Recarga Sin Caché -->
-  <script type="module" src="js/app.js?v=1040"></script>
+  <!-- Entry Script con Query Versioning v1042 para Forzar Recarga Sin Caché -->
+  <script type="module" src="js/app.js?v=1042"></script>
 </body>
 </html>

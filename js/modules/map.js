@@ -1,7 +1,7 @@
 /**
- * Transportes SIL - Módulo de Mapa Interactivo de Cobertura V Región
+ * Transportes SIL - Módulo de Mapa Interactivo de Cobertura V Región (36 Comunas)
  * 
- * Réplica exacta del diseño vectorial Dark Premium con zonas por color:
+ * Réplica exacta del diseño vectorial Dark Premium con las 36 comunas de la 5ta Región:
  * - ZONA NORTE: Azul (#1d4ed8)
  * - ZONA CENTRO: Verde (#059669)
  * - ZONA ESTE: Rojo (#dc2626)
@@ -14,41 +14,8 @@ import { preselectDestination } from './calculator.js';
 let leafletMap = null;
 let geojsonLayer = null;
 let originMarker = null;
-let destMarker = null;
 let routeLine = null;
 let selectedComunaId = 'casablanca'; // Casablanca seleccionada por defecto como en la referencia
-
-// Mapeo exacto de comunas a sus zonas de color según la imagen de referencia
-const COMUNA_ZONE_MAPPING = {
-  'concon': { zone: 'ZONA COSTA', color: '#00b4d8' },
-  'vina-del-mar': { zone: 'ZONA COSTA', color: '#00b4d8' },
-  'san-antonio': { zone: 'ZONA COSTA', color: '#00b4d8' },
-  'valparaiso': { zone: 'ZONA ESTE', color: '#dc2626' },
-  'san-felipe': { zone: 'ZONA ESTE', color: '#dc2626' },
-  'los-andes': { zone: 'ZONA ESTE', color: '#dc2626' },
-  'quilpue': { zone: 'ZONA CENTRO', color: '#059669' },
-  'villa-alemana': { zone: 'ZONA CENTRO', color: '#059669' },
-  'casablanca': { zone: 'ZONA CENTRO', color: '#059669' },
-  'quillota': { zone: 'ZONA NORTE', color: '#1d4ed8' },
-  'la-calera': { zone: 'ZONA NORTE', color: '#1d4ed8' },
-  'limache': { zone: 'ZONA NORTE', color: '#1d4ed8' }
-};
-
-// Coordenadas manuales optimizadas para las etiquetas fijas sobre cada comuna
-const LABEL_COORDINATES = {
-  'concon': [-32.89, -71.51],
-  'vina-del-mar': [-33.00, -71.53],
-  'valparaiso': [-33.08, -71.60],
-  'san-antonio': [-33.60, -71.58],
-  'quilpue': [-33.06, -71.38],
-  'villa-alemana': [-33.04, -71.24],
-  'casablanca': [-33.32, -71.40],
-  'quillota': [-32.87, -71.24],
-  'la-calera': [-32.78, -71.18],
-  'limache': [-32.98, -71.26],
-  'san-felipe': [-32.74, -70.72],
-  'los-andes': [-32.84, -70.60]
-};
 
 export function initInteractiveMap() {
   const mapContainer = document.getElementById('map-vector-container');
@@ -105,8 +72,8 @@ async function initLeafletGISMap() {
 
   // Inicializar Leaflet sobre fondo azul marino profundo (#060d1e)
   leafletMap = L.map('map', {
-    center: [-33.12, -71.15],
-    zoom: 9,
+    center: [-32.85, -71.10],
+    zoom: 8.5,
     zoomControl: false, // Ocultar controles predeterminados para una estética limpia
     attributionControl: false,
     scrollWheelZoom: false
@@ -119,9 +86,9 @@ async function initLeafletGISMap() {
     subdomains: 'abcd'
   }).addTo(leafletMap);
 
-  // Cargar Dataset GeoJSON Real de las 12 Comunas
+  // Cargar Dataset GeoJSON Real de las 36 Comunas de la 5ta Región
   try {
-    const response = await fetch('assets/maps/valparaiso-comunas.geojson?v=1038');
+    const response = await fetch('assets/maps/valparaiso-comunas.geojson?v=1042');
     if (response.ok) {
       const geojsonData = await response.json();
       renderGeoJSONComunas(geojsonData);
@@ -155,12 +122,12 @@ async function initLeafletGISMap() {
     updateRouteLine(santiagoCoords, [-33.32, -71.40]);
   }
 
-  // Ajustar encuadre responsivo
+  // Ajustar encuadre responsivo para incluir toda la 5ta Región (de Petorca a San Antonio y Cordillera)
   const initialBounds = L.latLngBounds([
-    [-32.55, -71.75],
-    [-33.65, -70.30]
+    [-32.15, -71.60], // Norte (La Ligua / Petorca / Papudo)
+    [-33.85, -70.00]  // Sur / Cordillera (San Antonio / Los Andes)
   ]);
-  leafletMap.fitBounds(initialBounds, { padding: [20, 20] });
+  leafletMap.fitBounds(initialBounds, { padding: [15, 15] });
 
   setTimeout(() => {
     if (leafletMap) leafletMap.invalidateSize();
@@ -177,12 +144,12 @@ function renderGeoJSONComunas(geojsonData) {
   geojsonLayer = L.geoJSON(geojsonData, {
     style: (feature) => {
       const comunaId = feature.properties.id;
-      const mapping = COMUNA_ZONE_MAPPING[comunaId] || { color: '#059669' };
+      const color = feature.properties.color || '#00b4d8';
       const isSelected = comunaId === selectedComunaId;
 
       return {
-        fillColor: mapping.color,
-        fillOpacity: isSelected ? 0.95 : 0.75,
+        fillColor: color,
+        fillOpacity: isSelected ? 0.95 : 0.72,
         color: isSelected ? '#ffffff' : 'rgba(255, 255, 255, 0.4)',
         weight: isSelected ? 3.5 : 1.5,
         opacity: 1
@@ -194,15 +161,17 @@ function renderGeoJSONComunas(geojsonData) {
       const comunaName = feature.properties.name;
 
       // 1. Etiqueta de Texto Fija sobre el polígono en mayúsculas
-      const labelPos = LABEL_COORDINATES[comunaId] || layer.getBounds().getCenter();
-      const labelIcon = L.divIcon({
-        className: 'comuna-label-wrapper',
-        html: `<span class="comuna-text-bold">${comunaName.toUpperCase()}</span>`,
-        iconSize: [120, 20],
-        iconAnchor: [60, 10]
-      });
+      const centerPos = layer.getBounds ? layer.getBounds().getCenter() : null;
+      if (centerPos) {
+        const labelIcon = L.divIcon({
+          className: 'comuna-label-wrapper',
+          html: `<span class="comuna-text-bold">${comunaName.toUpperCase()}</span>`,
+          iconSize: [120, 20],
+          iconAnchor: [60, 10]
+        });
 
-      L.marker(labelPos, { icon: labelIcon, interactive: false, zIndexOffset: 200 }).addTo(leafletMap);
+        L.marker(centerPos, { icon: labelIcon, interactive: false, zIndexOffset: 200 }).addTo(leafletMap);
+      }
 
       // 2. Hover en Polígono
       layer.on('mouseover', function () {
@@ -233,7 +202,7 @@ function renderGeoJSONComunas(geojsonData) {
           weight: 3.5
         });
 
-        const destPos = LABEL_COORDINATES[comunaId] || this.getBounds().getCenter();
+        const destPos = centerPos || this.getBounds().getCenter();
         updateRouteLine([-33.38, -70.75], destPos);
 
         const info = getComunaInfo(comunaId);
@@ -251,9 +220,8 @@ function renderGeoJSONComunas(geojsonData) {
 function updateRouteLine(startCoords, endCoords) {
   if (!leafletMap) return;
 
-  // Generar punto medio para la curva
-  const midLat = (startCoords[0] + endCoords[0]) / 2 + 0.05;
-  const midLng = (startCoords[1] + endCoords[1]) / 2 - 0.05;
+  const midLat = (startCoords[0] + endCoords[0]) / 2 + 0.04;
+  const midLng = (startCoords[1] + endCoords[1]) / 2 - 0.04;
   const curvePoints = [startCoords, [midLat, midLng], endCoords];
 
   if (routeLine) {
@@ -275,8 +243,7 @@ function showComunaDetail(info) {
   const infoCard = document.getElementById('map-info-card');
   if (!infoCard) return;
 
-  const mapping = COMUNA_ZONE_MAPPING[info.id] || { zone: 'RUTA 68' };
-  const displayZone = info.id === 'casablanca' ? 'RUTA 68' : mapping.zone;
+  const displayZone = info.zone || 'V REGIÓN';
 
   infoCard.innerHTML = `
     <div class="sil-detail-card animate-fade-in">
@@ -297,7 +264,7 @@ function showComunaDetail(info) {
         </div>
 
         <div class="sil-detail-row">
-          <div class="sil-detail-icon">🚛</div>
+          <div class="sil-detail-icon">🚚</div>
           <div class="sil-detail-text">
             <span class="sil-detail-label">FRECUENCIA</span>
             <span class="sil-detail-value">${info.scheduleNote || 'Salidas diarias Lunes a Viernes'}</span>
@@ -308,7 +275,7 @@ function showComunaDetail(info) {
           <div class="sil-detail-icon">📍</div>
           <div class="sil-detail-text">
             <span class="sil-detail-label">COBERTURA</span>
-            <span class="sil-detail-value">Habilitado para retiro en Santiago y entrega directa</span>
+            <span class="sil-detail-value">Habilitado para retiro en Santiago y entrega directa en ${info.name}</span>
           </div>
         </div>
       </div>
