@@ -49,21 +49,29 @@ export const TARIFF_CONFIG = {
 
 /**
  * Convierte cualquier medida a Metros según la unidad seleccionada.
+ * Incluye salvaguarda de sanidad comercial.
  */
-export function convertToMeters(value, unit = 'm') {
+export function convertToMeters(value, unit = 'cm') {
   const num = parseFloat(value);
-  if (isNaN(num)) return 0;
+  if (isNaN(num) || num <= 0) return 0;
 
-  switch (unit.toLowerCase()) {
-    case 'cm':
-      return num / 100;
-    case 'in':
-    case 'pulgadas':
-      return num * 0.0254;
-    case 'm':
-    default:
-      return num;
+  const u = (unit || 'cm').toString().trim().toLowerCase();
+  let meters = num;
+
+  if (u === 'cm' || u === 'centimetros' || u === 'centímetros') {
+    meters = num / 100;
+  } else if (u === 'in' || u === 'pulgadas') {
+    meters = num * 0.0254;
+  } else {
+    // Si la unidad es 'm' pero el valor es mayor a 10 (ej: 120), es claramente en cm
+    if (num > 10) {
+      meters = num / 100;
+    } else {
+      meters = num;
+    }
   }
+
+  return meters;
 }
 
 /**

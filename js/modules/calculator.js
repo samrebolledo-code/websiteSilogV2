@@ -51,6 +51,10 @@ export function initCalculator() {
     e.preventDefault();
     hideError();
 
+    // Obtener la unidad activa directamente del DOM (cm por defecto)
+    const activeUnitBtn = document.querySelector('#unit-segmented-control .unit-btn.active');
+    const selectedUnit = activeUnitBtn ? activeUnitBtn.getAttribute('data-unit') : 'cm';
+
     const inputData = {
       origin: "Santiago",
       destination: selectDestination.value,
@@ -59,7 +63,7 @@ export function initCalculator() {
       length: document.getElementById('calc-length').value,
       width: document.getElementById('calc-width').value,
       height: document.getElementById('calc-height').value,
-      unit: currentUnit
+      unit: selectedUnit
     };
 
     const result = calculateQuote(inputData);
