@@ -1,5 +1,5 @@
 /**
- * Transportes SIL - Estilos de Componentes UI (V1009 - Complete Grid & Floating Elements)
+ * Transportes SIL - Estilos de Componentes UI (V1011 - Contact 2-Column Desktop Grid)
  */
 
 /* 1. Glassmorphism & Header (Desktop & Mobile) */
@@ -540,7 +540,48 @@
   margin-top: auto;
 }
 
-/* 8. Botón Flotante de WhatsApp (Fixed Bottom-Right) */
+/* 8. Contact Section (2-Column Grid on Desktop: Left Info / Right Form) */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: var(--space-xl);
+  align-items: start;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(37, 99, 235, 0.15);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--clr-blue-400);
+  flex-shrink: 0;
+}
+
+/* 9. Botón Flotante de WhatsApp & Chatbot Modal */
 .floating-wa-btn {
   position: fixed !important;
   bottom: 24px !important;
@@ -566,7 +607,6 @@
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
 }
 
-/* Chatbot Popup Modal */
 .chatbot-modal {
   position: fixed;
   bottom: 95px;
@@ -587,7 +627,7 @@
   display: flex !important;
 }
 
-/* 9. Footer */
+/* 10. Footer */
 .site-footer {
   background: #0f172a !important;
   color: #cbd5e1 !important;
