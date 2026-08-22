@@ -1,5 +1,5 @@
 /**
- * Transportes SIL - Estilos de Componentes UI
+ * Transportes SIL - Estilos de Componentes UI (V1005 - Agency Grade Light Mode Polish)
  */
 
 /* 1. Glassmorphism & Header (100% Mobile Responsive) */
@@ -104,7 +104,7 @@
   }
 }
 
-/* 2. Hero Section */
+/* 2. Hero Section (SIEMPRE MANTIENE TEXTO BLANCO SOBRE FOTO OSCURA) */
 .hero-section {
   position: relative;
   padding: clamp(2.5rem, 6vw, 5rem) 0;
@@ -467,8 +467,36 @@
   margin: var(--space-xs) 0;
 }
 
+/* FOOTER PREMIM ESTILO NAVY PROFUNDO */
+.site-footer {
+  background: #0f172a !important;
+  color: #cbd5e1 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 3.5rem 0 2rem 0 !important;
+}
+
+.site-footer h4 {
+  color: #ffffff !important;
+}
+
+.site-footer p,
+.site-footer a {
+  color: #94a3b8 !important;
+}
+
+.site-footer a:hover {
+  color: #3b82f6 !important;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  margin-top: 2rem !important;
+  padding-top: 1.5rem !important;
+  color: #64748b !important;
+}
+
 /* =========================================
-   REGLAS ESPECÍFICAS DE CONTRASTE MODO CLARO
+   REGLAS ESPECÍFICAS DE CONTRASTE MODO CLARO (LIGHT MODE)
    ========================================= */
 
 html[data-theme="light"] .site-header {
@@ -494,6 +522,7 @@ html[data-theme="light"] .theme-toggle-btn {
   color: #0f172a !important;
 }
 
+/* Tarjetas y Contenedores */
 html[data-theme="light"] .calculator-card,
 html[data-theme="light"] .feature-card,
 html[data-theme="light"] .step-card,
@@ -512,27 +541,111 @@ html[data-theme="light"] .section-title {
   color: #0f172a !important;
 }
 
+/* Inputs del Cotizador */
 html[data-theme="light"] .form-control {
-  background: #f8fafc !important;
-  border-color: #cbd5e1 !important;
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
   color: #0f172a !important;
+  font-weight: 500 !important;
 }
 
+html[data-theme="light"] .form-control::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Control Segmentado de Unidades */
 html[data-theme="light"] .unit-toggle-label {
-  color: #475569 !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
 }
 
 html[data-theme="light"] .unit-segmented-control {
-  background: #f1f5f9 !important;
+  background: #e2e8f0 !important;
   border-color: #cbd5e1 !important;
 }
 
 html[data-theme="light"] .unit-btn {
-  color: #64748b !important;
+  color: #475569 !important;
 }
 
 html[data-theme="light"] .unit-btn.active {
   background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* Box Carga Fraccionada */
+html[data-theme="light"] .fraccionada-box {
+  background: #eff6ff !important;
+  border-left: 4px solid #2563eb !important;
+}
+
+html[data-theme="light"] .fraccionada-box h3 {
+  color: #1e3a8a !important;
+}
+
+html[data-theme="light"] .fraccionada-box p,
+html[data-theme="light"] .fraccionada-box strong {
+  color: #1e40af !important;
+}
+
+/* Aviso de Servicios Especiales */
+html[data-theme="light"] .special-services-notice {
+  background: #f8fafc !important;
+  border-color: #93c5fd !important;
+}
+
+html[data-theme="light"] .special-services-text h4 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .special-services-text p {
+  color: #334155 !important;
+}
+
+/* Chatbot Popup Modal */
+html[data-theme="light"] .chatbot-modal {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15) !important;
+}
+
+html[data-theme="light"] .chatbot-header {
+  background: #25d366 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .chatbot-header-text h4 {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .chatbot-status {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+html[data-theme="light"] .chatbot-body {
+  background: #f8fafc !important;
+}
+
+html[data-theme="light"] .chatbot-bubble {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+html[data-theme="light"] .chatbot-option-btn {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] .chatbot-option-btn:hover {
+  background: #f1f5f9 !important;
+  border-color: #2563eb !important;
+}
+
+html[data-theme="light"] .chatbot-close-btn {
   color: #ffffff !important;
 }
 
