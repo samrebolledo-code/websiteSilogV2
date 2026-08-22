@@ -22,9 +22,9 @@
   <!-- Preconnect Fonts & Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/main.css?v=1012" />
-  <link rel="stylesheet" href="css/components.css?v=1012" />
-  <link rel="stylesheet" href="css/utilities.css?v=1012" />
+  <link rel="stylesheet" href="css/main.css?v=1014" />
+  <link rel="stylesheet" href="css/components.css?v=1014" />
+  <link rel="stylesheet" href="css/utilities.css?v=1014" />
 
   <style>
     /* Prevención Estricta de Scroll Horizontal en cualquier celular */
@@ -44,7 +44,7 @@
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo" aria-label="Transportes SIL Inicio">
-        <img src="assets/logo.png?v=1012" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+        <img src="assets/logo.png?v=1014" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <span class="brand-title-fallback">TRANSPORTES <span>SIL</span></span>
       </a>
 
@@ -261,8 +261,8 @@
         </div>
 
         <form id="calculator-form">
-          <div class="form-grid">
-            <!-- Origen (Fijo) -->
+          <!-- Fila 1: Origen y Destino -->
+          <div class="form-row-two">
             <div class="form-group">
               <label for="calc-origin">Origen:</label>
               <select id="calc-origin" class="form-control" disabled>
@@ -270,47 +270,47 @@
               </select>
             </div>
 
-            <!-- Destino (Comunas V Región) -->
             <div class="form-group">
               <label for="calc-destination">Destino (V Región):</label>
               <select id="calc-destination" class="form-control" required>
                 <!-- Cargado dinámicamente desde js/config/coverage.js -->
               </select>
             </div>
+          </div>
 
-            <!-- Cantidad de Pallets -->
+          <!-- Fila 2: Cantidad de Pallets y Peso Total de la Carga -->
+          <div class="form-row-two mt-4">
             <div class="form-group">
               <label for="calc-pallets">Cantidad de Pallets:</label>
               <input type="number" id="calc-pallets" class="form-control" min="1" max="28" placeholder="Ej: 1" required />
             </div>
 
-            <!-- Peso Total Aprox (kg) -->
             <div class="form-group">
-              <label for="calc-weight">Peso total aprox. (kg):</label>
+              <label for="calc-weight">Peso total de la carga (kg):</label>
               <input type="number" id="calc-weight" class="form-control" min="1" step="any" placeholder="Ej: 900" required />
-            </div>
-
-            <!-- Dimensiones Unitarias (Largo, Ancho, Alto por pallet) -->
-            <div class="form-group dimensions-row">
-              <div>
-                <label for="calc-length" id="label-length">Largo por pallet (m):</label>
-                <input type="number" id="calc-length" class="form-control" min="0.01" step="any" placeholder="1.20" required />
-              </div>
-              <div>
-                <label for="calc-width" id="label-width">Ancho por pallet (m):</label>
-                <input type="number" id="calc-width" class="form-control" min="0.01" step="any" placeholder="1.00" required />
-              </div>
-              <div>
-                <label for="calc-height" id="label-height">Alto por pallet (m):</label>
-                <input type="number" id="calc-height" class="form-control" min="0.01" step="any" placeholder="1.20" required />
-              </div>
-              <small style="color: var(--text-muted); font-size: 0.82rem; grid-column: 1 / -1; margin-top: -0.25rem;">
-                💡 Las dimensiones corresponden a las medidas individuales de 1 pallet o bulto.
-              </small>
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">
+          <!-- Fila 3: Dimensiones Unitarias (Largo, Ancho, Alto por pallet) -->
+          <div class="dimensions-row mt-4">
+            <div class="form-group">
+              <label for="calc-length" id="label-length">Largo por pallet (m):</label>
+              <input type="number" id="calc-length" class="form-control" min="0.01" step="any" placeholder="1.20" required />
+            </div>
+            <div class="form-group">
+              <label for="calc-width" id="label-width">Ancho por pallet (m):</label>
+              <input type="number" id="calc-width" class="form-control" min="0.01" step="any" placeholder="1.00" required />
+            </div>
+            <div class="form-group">
+              <label for="calc-height" id="label-height">Alto por pallet (m):</label>
+              <input type="number" id="calc-height" class="form-control" min="0.01" step="any" placeholder="1.20" required />
+            </div>
+            <small style="color: var(--text-muted); font-size: 0.82rem; grid-column: 1 / -1; margin-top: 0.25rem;">
+              💡 Las dimensiones corresponden a las medidas individuales de 1 pallet o bulto.
+            </small>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block mt-6">
             Calcular Cotización Estimada →
           </button>
         </form>
@@ -534,7 +534,7 @@
       <div class="footer-grid">
         <div>
           <div class="brand-logo mb-4">
-            <img src="assets/logo.png?v=1012" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
+            <img src="assets/logo.png?v=1014" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
             <span class="brand-title-fallback" style="color: #ffffff !important;">TRANSPORTES <span style="color: #3b82f6;">SIL</span></span>
           </div>
           <p style="font-size: 0.9rem; color: #94a3b8 !important;">
@@ -570,7 +570,7 @@
   <!-- Leaflet GIS Map Library JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <!-- Entry Script con Query Versioning v1012 para Forzar Recarga Sin Caché -->
-  <script type="module" src="js/app.js?v=1012"></script>
+  <!-- Entry Script con Query Versioning v1014 para Forzar Recarga Sin Caché -->
+  <script type="module" src="js/app.js?v=1014"></script>
 </body>
 </html>
