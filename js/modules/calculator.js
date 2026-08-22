@@ -24,12 +24,15 @@ export function initCalculator() {
 
   // 1. Poblar selector de comunas con las habilitadas en V Región
   const enabledComunas = getEnabledComunas();
-  selectDestination.innerHTML = '<option value="" disabled selected>Selecciona comuna de destino...</option>';
+  selectDestination.innerHTML = '';
   
-  enabledComunas.forEach(comuna => {
+  enabledComunas.forEach((comuna, idx) => {
     const opt = document.createElement('option');
     opt.value = comuna.id;
     opt.textContent = `${comuna.name} (${comuna.days})`;
+    if (comuna.id === 'valparaiso' || idx === 0) {
+      opt.selected = true;
+    }
     selectDestination.appendChild(opt);
   });
 

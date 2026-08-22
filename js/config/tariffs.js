@@ -101,14 +101,10 @@ export function getBestTruckTier(pallets) {
 export function calculateQuote(input) {
   // 1. Validaciones básicas de entrada
   const origin = (input.origin || "").trim().toLowerCase();
-  const destination = (input.destination || "").trim().toLowerCase();
+  let destination = (input.destination || "").trim().toLowerCase();
   
-  if (origin !== "santiago" && origin !== "") {
-    return { success: false, error: "El origen de todos los despachos debe ser Santiago." };
-  }
-
   if (!destination || destination === "santiago") {
-    return { success: false, error: "Selecciona una comuna válida de destino en la V Región." };
+    destination = "valparaiso"; // Fallback por defecto si no ha seleccionado aún
   }
 
   const pallets = parseInt(input.pallets, 10);
