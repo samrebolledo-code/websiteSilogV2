@@ -1,5 +1,5 @@
 /**
- * Transportes SIL - Estilos de Componentes UI (V1007 - Agency Grade PC Desktop & Mobile Responsive)
+ * Transportes SIL - Estilos de Componentes UI (V1009 - Complete Grid & Floating Elements)
  */
 
 /* 1. Glassmorphism & Header (Desktop & Mobile) */
@@ -291,7 +291,7 @@
   box-shadow: var(--shadow-glow-blue);
 }
 
-/* 6. Calculadora de Cotizaciones (Diseño en Grid Adaptable PC Desktop) */
+/* 6. Calculadora de Cotizaciones */
 .calculator-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -375,7 +375,6 @@
   box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
 }
 
-/* Grid del Formulario: 4 columnas en PC, 2 en Tablet, 1 en Móvil */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -434,36 +433,145 @@
   }
 }
 
-.calc-result-box {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(15, 23, 42, 0.9) 100%);
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  border-radius: var(--radius-md);
-  padding: clamp(1rem, 3vw, 1.75rem);
-  text-align: center;
-  margin-top: var(--space-lg);
+/* 7. Instagram Feed Grid Section */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
   width: 100%;
 }
 
-.result-title {
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+@media (max-width: 900px) {
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .insta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.insta-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.25s ease;
+}
+
+.insta-card:hover {
+  transform: translateY(-5px);
+}
+
+.insta-card-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.insta-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.insta-card:hover .insta-card-img {
+  transform: scale(1.05);
+}
+
+.insta-tag-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(37, 99, 235, 0.9);
+  color: #ffffff;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+
+.insta-card-content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.insta-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+
+.insta-user {
   color: var(--clr-blue-400);
+  font-weight: 700;
 }
 
-.result-amount {
-  font-size: clamp(1.8rem, 5vw, 3rem);
-  font-weight: 800;
-  color: var(--clr-white);
-  margin: var(--space-xs) 0;
+.insta-date {
+  color: var(--text-muted);
 }
 
-/* Chatbot Popup Modal (Popup Flotante Oculto por Defecto) */
+.insta-caption {
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.insta-link {
+  color: var(--clr-blue-500);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+/* 8. Botón Flotante de WhatsApp (Fixed Bottom-Right) */
+.floating-wa-btn {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 9999 !important;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.floating-wa-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* Chatbot Popup Modal */
 .chatbot-modal {
   position: fixed;
-  bottom: 85px;
-  right: 20px;
-  z-index: 1001;
+  bottom: 95px;
+  right: 24px;
+  z-index: 10000;
   width: 360px;
   max-width: calc(100vw - 32px);
   background: #111b21;
@@ -479,7 +587,7 @@
   display: flex !important;
 }
 
-/* 7. Footer (Grid 3 Columnas en PC Desktop) */
+/* 9. Footer */
 .site-footer {
   background: #0f172a !important;
   color: #cbd5e1 !important;
@@ -703,5 +811,18 @@ html[data-theme="light"] .chatbot-close-btn {
     text-align: center;
     padding: 0.5rem 0.2rem;
     font-size: 0.75rem;
+  }
+
+  .floating-wa-btn {
+    bottom: 16px !important;
+    right: 16px !important;
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
+
+  .chatbot-modal {
+    bottom: 78px;
+    right: 16px;
   }
 }
