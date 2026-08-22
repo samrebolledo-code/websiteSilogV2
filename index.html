@@ -22,9 +22,9 @@
   <!-- Preconnect Fonts & Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/main.css?v=1026" />
-  <link rel="stylesheet" href="css/components.css?v=1026" />
-  <link rel="stylesheet" href="css/utilities.css?v=1026" />
+  <link rel="stylesheet" href="css/main.css?v=1028" />
+  <link rel="stylesheet" href="css/components.css?v=1028" />
+  <link rel="stylesheet" href="css/utilities.css?v=1028" />
 
   <style>
     /* Prevención Estricta de Scroll Horizontal en cualquier celular */
@@ -44,7 +44,7 @@
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo" aria-label="Transportes SIL Inicio">
-        <img src="assets/logo.png?v=1026" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+        <img src="assets/logo.png?v=1028" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <span class="brand-title-fallback">TRANSPORTES <span>SIL</span></span>
       </a>
 
@@ -249,7 +249,7 @@
       </p>
 
       <div class="calculator-card">
-        <!-- Encabezado del Cotizador con Control Segmentado en la Esquina Superior Derecha -->
+        <!-- Encabezado del Cotizador con Control Segmentado en la Esquina Superior Derecha (Centímetros por defecto) -->
         <div class="calculator-card-header">
           <div>
             <h3 class="calculator-header-title">Ingresa los datos de tu carga</h3>
@@ -257,8 +257,8 @@
           <div class="unit-toggle-container">
             <span class="unit-toggle-label">Unidad:</span>
             <div class="unit-segmented-control" id="unit-segmented-control">
-              <button type="button" class="unit-btn active" data-unit="m">Metros (m)</button>
-              <button type="button" class="unit-btn" data-unit="cm">Centímetros (cm)</button>
+              <button type="button" class="unit-btn" data-unit="m">Metros (m)</button>
+              <button type="button" class="unit-btn active" data-unit="cm">Centímetros (cm)</button>
               <button type="button" class="unit-btn" data-unit="in">Pulgadas (in)</button>
             </div>
           </div>
@@ -295,19 +295,19 @@
             </div>
           </div>
 
-          <!-- Fila 3: Dimensiones Unitarias (Largo, Ancho, Alto por pallet) -->
+          <!-- Fila 3: Dimensiones Unitarias (Largo, Ancho, Alto por pallet en cm por defecto) -->
           <div class="dimensions-row mt-4">
             <div class="form-group">
-              <label for="calc-length" id="label-length">Largo por pallet (m):</label>
-              <input type="number" id="calc-length" class="form-control" min="0.01" step="any" placeholder="1.20" required />
+              <label for="calc-length" id="label-length">Largo por pallet (cm):</label>
+              <input type="number" id="calc-length" class="form-control" min="0.01" step="any" placeholder="120" required />
             </div>
             <div class="form-group">
-              <label for="calc-width" id="label-width">Ancho por pallet (m):</label>
-              <input type="number" id="calc-width" class="form-control" min="0.01" step="any" placeholder="1.00" required />
+              <label for="calc-width" id="label-width">Ancho por pallet (cm):</label>
+              <input type="number" id="calc-width" class="form-control" min="0.01" step="any" placeholder="100" required />
             </div>
             <div class="form-group">
-              <label for="calc-height" id="label-height">Alto por pallet (m):</label>
-              <input type="number" id="calc-height" class="form-control" min="0.01" step="any" placeholder="1.20" required />
+              <label for="calc-height" id="label-height">Alto por pallet (cm):</label>
+              <input type="number" id="calc-height" class="form-control" min="0.01" step="any" placeholder="120" required />
             </div>
             <small style="color: var(--text-muted); font-size: 0.82rem; grid-column: 1 / -1; margin-top: 0.25rem;">
               💡 Las dimensiones corresponden a las medidas individuales de 1 pallet o bulto.
@@ -538,7 +538,7 @@
       <div class="footer-grid">
         <div>
           <div class="brand-logo mb-4">
-            <img src="assets/logo.png?v=1026" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
+            <img src="assets/logo.png?v=1028" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
             <span class="brand-title-fallback" style="color: #ffffff !important;">TRANSPORTES <span style="color: #3b82f6;">SIL</span></span>
           </div>
           <p style="font-size: 0.9rem; color: #94a3b8 !important;">
@@ -574,7 +574,7 @@
   <!-- Leaflet GIS Map Library JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <!-- Entry Script con Query Versioning v1026 para Forzar Recarga Sin Caché -->
-  <script type="module" src="js/app.js?v=1026"></script>
+  <!-- Entry Script con Query Versioning v1028 para Forzar Recarga Sin Caché -->
+  <script type="module" src="js/app.js?v=1028"></script>
 </body>
 </html>

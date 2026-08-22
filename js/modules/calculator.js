@@ -11,7 +11,7 @@ import { calculateQuote } from '../config/tariffs.js';
 import { buildQuoteWhatsAppUrl, openWhatsApp } from './whatsapp.js';
 
 let currentQuoteResult = null;
-let currentUnit = 'm'; // Unidad por defecto: Metros
+let currentUnit = 'cm'; // Unidad por defecto: Centímetros (cm)
 
 export function initCalculator() {
   const selectDestination = document.getElementById('calc-destination');
