@@ -1,8 +1,8 @@
 /**
- * Transportes SIL - Estilos de Componentes UI (V1005 - Agency Grade Light Mode Polish)
+ * Transportes SIL - Estilos de Componentes UI (V1007 - Agency Grade PC Desktop & Mobile Responsive)
  */
 
-/* 1. Glassmorphism & Header (100% Mobile Responsive) */
+/* 1. Glassmorphism & Header (Desktop & Mobile) */
 .site-header {
   position: sticky;
   top: 0;
@@ -27,7 +27,6 @@
   align-items: center;
   gap: var(--space-sm);
   text-decoration: none;
-  max-width: 75%;
 }
 
 .brand-logo-img {
@@ -44,8 +43,6 @@
   color: var(--clr-white);
   letter-spacing: -0.5px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .brand-title-fallback span {
@@ -104,10 +101,10 @@
   }
 }
 
-/* 2. Hero Section (SIEMPRE MANTIENE TEXTO BLANCO SOBRE FOTO OSCURA) */
+/* 2. Hero Section */
 .hero-section {
   position: relative;
-  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  padding: clamp(3rem, 7vw, 6rem) 0;
   overflow: hidden;
   background: #0f172a;
   color: #ffffff !important;
@@ -143,7 +140,7 @@
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 780px;
+  max-width: 850px;
 }
 
 .hero-badge-pill {
@@ -162,17 +159,16 @@
 }
 
 .hero-headline {
-  font-size: clamp(1.6rem, 5vw, 3.2rem);
+  font-size: clamp(1.8rem, 5vw, 3.4rem);
   font-weight: 800;
   margin-bottom: var(--space-md);
   letter-spacing: -0.5px;
-  line-height: 1.25;
-  word-break: break-word;
+  line-height: 1.2;
   color: #ffffff !important;
 }
 
 .hero-claim-text {
-  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
   color: #e2e8f0 !important;
   margin-bottom: var(--space-xl);
   line-height: 1.6;
@@ -187,7 +183,7 @@
 /* 3. Propuesta de Valor Grid */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-lg);
 }
 
@@ -266,7 +262,7 @@
 /* 5. Cómo Funciona Steps */
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-lg);
   position: relative;
 }
@@ -295,18 +291,17 @@
   box-shadow: var(--shadow-glow-blue);
 }
 
-/* 6. Calculadora de Cotizaciones & Control Segmentado */
+/* 6. Calculadora de Cotizaciones (Diseño en Grid Adaptable PC Desktop) */
 .calculator-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: clamp(0.85rem, 3.5vw, 1.75rem);
+  padding: clamp(1.25rem, 3.5vw, 2.25rem);
   box-shadow: var(--shadow-lg);
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .calculator-card-header {
@@ -318,7 +313,6 @@
   padding-bottom: var(--space-md);
   border-bottom: 1px solid var(--border-subtle);
   width: 100%;
-  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -337,65 +331,38 @@
 
 .unit-toggle-container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.35rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-@media (min-width: 768px) {
-  .unit-toggle-container {
-    flex-direction: row;
-    align-items: center;
-    width: auto;
-  }
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .unit-toggle-label {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-muted);
   white-space: nowrap;
 }
 
 .unit-segmented-control {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   background: rgba(15, 23, 42, 0.95);
   border: 1px solid var(--border-subtle);
   padding: 3px;
   border-radius: var(--radius-full);
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .unit-segmented-control {
-    width: auto;
-  }
 }
 
 .unit-btn {
-  flex: 1 1 33.333%;
-  width: 33.333%;
-  min-width: 0;
   background: transparent;
   border: none;
   color: #94a3b8;
-  padding: 0.45rem 0.2rem;
+  padding: 0.45rem 0.85rem;
   border-radius: var(--radius-full);
-  font-size: clamp(0.72rem, 2.2vw, 0.85rem);
+  font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
-  line-height: 1;
-  text-align: center;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  box-sizing: border-box;
 }
 
 .unit-btn:hover {
@@ -408,9 +375,10 @@
   box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
 }
 
+/* Grid del Formulario: 4 columnas en PC, 2 en Tablet, 1 en Móvil */
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
   width: 100%;
@@ -442,6 +410,30 @@
   box-sizing: border-box;
 }
 
+.dimensions-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dimensions-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .calc-result-box {
   background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(15, 23, 42, 0.9) 100%);
   border: 1px solid rgba(59, 130, 246, 0.4);
@@ -450,7 +442,6 @@
   text-align: center;
   margin-top: var(--space-lg);
   width: 100%;
-  box-sizing: border-box;
 }
 
 .result-title {
@@ -467,12 +458,49 @@
   margin: var(--space-xs) 0;
 }
 
-/* FOOTER PREMIM ESTILO NAVY PROFUNDO */
+/* Chatbot Popup Modal (Popup Flotante Oculto por Defecto) */
+.chatbot-modal {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  z-index: 1001;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  background: #111b21;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: none !important;
+  flex-direction: column;
+}
+
+.chatbot-modal.active {
+  display: flex !important;
+}
+
+/* 7. Footer (Grid 3 Columnas en PC Desktop) */
 .site-footer {
   background: #0f172a !important;
   color: #cbd5e1 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   padding: 3.5rem 0 2rem 0 !important;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    text-align: center;
+  }
 }
 
 .site-footer h4 {
@@ -490,9 +518,10 @@
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  margin-top: 2rem !important;
+  margin-top: 2.5rem !important;
   padding-top: 1.5rem !important;
   color: #64748b !important;
+  text-align: center;
 }
 
 /* =========================================
@@ -650,85 +679,29 @@ html[data-theme="light"] .chatbot-close-btn {
 }
 
 /* =========================================
-   CORRECCIÓN RESPONSIVE DEFINITIVA
+   REGLAS EXCLUSIVAS PARA MÓVILES (MAX-WIDTH 767PX)
    ========================================= */
 
 @media (max-width: 767px) {
-
   .calculator-card {
-    width: 100%;
-    max-width: 100%;
     padding: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-  }
-
-  .calculator-card-header {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .form-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    width: 100%;
-    min-width: 0;
-  }
-
-  .form-group {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .form-control {
-    display: block;
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
   }
 
   .unit-toggle-container {
     width: 100%;
-    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .unit-segmented-control {
     width: 100%;
-    max-width: 100%;
-    min-width: 0;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    overflow: hidden;
   }
 
   .unit-btn {
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: 100%;
-    padding: 0.6rem 0.25rem !important;
-    font-size: 0.72rem !important;
-    line-height: 1.15;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-  }
-
-  .dimensions-row {
-    grid-template-columns: minmax(0, 1fr);
-    width: 100%;
-    min-width: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  .calculator-card {
-    padding: 1rem 0.85rem;
-    border-radius: 16px;
+    text-align: center;
+    padding: 0.5rem 0.2rem;
+    font-size: 0.75rem;
   }
 }
