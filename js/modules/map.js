@@ -1,9 +1,8 @@
 /**
  * Transportes SIL - Módulo de Mapa Interactivo de Cobertura V Región
  * 
- * Renderiza la visualización de mapa GIS Coroplético (Choropleth Map) de la V Región de Valparaíso
- * en tonos cian, azul profundo y cerceta marina con mapa interactivo Leaflet.js / SVG dark GIS
- * igual a la referencia visual entregada.
+ * Renderiza la visualización de mapa GIS Coroplético de la V Región de Valparaíso
+ * con marcadores dinámicos Leaflet.js para Origen (A) y Destino (B).
  */
 
 import { COVERAGE_DATA, getComunaInfo } from '../config/coverage.js';
@@ -15,7 +14,7 @@ export function initInteractiveMap() {
 
   if (!mapContainer) return;
 
-  // Intentar cargar mapa interactivo Leaflet.js si la librería está disponible o renderizar SVG GIS Coroplético
+  // Cargar mapa interactivo Leaflet.js o SVG Coroplético
   if (window.L) {
     initLeafletGISMap(mapContainer);
   } else {
@@ -35,14 +34,17 @@ export function initInteractiveMap() {
 }
 
 /**
- * Inicializa el mapa GIS interactivo Leaflet con tiles oscuros estilo CartoDB Dark Matter
- * y capa GeoJSON coroplética en tonos azul/cian.
+ * Inicializa el mapa GIS interactivo Leaflet con marcadores personalizados (A: Santiago / B: Destino)
  */
 function initLeafletGISMap(container) {
-  container.innerHTML = '<div id="leaflet-map" style="width: 100%; height: 550px; border-radius: 12px; overflow: hidden;"></div>';
+  container.innerHTML = `
+    <div class="map-card">
+      <div id="map"></div>
+    </div>
+  `;
 
-  const map = L.map('leaflet-map', {
-    center: [-33.0, -71.2],
+  const map = L.map('map', {
+    center: [-33.15, -71.2],
     zoom: 9,
     zoomControl: true,
     attributionControl: false
@@ -53,6 +55,36 @@ function initLeafletGISMap(container) {
     maxZoom: 18,
     subdomains: 'abcd'
   }).addTo(map);
+
+  // Iconos Personalizados Leaflet
+  const silIcon = L.divIcon({
+    className: "sil-marker",
+    html: `<div class="sil-marker-dot"></div>`,
+    iconSize: [34, 34],
+    iconAnchor: [17, 17],
+  });
+
+  const originIcon = L.divIcon({
+    className: "map-marker",
+    html: `<div class="marker-origin">A</div>`,
+    iconSize: [38, 38],
+    iconAnchor: [19, 19],
+  });
+
+  const destinationIcon = L.divIcon({
+    className: "map-marker",
+    html: `<div class="marker-destination">B</div>`,
+    iconSize: [38, 38],
+    iconAnchor: [19, 19],
+  });
+
+  // Marcador Origen A: Santiago
+  const originMarker = L.marker([-33.4489, -70.6693], { icon: originIcon }).addTo(map);
+  originMarker.bindPopup(`<strong>📍 Origen: Santiago</strong><br/><small>Base Operativa de Retiros</small>`);
+
+  // Marcador Destino B: Valparaíso (Puerto)
+  const destMarker = L.marker([-33.0472, -71.6127], { icon: destinationIcon }).addTo(map);
+  destMarker.bindPopup(`<strong>📍 Destino: Valparaíso</strong><br/><small>Despachos Diarios Lun-Vie</small>`);
 
   // GeoJSON Dataset de Comunas V Región
   const comunaFeatures = [
@@ -81,7 +113,8 @@ function initLeafletGISMap(container) {
     const info = getComunaInfo(item.id);
     const popupContent = `<strong>${item.name}</strong><br/><small>Días: ${info?.days || 'Consulte'}</small>`;
 
-    polygon.bindTooltip(popupContent, { sticky: true });
+    polygon.bindPopup(popupContent);
+    polygon.bindTooltip(item.name, { sticky: true });
 
     polygon.on('mouseover', function () {
       this.setStyle({ fillOpacity: 0.95, weight: 2.5, color: '#00ffff' });
@@ -166,13 +199,12 @@ function showComunaDetail(info) {
 }
 
 /**
- * Genera el mapa vectorial coroplético SVG (Choropleth GIS) en escala de azul/cian idéntico a la imagen de referencia.
+ * Genera el mapa vectorial coroplético SVG (Choropleth GIS)
  */
 function createVectorChoroplethSVGMap() {
   return `
     <svg viewBox="0 0 880 540" class="svg-map-element" xmlns="http://www.w3.org/2000/svg" style="background: #060b17; border-radius: 12px;">
       <defs>
-        <!-- Gradiante Mar Profundo -->
         <linearGradient id="deepOcean" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#040814" />
           <stop offset="100%" stop-color="#0a1226" />
@@ -184,12 +216,10 @@ function createVectorChoroplethSVGMap() {
         </linearGradient>
       </defs>
 
-      <!-- Fondo Mar -->
       <rect width="880" height="540" fill="url(#deepOcean)" rx="16" />
       <path d="M 0,0 L 175,0 L 130,540 L 0,540 Z" fill="#02040a" opacity="0.9" />
       <text x="30" y="270" fill="#1e293b" font-size="13" font-weight="700" transform="rotate(-90 30 270)" letter-spacing="5">OCÉANO PACÍFICO</text>
 
-      <!-- Rosa de los Vientos / Brújula -->
       <g transform="translate(60, 60)" opacity="0.4">
         <circle cx="0" cy="0" r="18" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="2,2"/>
         <polygon points="0,-22 4,-6 0,0 -4,-6" fill="#38bdf8"/>
@@ -197,82 +227,56 @@ function createVectorChoroplethSVGMap() {
         <text x="-4" y="-26" fill="#38bdf8" font-size="9" font-weight="800">N</text>
       </g>
 
-      <!-- MAPA COROPLÉTICO GIS POR COMUNAS (ESTILO AZUL/CIAN REFERENCIA) -->
       <g class="comunas-choropleth-group" stroke="#050e1f" stroke-width="1.5" stroke-linejoin="round">
-
-        <!-- Valparaíso -->
         <g class="map-comuna-path" data-comuna-id="valparaiso">
           <polygon points="140,240 160,225 185,220 205,245 220,270 210,310 175,340 145,315 130,275" fill="#0077b6" fill-opacity="0.85" />
           <text x="175" y="280" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" stroke="none">Valparaíso</text>
         </g>
-
-        <!-- Viña del Mar -->
         <g class="map-comuna-path" data-comuna-id="vina-del-mar">
           <polygon points="185,220 215,195 255,200 270,225 245,255 205,245" fill="#00b4d8" fill-opacity="0.85" />
           <text x="230" y="228" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle" stroke="none">Viña del Mar</text>
         </g>
-
-        <!-- Concón -->
         <g class="map-comuna-path" data-comuna-id="concon">
           <polygon points="215,195 245,170 280,160 300,185 270,225 255,200" fill="#90e0ef" fill-opacity="0.9" />
           <text x="258" y="192" fill="#03045e" font-size="11" font-weight="800" text-anchor="middle" stroke="none">Concón</text>
         </g>
-
-        <!-- Quilpué -->
         <g class="map-comuna-path" data-comuna-id="quilpue">
           <polygon points="270,225 300,185 365,195 390,225 375,275 320,285 245,255" fill="#0096c7" fill-opacity="0.85" />
           <text x="325" y="240" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" stroke="none">Quilpué</text>
         </g>
-
-        <!-- Villa Alemana -->
         <g class="map-comuna-path" data-comuna-id="villa-alemana">
           <polygon points="390,225 435,215 460,230 445,270 375,275" fill="#48cae4" fill-opacity="0.85" />
           <text x="420" y="246" fill="#03045e" font-size="11" font-weight="800" text-anchor="middle" stroke="none">Villa Alemana</text>
         </g>
-
-        <!-- Limache -->
         <g class="map-comuna-path" data-comuna-id="limache">
           <polygon points="435,215 480,205 520,215 530,250 490,285 445,270 460,230" fill="#03045e" fill-opacity="0.85" />
           <text x="480" y="246" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" stroke="none">Limache</text>
         </g>
-
-        <!-- Quillota -->
         <g class="map-comuna-path" data-comuna-id="quillota">
           <polygon points="300,185 340,140 420,125 465,145 445,185 435,215 365,195" fill="#023e8a" fill-opacity="0.85" />
           <text x="385" y="165" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" stroke="none">Quillota</text>
         </g>
-
-        <!-- La Calera -->
         <g class="map-comuna-path" data-comuna-id="la-calera">
           <polygon points="465,145 525,130 570,140 560,185 500,200 445,185" fill="#0077b6" fill-opacity="0.85" />
           <text x="510" y="162" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" stroke="none">La Calera</text>
         </g>
-
-        <!-- Casablanca -->
         <g class="map-comuna-path" data-comuna-id="casablanca">
           <polygon points="175,340 210,310 320,285 445,270 490,285 460,345 410,430 310,460 215,440 160,390" fill="#0096c7" fill-opacity="0.85" />
           <text x="315" y="375" fill="#ffffff" font-size="14" font-weight="800" text-anchor="middle" stroke="none">Casablanca</text>
         </g>
-
-        <!-- San Antonio -->
         <g class="map-comuna-path" data-comuna-id="san-antonio">
           <polygon points="160,390 215,440 310,460 260,515 170,520 130,460 140,410" fill="#00b4d8" fill-opacity="0.85" />
           <text x="195" y="465" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle" stroke="none">San Antonio</text>
         </g>
-
-        <!-- San Felipe -->
         <g class="map-comuna-path" data-comuna-id="san-felipe">
           <polygon points="570,140 645,125 715,135 710,185 640,200 560,185" fill="#023e8a" fill-opacity="0.85" />
           <text x="635" y="162" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" stroke="none">San Felipe</text>
         </g>
-
-        <!-- Los Andes -->
         <g class="map-comuna-path" data-comuna-id="los-andes">
           <polygon points="715,135 795,120 835,140 820,205 750,220 710,185" fill="#03045e" fill-opacity="0.85" />
           <text x="765" y="170" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle" stroke="none">Los Andes</text>
         </g>
 
-        <!-- Origen Santiago -->
         <g class="santiago-origin-node" transform="translate(640, 460)" stroke="none">
           <rect x="-100" y="-18" width="200" height="36" rx="18" fill="url(#santiagoBadgeGrad)" stroke="#f59e0b" stroke-width="1.5" />
           <text x="0" y="5" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">📍 SANTIAGO (ORIGEN)</text>
