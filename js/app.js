@@ -19,23 +19,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initInstagramSection();
   initWhatsAppChatbot();
 
-  // 2. Control de Tema Claro / Oscuro (Theme Switcher)
+  // 2. Control de Tema Claro / Oscuro (Theme Switcher Track)
   const themeToggleBtn = document.getElementById('theme-toggle');
   if (themeToggleBtn) {
-    const updateIcon = (theme) => {
+    const updateTitle = (theme) => {
       themeToggleBtn.setAttribute('title', theme === 'dark' ? 'Cambiar a Modo Claro' : 'Cambiar a Modo Oscuro');
-      themeToggleBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
     };
 
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    updateIcon(currentTheme);
+    updateTitle(currentTheme);
 
     themeToggleBtn.addEventListener('click', () => {
       const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
       const nextTheme = activeTheme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', nextTheme);
       localStorage.setItem('sil-theme', nextTheme);
-      updateIcon(nextTheme);
+      updateTitle(nextTheme);
     });
   }
 
