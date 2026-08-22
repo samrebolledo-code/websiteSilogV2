@@ -22,9 +22,9 @@
   <!-- Preconnect Fonts & Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/main.css?v=1036" />
-  <link rel="stylesheet" href="css/components.css?v=1036" />
-  <link rel="stylesheet" href="css/utilities.css?v=1036" />
+  <link rel="stylesheet" href="css/main.css?v=1040" />
+  <link rel="stylesheet" href="css/components.css?v=1040" />
+  <link rel="stylesheet" href="css/utilities.css?v=1040" />
 
   <style>
     /* Prevención Estricta de Scroll Horizontal en cualquier celular */
@@ -44,7 +44,7 @@
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo" aria-label="Transportes SIL Inicio">
-        <img src="assets/logo.png?v=1036" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+        <img src="assets/logo.png?v=1040" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <span class="brand-title-fallback">TRANSPORTES <span>SIL</span></span>
       </a>
 
@@ -363,7 +363,7 @@
       </p>
 
       <div class="map-layout">
-        <!-- Contenedor del Mapa Leaflet GIS Real GeoJSON -->
+        <!-- Contenedor del Mapa Leaflet GIS Real GeoJSON (Réplica Exacta) -->
         <div class="map-wrapper">
           <div id="map-vector-container">
             <!-- Renderizado por js/modules/map.js -->
@@ -371,13 +371,10 @@
           <div id="map-tooltip" class="map-tooltip-box hidden"></div>
         </div>
 
-        <!-- Panel Contextual de Información de Comuna -->
+        <!-- Panel Contextual de Información de Comuna (Réplica Exacta) -->
         <div class="map-info-card-container">
           <div id="map-info-card">
-            <div class="text-center" style="padding: 2rem 0; color: var(--text-muted);">
-              <p style="font-size: 2.5rem; margin-bottom: 0.5rem;">👇</p>
-              <p>Haz clic en una comuna del mapa para ver los días de atención y cotizar.</p>
-            </div>
+            <!-- Renderizado dinámicamente por js/modules/map.js -->
           </div>
         </div>
       </div>
@@ -538,7 +535,7 @@
       <div class="footer-grid">
         <div>
           <div class="brand-logo mb-4">
-            <img src="assets/logo.png?v=1036" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
+            <img src="assets/logo.png?v=1040" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
             <span class="brand-title-fallback" style="color: #ffffff !important;">TRANSPORTES <span style="color: #3b82f6;">SIL</span></span>
           </div>
           <p style="font-size: 0.9rem; color: #94a3b8 !important;">
@@ -574,7 +571,7 @@
   <!-- Leaflet GIS Map Library JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <!-- Entry Script con Query Versioning v1036 para Forzar Recarga Sin Caché -->
-  <script type="module" src="js/app.js?v=1036"></script>
+  <!-- Entry Script con Query Versioning v1040 para Forzar Recarga Sin Caché -->
+  <script type="module" src="js/app.js?v=1040"></script>
 </body>
 </html>
