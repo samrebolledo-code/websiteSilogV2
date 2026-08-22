@@ -150,11 +150,10 @@ function displayResult(result) {
   if (!breakdownEl) {
     breakdownEl = document.createElement('div');
     breakdownEl.id = 'calc-breakdown-details';
-    breakdownEl.style.color = '#94a3b8';
-    breakdownEl.style.fontSize = '0.92rem';
-    breakdownEl.style.marginTop = '0.5rem';
-    breakdownEl.style.marginBottom = '1rem';
+    breakdownEl.className = 'result-breakdown';
     priceDisplay.parentNode.insertBefore(breakdownEl, priceDisplay.nextSibling);
+  } else {
+    breakdownEl.className = 'result-breakdown';
   }
 
   breakdownEl.textContent = `📦 Volumen Total: ${result.totalVolumeM3} m³ | ${result.breakdownDetails}`;

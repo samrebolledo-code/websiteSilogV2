@@ -456,20 +456,22 @@
 }
 
 .calc-result-box {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(15, 23, 42, 0.9) 100%);
-  border: 1px solid rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1.5px solid rgba(59, 130, 246, 0.4);
   border-radius: var(--radius-md);
   padding: clamp(1rem, 3vw, 1.75rem);
   text-align: center;
   margin-top: var(--space-lg);
   width: 100%;
+  box-sizing: border-box;
 }
 
 .result-title {
   font-size: 0.85rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--clr-blue-400);
+  color: #60a5fa;
+  font-weight: 700;
 }
 
 .result-amount {
@@ -477,6 +479,40 @@
   font-weight: 800;
   color: var(--clr-white);
   margin: var(--space-xs) 0;
+}
+
+.result-breakdown {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.5;
+}
+
+.result-iva-note {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.badge-primary {
+  background: rgba(37, 99, 235, 0.25);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.badge-secondary {
+  background: rgba(100, 116, 139, 0.25);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.4);
 }
 
 /* Banner de Aviso de Servicios Especiales */
@@ -982,6 +1018,46 @@ html[data-theme="light"] .unit-btn.active {
   background: #2563eb !important;
   color: #ffffff !important;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* Tarjeta de Resultado de Cotización (Modo Claro High Contrast) */
+html[data-theme="light"] .calc-result-box {
+  background: #eff6ff !important;
+  border: 1.5px solid #93c5fd !important;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08) !important;
+}
+
+html[data-theme="light"] .result-title {
+  color: #1e3a8a !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .result-amount {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .result-breakdown {
+  color: #1e3a8a !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .result-iva-note {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .badge-primary {
+  background: #dbeafe !important;
+  color: #1e40af !important;
+  border: 1px solid #93c5fd !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .badge-secondary {
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1 !important;
+  font-weight: 800 !important;
 }
 
 /* Box Carga Fraccionada */
