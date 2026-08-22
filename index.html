@@ -22,9 +22,9 @@
   <!-- Preconnect Fonts & Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/main.css?v=1034" />
-  <link rel="stylesheet" href="css/components.css?v=1034" />
-  <link rel="stylesheet" href="css/utilities.css?v=1034" />
+  <link rel="stylesheet" href="css/main.css?v=1036" />
+  <link rel="stylesheet" href="css/components.css?v=1036" />
+  <link rel="stylesheet" href="css/utilities.css?v=1036" />
 
   <style>
     /* Prevención Estricta de Scroll Horizontal en cualquier celular */
@@ -44,7 +44,7 @@
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo" aria-label="Transportes SIL Inicio">
-        <img src="assets/logo.png?v=1034" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+        <img src="assets/logo.png?v=1036" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <span class="brand-title-fallback">TRANSPORTES <span>SIL</span></span>
       </a>
 
@@ -352,18 +352,18 @@
   </section>
 
   <!-- ==========================================================================
-       7. MAPA INTERACTIVO DE COBERTURA (V REGIÓN)
+       7. MAPA INTERACTIVO DE COBERTURA GIS (V REGIÓN - LEAFLET REAL GEOJSON)
        ========================================================================== -->
   <section id="cobertura" class="map-section">
     <div class="container">
       <div class="section-subtitle">Zonas de atención</div>
       <h2 class="section-title">Mapa de Cobertura V Región</h2>
       <p class="section-description">
-        Haz clic en cualquier comuna del mapa para revisar los días de atención y enviar una cotización directa.
+        Haz clic en cualquier comuna del mapa para revisar los días de atención y cotizar tu envío.
       </p>
 
       <div class="map-layout">
-        <!-- Contenedor del Mapa Leaflet GIS con Marcadores A y B -->
+        <!-- Contenedor del Mapa Leaflet GIS Real GeoJSON -->
         <div class="map-wrapper">
           <div id="map-vector-container">
             <!-- Renderizado por js/modules/map.js -->
@@ -538,7 +538,7 @@
       <div class="footer-grid">
         <div>
           <div class="brand-logo mb-4">
-            <img src="assets/logo.png?v=1034" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
+            <img src="assets/logo.png?v=1036" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
             <span class="brand-title-fallback" style="color: #ffffff !important;">TRANSPORTES <span style="color: #3b82f6;">SIL</span></span>
           </div>
           <p style="font-size: 0.9rem; color: #94a3b8 !important;">
@@ -574,7 +574,7 @@
   <!-- Leaflet GIS Map Library JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <!-- Entry Script con Query Versioning v1034 para Forzar Recarga Sin Caché -->
-  <script type="module" src="js/app.js?v=1034"></script>
+  <!-- Entry Script con Query Versioning v1036 para Forzar Recarga Sin Caché -->
+  <script type="module" src="js/app.js?v=1036"></script>
 </body>
 </html>

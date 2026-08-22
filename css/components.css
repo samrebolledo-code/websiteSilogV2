@@ -589,7 +589,218 @@
   color: #93c5fd;
 }
 
-/* 7. Instagram Feed Grid Section */
+/* ==========================================================================
+   7. MAPA DE COBERTURA GIS (LEAFLET REAL GEOJSON)
+   ========================================================================== */
+.map-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-xl);
+  align-items: stretch;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .map-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+.map-wrapper,
+#map-vector-container {
+  width: 100%;
+  position: relative;
+}
+
+.map-card-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  border: 1.5px solid rgba(59, 130, 246, 0.35);
+  overflow: hidden;
+  background: #0b1329;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+#map {
+  width: 100%;
+  height: 520px;
+  background: #0b1329;
+}
+
+@media (max-width: 992px) {
+  #map {
+    height: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  #map {
+    height: 350px;
+  }
+}
+
+/* Marcadores Personalizados Leaflet (A: Santiago Origen / B: Destino) */
+.sil-marker-wrapper {
+  background: transparent !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.sil-map-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 99px;
+  font-family: var(--ff-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sil-map-badge:hover {
+  transform: scale(1.08);
+}
+
+.sil-map-badge .badge-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 0.82rem;
+  margin-right: 7px;
+  background: #ffffff;
+}
+
+.badge-origin {
+  background: linear-gradient(135deg, #1e40af 0%, #dc2626 100%);
+  border: 1.5px solid #ef4444;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.6), 0 0 10px rgba(37, 99, 235, 0.4);
+}
+
+.badge-origin .badge-letter {
+  color: #dc2626;
+}
+
+.badge-dest {
+  background: linear-gradient(135deg, #047857 0%, #10b981 100%);
+  border: 1.5px solid #34d399;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.6), 0 0 10px rgba(52, 211, 153, 0.4);
+}
+
+.badge-dest .badge-letter {
+  color: #047857;
+}
+
+/* Etiquetas Fijas de Comunas sobre Polígonos */
+.comuna-label-wrapper {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+.comuna-map-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95), 0 0 8px rgba(15, 23, 42, 0.9);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .comuna-map-label {
+    font-size: 0.62rem;
+    letter-spacing: 0px;
+  }
+}
+
+/* Panel Contextual de Información de Comuna */
+.map-info-card-container {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  box-sizing: border-box;
+}
+
+.comuna-detail-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comuna-detail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.comuna-zone-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #60a5fa;
+  letter-spacing: 0.5px;
+}
+
+.comuna-detail-header h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--clr-white);
+  margin: 0;
+}
+
+.comuna-detail-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.detail-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.highlight-text {
+  color: #38bdf8 !important;
+  font-weight: 700 !important;
+}
+
+/* 8. Instagram Feed Grid Section */
 .insta-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
