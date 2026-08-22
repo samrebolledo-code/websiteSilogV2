@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,15 +13,18 @@
   <meta property="og:image" content="assets/images/hero-truck.jpg" />
   <meta property="og:type" content="website" />
 
+  <!-- Pre-cargas para evitar el parpadeo de tema (Flicker Prevention) -->
+  <script>(function(){try{var saved=localStorage.getItem('sil-theme');var preferred=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',saved==='light'||saved==='dark'?saved:preferred);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+
   <!-- Leaflet GIS Map Library CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
   <!-- Preconnect Fonts & Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/main.css?v=1001" />
-  <link rel="stylesheet" href="css/components.css?v=1001" />
-  <link rel="stylesheet" href="css/utilities.css?v=1001" />
+  <link rel="stylesheet" href="css/main.css?v=1002" />
+  <link rel="stylesheet" href="css/components.css?v=1002" />
+  <link rel="stylesheet" href="css/utilities.css?v=1002" />
 
   <style>
     /* Prevención Estricta de Scroll Horizontal en cualquier celular */
@@ -36,18 +39,25 @@
 <body>
 
   <!-- ==========================================================================
-       1. HEADER & NAVIGATION
+       1. HEADER & NAVIGATION (AGENCY GRADE WITH THEME TOGGLE)
        ========================================================================== -->
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo" aria-label="Transportes SIL Inicio">
-        <img src="assets/logo.png?v=1001" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+        <img src="assets/logo.png?v=1002" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <span class="brand-title-fallback">TRANSPORTES <span>SIL</span></span>
       </a>
 
-      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir Menú de Navegación" aria-expanded="false">
-        ☰
-      </button>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <!-- Botón Selector de Tema Claro / Oscuro -->
+        <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar Tema Claro / Oscuro">
+          ☀️
+        </button>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir Menú de Navegación" aria-expanded="false">
+          ☰
+        </button>
+      </div>
 
       <nav>
         <ul class="nav-menu" id="nav-menu">
@@ -156,13 +166,13 @@
   <!-- ==========================================================================
        4. NOSOTROS & EXPLICACIÓN CARGA FRACCIONADA
        ========================================================================== -->
-  <section id="nosotros" class="section" style="background: var(--clr-navy-800);">
+  <section id="nosotros" class="section" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="nosotros-layout">
         <div class="nosotros-text-content">
           <div class="section-subtitle" style="text-align: left;">Sobre Nosotros</div>
           <h2 class="section-title" style="text-align: left;">20 años uniendo Santiago y la V Región</h2>
-          <p class="mt-4" style="color: #cbd5e1;">
+          <p class="mt-4" style="color: var(--text-soft);">
             En <strong>Transportes SIL</strong> nos especializamos en el transporte terrestre de carga palletizada. Nuestra trayectoria de dos décadas nos posiciona como un socio estratégico confiable para empresas que requieren enviar mercadería entre la Región Metropolitana y la V Región de Valparaíso.
           </p>
 
@@ -171,7 +181,7 @@
             <h3 style="font-size: 1.15rem; color: var(--clr-white); margin-bottom: 0.5rem;">
               💡 ¿Qué es la Carga Fraccionada Palletizada?
             </h3>
-            <p style="font-size: 0.95rem; color: #94a3b8;">
+            <p style="font-size: 0.95rem; color: var(--text-muted);">
               Es un servicio eficiente y económico que te permite transportar desde 1 hasta varios pallets <strong>sin necesidad de contratar un camión completo</strong>. Pagas únicamente por el espacio y capacidad que utiliza tu mercadería, aprovechando nuestras consolidaciones diarias.
             </p>
           </div>
@@ -226,7 +236,7 @@
   <!-- ==========================================================================
        6. CALCULADORA DE COTIZACIONES (ELEMENTO CENTRAL)
        ========================================================================== -->
-  <section id="cotizar" class="section" style="background: linear-gradient(180deg, var(--clr-navy-900) 0%, var(--clr-navy-800) 100%);">
+  <section id="cotizar" class="section" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-subtitle">Cotizador en línea</div>
       <h2 class="section-title">Cotiza tu envío en segundos</h2>
@@ -294,7 +304,7 @@
                 <label for="calc-height" id="label-height">Alto por pallet (m):</label>
                 <input type="number" id="calc-height" class="form-control" min="0.01" step="any" placeholder="1.20" required />
               </div>
-              <small style="color: #94a3b8; font-size: 0.82rem; grid-column: 1 / -1; margin-top: -0.25rem;">
+              <small style="color: var(--text-muted); font-size: 0.82rem; grid-column: 1 / -1; margin-top: -0.25rem;">
                 💡 Las dimensiones corresponden a las medidas individuales de 1 pallet o bulto.
               </small>
             </div>
@@ -360,7 +370,7 @@
         <!-- Panel Contextual de Información de Comuna -->
         <div class="map-info-card-container">
           <div id="map-info-card">
-            <div class="text-center" style="padding: 2rem 0; color: #94a3b8;">
+            <div class="text-center" style="padding: 2rem 0; color: var(--text-muted);">
               <p style="font-size: 2.5rem; margin-bottom: 0.5rem;">👇</p>
               <p>Haz clic en una comuna del mapa para ver los días de atención y cotizar.</p>
             </div>
@@ -373,7 +383,7 @@
   <!-- ==========================================================================
        8. INSTAGRAM SECTION
        ========================================================================== -->
-  <section class="section" style="background: var(--clr-navy-800);">
+  <section class="section" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-subtitle">Novedades y Operaciones</div>
       <h2 class="section-title">Transportes SIL en Acción</h2>
@@ -405,8 +415,8 @@
             <div class="contact-icon">💬</div>
             <div>
               <h4 style="font-size: 1.1rem; color: var(--clr-white);">WhatsApp Comercial</h4>
-              <p style="color: #cbd5e1;">+56 9 1234 5678</p>
-              <small style="color: #64748b;">Atención rápida de Lunes a Viernes</small>
+              <p style="color: var(--text-soft);">+56 9 1234 5678</p>
+              <small style="color: var(--text-muted);">Atención rápida de Lunes a Viernes</small>
             </div>
           </div>
 
@@ -414,8 +424,8 @@
             <div class="contact-icon">📞</div>
             <div>
               <h4 style="font-size: 1.1rem; color: var(--clr-white);">Teléfono</h4>
-              <p style="color: #cbd5e1;">+56 2 2345 6789</p>
-              <small style="color: #64748b;">Oficina de coordinaciones</small>
+              <p style="color: var(--text-soft);">+56 2 2345 6789</p>
+              <small style="color: var(--text-muted);">Oficina de coordinaciones</small>
             </div>
           </div>
 
@@ -423,8 +433,8 @@
             <div class="contact-icon">✉️</div>
             <div>
               <h4 style="font-size: 1.1rem; color: var(--clr-white);">Correo Electrónico</h4>
-              <p style="color: #cbd5e1;">contacto@transportessil.cl</p>
-              <small style="color: #64748b;">Consultas comerciales y convenios B2B</small>
+              <p style="color: var(--text-soft);">contacto@transportessil.cl</p>
+              <small style="color: var(--text-muted);">Consultas comerciales y convenios B2B</small>
             </div>
           </div>
 
@@ -432,7 +442,7 @@
             <div class="contact-icon">📍</div>
             <div>
               <h4 style="font-size: 1.1rem; color: var(--clr-white);">Base Operativa</h4>
-              <p style="color: #cbd5e1;">Santiago — V Región de Valparaíso</p>
+              <p style="color: var(--text-soft);">Santiago — V Región de Valparaíso</p>
             </div>
           </div>
         </div>
@@ -525,17 +535,17 @@
       <div class="footer-grid">
         <div>
           <div class="brand-logo mb-4">
-            <img src="assets/logo.png?v=1001" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
+            <img src="assets/logo.png?v=1002" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
             <span class="brand-title-fallback">TRANSPORTES <span>SIL</span></span>
           </div>
-          <p style="font-size: 0.9rem; color: #94a3b8;">
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
             Especialistas en transporte de carga fraccionada palletizada desde Santiago hacia la V Región. Salidas de Lunes a Viernes con 20 años de experiencia.
           </p>
         </div>
 
         <div>
           <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--clr-white);">Navegación</h4>
-          <ul style="list-style: none; font-size: 0.9rem; color: #cbd5e1; display: flex; flex-direction: column; gap: 0.5rem;">
+          <ul style="list-style: none; font-size: 0.9rem; color: var(--text-soft); display: flex; flex-direction: column; gap: 0.5rem;">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#como-funciona">Cómo Funciona</a></li>
@@ -546,9 +556,9 @@
 
         <div>
           <h4 style="font-size: 1rem; margin-bottom: 1rem; color: var(--clr-white);">Contacto</h4>
-          <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0.5rem;">📍 Santiago — V Región</p>
-          <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0.5rem;">💬 WhatsApp: +56 9 1234 5678</p>
-          <p style="font-size: 0.9rem; color: #cbd5e1;">✉️ contacto@transportessil.cl</p>
+          <p style="font-size: 0.9rem; color: var(--text-soft); margin-bottom: 0.5rem;">📍 Santiago — V Región</p>
+          <p style="font-size: 0.9rem; color: var(--text-soft); margin-bottom: 0.5rem;">💬 WhatsApp: +56 9 1234 5678</p>
+          <p style="font-size: 0.9rem; color: var(--text-soft);">✉️ contacto@transportessil.cl</p>
         </div>
       </div>
 
@@ -561,7 +571,7 @@
   <!-- Leaflet GIS Map Library JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <!-- Entry Script con Query Versioning v1001 para Forzar Recarga Sin Caché -->
-  <script type="module" src="js/app.js?v=1001"></script>
+  <!-- Entry Script con Query Versioning v1002 para Forzar Recarga Sin Caché -->
+  <script type="module" src="js/app.js?v=1002"></script>
 </body>
 </html>
