@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TRANSPORTES SIL - DESIGN SYSTEM & MAIN STYLES (AGENCY GRADE V1002)
+   TRANSPORTES SIL - DESIGN SYSTEM & MAIN STYLES (AGENCY GRADE V1003)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap');
@@ -45,7 +45,7 @@
   --text-muted: #94a3b8;
   --text-soft: #cbd5e1;
 
-  --glass-bg: rgba(15, 23, 42, 0.82);
+  --glass-bg: rgba(15, 23, 42, 0.85);
   --glass-border: rgba(255, 255, 255, 0.12);
   --glass-backdrop: blur(18px);
 
@@ -53,7 +53,7 @@
   --border-subtle: rgba(255, 255, 255, 0.1);
 }
 
-/* ☀️ TEMA CLARO (LIGHT MODE) */
+/* ☀️ TEMA CLARO (LIGHT MODE - ALTA LEGIBILIDAD PROFESIONAL) */
 html[data-theme="light"] {
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
@@ -65,7 +65,7 @@ html[data-theme="light"] {
   --text-muted: #64748b;
   --text-soft: #334155;
 
-  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-bg: rgba(255, 255, 255, 0.92);
   --glass-border: rgba(15, 23, 42, 0.08);
   --glass-backdrop: blur(18px);
 
@@ -150,7 +150,7 @@ img {
 
 .section-subtitle {
   text-align: center;
-  color: var(--clr-blue-500);
+  color: var(--clr-blue-600);
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -185,7 +185,7 @@ img {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--clr-blue-600) 0%, #1d4ed8 100%);
-  color: #ffffff;
+  color: #ffffff !important;
   box-shadow: var(--shadow-glow-blue);
 }
 
@@ -202,7 +202,7 @@ img {
 
 .btn-whatsapp {
   background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: #ffffff;
+  color: #ffffff !important;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
 }
 

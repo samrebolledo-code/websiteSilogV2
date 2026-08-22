@@ -109,7 +109,8 @@
   position: relative;
   padding: clamp(2.5rem, 6vw, 5rem) 0;
   overflow: hidden;
-  background: var(--clr-navy-900);
+  background: #0f172a;
+  color: #ffffff !important;
   width: 100%;
 }
 
@@ -135,7 +136,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.95) 100%);
   z-index: 2;
 }
 
@@ -150,10 +151,10 @@
   align-items: center;
   gap: var(--space-sm);
   padding: 0.4rem 1rem;
-  background: rgba(37, 99, 235, 0.15);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(37, 99, 235, 0.25) !important;
+  border: 1px solid rgba(59, 130, 246, 0.4) !important;
   border-radius: var(--radius-full);
-  color: var(--clr-blue-400);
+  color: #60a5fa !important;
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: var(--space-md);
@@ -167,11 +168,12 @@
   letter-spacing: -0.5px;
   line-height: 1.25;
   word-break: break-word;
+  color: #ffffff !important;
 }
 
 .hero-claim-text {
   font-size: clamp(0.95rem, 2.2vw, 1.2rem);
-  color: #cbd5e1;
+  color: #e2e8f0 !important;
   margin-bottom: var(--space-xl);
   line-height: 1.6;
 }
@@ -190,8 +192,8 @@
 }
 
 .feature-card {
-  background: var(--clr-navy-800);
-  border: 1px solid var(--glass-border);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -221,7 +223,7 @@
 }
 
 .feature-desc {
-  color: #94a3b8;
+  color: var(--text-muted);
   font-size: 0.92rem;
 }
 
@@ -243,7 +245,7 @@
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-lg);
 }
 
@@ -270,8 +272,8 @@
 }
 
 .step-card {
-  background: var(--clr-navy-800);
-  border: 1px solid var(--glass-border);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   text-align: center;
@@ -282,7 +284,7 @@
   width: 44px;
   height: 44px;
   background: var(--clr-blue-600);
-  color: var(--clr-white);
+  color: #ffffff;
   font-weight: 800;
   font-size: 1.2rem;
   border-radius: var(--radius-full);
@@ -293,10 +295,10 @@
   box-shadow: var(--shadow-glow-blue);
 }
 
-/* 6. Calculadora de Cotizaciones & Control Segmentado (100% Ajustado a Móviles) */
+/* 6. Calculadora de Cotizaciones & Control Segmentado */
 .calculator-card {
-  background: var(--clr-navy-800);
-  border: 1px solid var(--glass-border);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: clamp(0.85rem, 3.5vw, 1.75rem);
   box-shadow: var(--shadow-lg);
@@ -307,7 +309,6 @@
   overflow: hidden;
 }
 
-/* Encabezado del Cotizador */
 .calculator-card-header {
   display: flex;
   flex-direction: column;
@@ -315,7 +316,7 @@
   gap: 0.75rem;
   margin-bottom: var(--space-lg);
   padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--border-subtle);
   width: 100%;
   box-sizing: border-box;
 }
@@ -354,7 +355,7 @@
 .unit-toggle-label {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--text-muted);
   white-space: nowrap;
 }
 
@@ -362,7 +363,7 @@
   display: flex;
   align-items: center;
   background: rgba(15, 23, 42, 0.95);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--border-subtle);
   padding: 3px;
   border-radius: var(--radius-full);
   width: 100%;
@@ -403,7 +404,7 @@
 
 .unit-btn.active {
   background: var(--clr-blue-600);
-  color: var(--clr-white);
+  color: #ffffff !important;
   box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
 }
 
@@ -425,45 +426,20 @@
 .form-group label {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #cbd5e1;
+  color: var(--clr-white);
 }
 
 .form-control {
   width: 100%;
   padding: 0.75rem 0.9rem;
   background: rgba(15, 23, 42, 0.6);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   color: var(--clr-white);
   font-size: 0.95rem;
   font-family: var(--ff-body);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--clr-blue-500);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-}
-
-.form-control:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.dimensions-row {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  width: 100%;
-}
-
-@media (max-width: 600px) {
-  .dimensions-row {
-    grid-template-columns: 1fr;
-  }
 }
 
 .calc-result-box {
@@ -491,178 +467,73 @@
   margin: var(--space-xs) 0;
 }
 
-.result-iva-note {
-  color: #94a3b8;
-  font-size: 0.85rem;
-  margin-bottom: var(--space-lg);
+/* =========================================
+   REGLAS ESPECÍFICAS DE CONTRASTE MODO CLARO
+   ========================================= */
+
+html[data-theme="light"] .site-header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
 }
 
-/* Aviso de Servicios Especiales */
-.special-services-notice {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px dashed rgba(59, 130, 246, 0.4);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
-  margin-top: var(--space-lg);
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  width: 100%;
-  box-sizing: border-box;
+html[data-theme="light"] .brand-title-fallback {
+  color: #0f172a !important;
 }
 
-.special-services-icon {
-  font-size: 1.6rem;
-  flex-shrink: 0;
+html[data-theme="light"] .nav-link {
+  color: #334155 !important;
 }
 
-.special-services-text h4 {
-  font-size: 0.95rem;
-  color: var(--clr-white);
-  margin-bottom: 0.25rem;
+html[data-theme="light"] .nav-link:hover {
+  color: #2563eb !important;
 }
 
-.special-services-text p {
-  font-size: 0.85rem;
-  color: #cbd5e1;
-  line-height: 1.4;
+html[data-theme="light"] .theme-toggle-btn {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
 }
 
-/* 7. Mapa de Cobertura */
-.map-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-xl);
-  align-items: start;
-  width: 100%;
+html[data-theme="light"] .calculator-card,
+html[data-theme="light"] .feature-card,
+html[data-theme="light"] .step-card,
+html[data-theme="light"] .map-info-card-container,
+html[data-theme="light"] .insta-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06) !important;
 }
 
-@media (min-width: 992px) {
-  .map-layout {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
+html[data-theme="light"] .calculator-header-title,
+html[data-theme="light"] .feature-title,
+html[data-theme="light"] .step-card h3,
+html[data-theme="light"] .form-group label,
+html[data-theme="light"] .section-title {
+  color: #0f172a !important;
 }
 
-.map-wrapper {
-  position: relative;
-  background: var(--clr-navy-800);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-sm);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  width: 100%;
-  box-sizing: border-box;
+html[data-theme="light"] .form-control {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
 }
 
-.svg-map-element {
-  width: 100%;
-  height: auto;
-  display: block;
+html[data-theme="light"] .unit-toggle-label {
+  color: #475569 !important;
 }
 
-.map-info-card-container {
-  background: var(--clr-navy-800);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  width: 100%;
-  box-sizing: border-box;
+html[data-theme="light"] .unit-segmented-control {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
 }
 
-/* 8. Instagram Section */
-.insta-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-lg);
-  width: 100%;
+html[data-theme="light"] .unit-btn {
+  color: #64748b !important;
 }
 
-.insta-card {
-  background: var(--clr-navy-800);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-/* 9. Contacto & Floating WhatsApp */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-xl);
-  width: 100%;
-}
-
-@media (min-width: 992px) {
-  .contact-layout {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.contact-info-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-}
-
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
-}
-
-.contact-icon {
-  width: 44px;
-  height: 44px;
-  background: rgba(37, 99, 235, 0.15);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  color: var(--clr-blue-400);
-  flex-shrink: 0;
-}
-
-.floating-wa-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  width: 56px;
-  height: 56px;
-  background: #25d366;
-  color: white;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-  transition: transform 0.3s ease;
-  font-size: 1.7rem;
-  cursor: pointer;
-}
-
-/* Chatbot Modal Popup */
-.chatbot-modal {
-  position: fixed;
-  bottom: 85px;
-  right: 16px;
-  z-index: 1001;
-  width: 350px;
-  max-width: calc(100vw - 32px);
-  background: #111b21;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: none;
-  flex-direction: column;
-}
-
-.chatbot-modal.active {
-  display: flex;
+html[data-theme="light"] .unit-btn.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
 }
 
 /* =========================================
