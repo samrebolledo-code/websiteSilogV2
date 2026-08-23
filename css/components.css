@@ -1842,14 +1842,14 @@ html[data-theme="light"] .theme-switch-thumb {
   }
 
   /* Popup Modal Compacto y Elegante (no ocupa toda la pantalla) */
-  /* Popup Modal Flotante Centrado (Ancho reducido max 340px, esquinas redondeadas) */
+  /* Popup Modal Angosto Flotante (Max 280px) y Traslúcido */
   .map-info-card-container {
     position: fixed;
     inset: 0;
     z-index: 99999;
-    background: rgba(15, 23, 42, 0.65) !important;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: rgba(6, 11, 24, 0.45) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1861,7 +1861,7 @@ html[data-theme="light"] .theme-switch-thumb {
   }
 
   html[data-theme="light"] .map-info-card-container {
-    background: rgba(15, 23, 42, 0.55) !important;
+    background: rgba(15, 23, 42, 0.35) !important;
   }
 
   .map-info-card-container.is-open {
@@ -1870,9 +1870,9 @@ html[data-theme="light"] .theme-switch-thumb {
   }
 
   #map-info-card {
-    width: calc(100% - 32px);
-    max-width: 340px;
-    margin: 0 auto;
+    width: 82% !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
     transform: scale(0.92);
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -1883,37 +1883,42 @@ html[data-theme="light"] .theme-switch-thumb {
 
   .sil-detail-card {
     border-radius: 20px !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
     position: relative;
-    padding: 1.1rem 1.2rem !important;
-    background: var(--bg-card, #0f172a);
+    padding: 1rem 1.1rem 1rem 1.1rem !important;
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
   }
 
   html[data-theme="light"] .sil-detail-card {
-    background: #ffffff !important;
-    border-color: #e2e8f0 !important;
-    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25) !important;
+    background: rgba(255, 255, 255, 0.82) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    color: #0f172a !important;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
   }
 
   .sil-comuna-heading {
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
     margin: 0.15rem 0 !important;
   }
 
   .sil-provincia-subtitle {
-    font-size: 0.78rem !important;
+    font-size: 0.75rem !important;
   }
 
   .sil-zone-title {
-    font-size: 0.65rem !important;
+    font-size: 0.62rem !important;
   }
 
   .sil-action-btn {
-    padding: 0.7rem 1rem !important;
-    font-size: 0.88rem !important;
-    margin-top: 0.85rem !important;
-    border-radius: 12px !important;
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.82rem !important;
+    margin-top: 0.75rem !important;
+    border-radius: 10px !important;
   }
 
   /* Botón de Cierre (X) compacto */
@@ -1922,23 +1927,23 @@ html[data-theme="light"] .theme-switch-thumb {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 0.85rem;
-    right: 0.85rem;
-    width: 28px;
-    height: 28px;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1;
     cursor: pointer;
     z-index: 10;
   }
 
   html[data-theme="light"] .map-popup-close-btn {
-    background: #f1f5f9;
-    border-color: #cbd5e1;
+    background: rgba(15, 23, 42, 0.08);
+    border-color: rgba(15, 23, 42, 0.15);
     color: #0f172a;
   }
 }
