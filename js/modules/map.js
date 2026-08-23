@@ -1,11 +1,10 @@
 /**
- * Transportes SIL - Módulo de Mapa Interactivo de Cobertura V Región (Ilustración Vectorial 36 Comunas)
+ * Transportes SIL - Módulo de Mapa Interactivo de Cobertura V Región
  * 
- * Recrea exactamente el diseño infográfico cartográfico de referencia.
- * Las 36 comunas continentales son 100% interactivas y seleccionables.
+ * Función única centralizada de selección y actualización de tarjeta.
  */
 
-import { getComunaInfo } from '../config/coverage.js';
+import { getComunaInfo, DEFAULT_SERVICE_DAYS, validateCoverageData } from '../config/coverage.js';
 import { preselectDestination } from './calculator.js';
 
 let selectedComunaId = 'valparaiso';
@@ -521,11 +520,15 @@ export function initInteractiveMap() {
   const mapContainer = document.getElementById('map-vector-container');
   if (!mapContainer) return;
 
+  // Ejecutar validación automática de IDs durante desarrollo
+  const geojsonIds = MAP_COMUNAS_DATA.map(c => c.id);
+  validateCoverageData(geojsonIds);
+
   mapContainer.innerHTML = `
     <div class="sil-svg-map-card">
       <div class="sil-svg-wrapper">
         <svg class="sil-coverage-svg" viewBox="0 0 860 560" role="img" aria-label="Mapa de cobertura de Transportes SIL en la Región de Valparaíso">
-          <!-- Texto Océano Pacífico (Indicado verticalmente a la izquierda) -->
+          <!-- Texto Océano Pacífico -->
           <text x="25" y="160" class="ocean-text">OCÉANO PACÍFICO</text>
 
           <!-- Grupo de 36 Comunas Continentales de la V Región -->
@@ -534,7 +537,8 @@ export function initInteractiveMap() {
               <path 
                 id="path-${c.id}"
                 class="coverage-comuna ${c.colorClass} ${c.id === selectedComunaId ? 'selected' : ''}" 
-                data-comuna="${c.id}" 
+                data-comuna-id="${c.id}" 
+                data-comuna="${c.id}"
                 data-name="${c.name}"
                 d="${c.path}" 
               >
@@ -550,6 +554,7 @@ export function initInteractiveMap() {
                 x="${c.labelX}" 
                 y="${c.labelY}" 
                 class="map-svg-label label-${c.id}" 
+                data-comuna-id="${c.id}"
                 data-comuna="${c.id}"
               >${c.name}</text>
             `).join('')}
@@ -580,7 +585,7 @@ export function initInteractiveMap() {
 
   setupMapInteractions();
 
-  // Seleccionar Valparaíso por defecto
+  // Seleccionar Valparaíso por defecto inicialmente
   selectComuna('valparaiso', false);
 }
 
@@ -588,12 +593,12 @@ function setupMapInteractions() {
   const mapContainer = document.getElementById('map-vector-container');
   if (!mapContainer) return;
 
-  // Delegación de eventos directa sobre el contenedor (Garantiza respuesta al clic en polígono o etiqueta)
+  // Delegación de eventos robusta (soporta data-comuna y data-comuna-id)
   mapContainer.addEventListener('click', (e) => {
-    const target = e.target.closest('[data-comuna]');
+    const target = e.target.closest('[data-comuna-id]') || e.target.closest('[data-comuna]');
     if (!target) return;
 
-    const comunaId = target.getAttribute('data-comuna');
+    const comunaId = target.getAttribute('data-comuna-id') || target.getAttribute('data-comuna');
     if (comunaId) {
       selectComuna(comunaId, false);
     }
@@ -602,7 +607,7 @@ function setupMapInteractions() {
   // Botones de cotización dentro de la tarjeta
   document.addEventListener('click', (e) => {
     if (e.target && e.target.classList.contains('btn-quote-comuna')) {
-      const comunaId = e.target.getAttribute('data-comuna-id');
+      const comunaId = e.target.getAttribute('data-comuna-id') || e.target.getAttribute('data-comuna');
       if (comunaId) {
         preselectDestination(comunaId, true);
       }
@@ -610,28 +615,35 @@ function setupMapInteractions() {
   });
 }
 
+/**
+ * Función ÚNICA centralizada de selección de comuna
+ */
 export function selectComuna(comunaId, scrollToCalc = false) {
   const info = getComunaInfo(comunaId);
-  if (!info) return;
+  if (!info) {
+    console.error(`No se encontró información para la comuna: ${comunaId}`);
+    return;
+  }
 
   selectedComunaId = comunaId;
 
-  // Actualizar selección visual en polígonos
+  // 1. Quitar selección anterior y seleccionar la nueva comuna exactamente
   document.querySelectorAll('.coverage-comuna').forEach(p => {
-    if (p.getAttribute('data-comuna') === comunaId) {
+    const pId = p.getAttribute('data-comuna-id') || p.getAttribute('data-comuna');
+    if (pId === comunaId) {
       p.classList.add('selected');
     } else {
       p.classList.remove('selected');
     }
   });
 
-  // Actualizar curva de ruta hacia Santiago
+  // 2. Actualizar curva decorativa hacia Santiago
   updateRouteCurve(comunaId);
 
-  // Actualizar tarjeta derecha
+  // 3. Actualizar TODA la tarjeta derecha con la nueva información
   showComunaDetail(info);
 
-  // Sincronizar cotizador
+  // 4. Actualizar destino en la calculadora (sin scroll si es clic directo en mapa)
   if (info.hasService) {
     preselectDestination(comunaId, scrollToCalc);
   }
@@ -653,8 +665,8 @@ function updateRouteCurve(comunaId) {
 }
 
 /**
- * Muestra la información de la comuna seleccionada en la tarjeta derecha
- * Estructura idéntica al diseño de referencia
+ * Reconstruye la tarjeta derecha garantizando que no queden datos de selecciones anteriores
+ * y sin mostrar jamás 'undefined' ni 'null'.
  */
 function showComunaDetail(info) {
   const infoCard = document.getElementById('map-info-card');
@@ -663,7 +675,7 @@ function showComunaDetail(info) {
   const comunaName = (info && info.name) ? info.name : 'Valparaíso';
   const provinciaName = (info && info.provincia) ? info.provincia : 'Provincia de Valparaíso';
   const zoneName = (info && info.zone) ? info.zone : 'ZONA COSTA';
-  const daysText = (info && info.days) ? info.days : 'Lunes a Viernes';
+  const daysText = (info && info.days) ? info.days : DEFAULT_SERVICE_DAYS;
   const isConfigured = !!(info && info.hasService);
 
   infoCard.innerHTML = `
@@ -742,11 +754,11 @@ function showComunaDetail(info) {
       </div>
 
       ${isConfigured ? `
-        <button class="btn btn-primary btn-block btn-quote-comuna sil-action-btn" data-comuna-id="${info.id}">
+        <button class="btn btn-primary btn-block btn-quote-comuna sil-action-btn" data-comuna-id="${info.id}" data-comuna="${info.id}">
           Cotizar mi envío a ${comunaName} →
         </button>
       ` : `
-        <a href="#contacto" class="btn btn-secondary btn-block sil-action-btn neutral-btn">
+        <a href="#contacto" class="btn btn-secondary btn-block sil-action-btn neutral-btn" data-comuna-id="${info.id}">
           Consultar disponibilidad en ${comunaName} →
         </a>
       `}

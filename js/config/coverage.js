@@ -1,8 +1,7 @@
 /**
  * Transportes SIL - Configuración Oficial de Cobertura V Región de Valparaíso (36 Comunas Continentales)
  * 
- * Configuración centralizada de las 36 comunas continentales de la Región de Valparaíso.
- * Días de atención configurados temporalmente en "Lunes a Viernes" como valor único centralizado.
+ * Fuente única de verdad operacional para las 36 comunas continentales de la V Región.
  */
 
 export const DEFAULT_SERVICE_DAYS = "Lunes a Viernes";
@@ -420,10 +419,71 @@ export function getAllComunas() {
   return COVERAGE_DATA.comunas;
 }
 
+/**
+ * Normaliza una cadena de texto (sin acentos, minúsculas, sin caracteres especiales)
+ */
+function normalizeId(str) {
+  if (!str) return "";
+  return str
+    .toLowerCase()
+    .trim()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/_/g, "-");
+}
+
+/**
+ * Búsqueda unificada y robusta de comuna por ID o Nombre
+ */
 export function getComunaInfo(idOrName) {
   if (!idOrName) return null;
-  const search = idOrName.toLowerCase().trim();
-  return COVERAGE_DATA.comunas.find(
-    c => c.id === search || c.name.toLowerCase() === search
-  ) || null;
+  const searchNorm = normalizeId(idOrName);
+
+  const found = COVERAGE_DATA.comunas.find(c => {
+    const cIdNorm = normalizeId(c.id);
+    const cNameNorm = normalizeId(c.name);
+    return cIdNorm === searchNorm || cNameNorm === searchNorm;
+  });
+
+  if (!found) {
+    console.error(`No se encontró información para la comuna: ${idOrName}`);
+  }
+
+  return found || null;
+}
+
+/**
+ * Validación automática requerida entre IDs de comunas y datos de cobertura
+ */
+export function validateCoverageData(geojsonIds = []) {
+  const covIds = COVERAGE_DATA.comunas.map(c => c.id);
+  const covSet = new Set(covIds);
+  const duplicates = covIds.filter((item, index) => covIds.indexOf(item) !== index);
+  
+  let correctCount = 0;
+  let missingCount = 0;
+
+  geojsonIds.forEach(gid => {
+    if (covSet.has(gid)) {
+      correctCount++;
+    } else {
+      missingCount++;
+      console.error(`ID de GeoJSON sin datos en coverage.js: ${gid}`);
+    }
+  });
+
+  console.log("=== VALIDACIÓN DE COBERTURA ===");
+  console.log(`Comunas geográficas: ${geojsonIds.length}`);
+  console.log(`Comunas con datos: ${covIds.length}`);
+  console.log(`Coincidencias correctas: ${correctCount}`);
+  console.log(`Sin información: ${missingCount}`);
+  console.log(`IDs duplicados: ${duplicates.length}`);
+
+  return {
+    geographic: geojsonIds.length,
+    withData: covIds.length,
+    matched: correctCount,
+    missing: missingCount,
+    duplicates: duplicates.length
+  };
 }

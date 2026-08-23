@@ -3,6 +3,7 @@
  * 
  * Inicializa todos los módulos, la navegación responsive, el chatbot flotante
  * de WhatsApp, Theme Switcher (Claro/Oscuro) y los comportamientos de scroll suave.
+ * Soporta ejecución segura previniendo condiciones de carrera si DOMContentLoaded ya ocurrió.
  */
 
 import { initCalculator } from './modules/calculator.js';
@@ -11,7 +12,7 @@ import { initContactForm } from './modules/contactForm.js';
 import { initInstagramSection } from './modules/instagram.js';
 import { initWhatsAppChatbot } from './modules/whatsapp.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+function startApp() {
   // 1. Inicializar Módulos Principales
   initCalculator();
   initInteractiveMap();
@@ -57,33 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+}
 
-  // 4. Scroll Suave para Enlaces de Navegación
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        e.preventDefault();
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-
-  // 5. Header Sticky Scroll Effect
-  const header = document.querySelector('.site-header');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-  }
-});
+// Ejecución a prueba de fallos: Si DOMContentLoaded ya pasó, arranca inmediatamente
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startApp);
+} else {
+  startApp();
+}

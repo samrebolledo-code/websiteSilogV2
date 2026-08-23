@@ -752,8 +752,7 @@ html[data-theme="light"] .coverage-comuna.zone-neutral {
   fill: #ffffff;
   text-anchor: middle;
   dominant-baseline: central;
-  pointer-events: auto;
-  cursor: pointer;
+  pointer-events: none; /* Clics atraviesan hacia el polígono inferior */
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
   letter-spacing: 0.3px;
 }

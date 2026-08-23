@@ -5,11 +5,7 @@
       "type": "Feature",
       "properties": {
         "id": "rinconada",
-        "name": "Rinconada",
-        "zone": "ZONA ESTE",
-        "color": "#dc2626",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Rinconada"
       },
       "geometry": {
         "type": "Polygon",
@@ -55,11 +51,7 @@
       "type": "Feature",
       "properties": {
         "id": "cabildo",
-        "name": "Cabildo",
-        "zone": "ZONA NORTE",
-        "color": "#1d4ed8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Cabildo"
       },
       "geometry": {
         "type": "Polygon",
@@ -177,11 +169,7 @@
       "type": "Feature",
       "properties": {
         "id": "petorca",
-        "name": "Petorca",
-        "zone": "ZONA NORTE",
-        "color": "#1d4ed8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Petorca"
       },
       "geometry": {
         "type": "Polygon",
@@ -283,11 +271,7 @@
       "type": "Feature",
       "properties": {
         "id": "panquehue",
-        "name": "Panquehue",
-        "zone": "ZONA ESTE",
-        "color": "#dc2626",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Panquehue"
       },
       "geometry": {
         "type": "Polygon",
@@ -325,11 +309,7 @@
       "type": "Feature",
       "properties": {
         "id": "olmue",
-        "name": "Olmué",
-        "zone": "ZONA CENTRO",
-        "color": "#059669",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Olmué"
       },
       "geometry": {
         "type": "Polygon",
@@ -375,11 +355,7 @@
       "type": "Feature",
       "properties": {
         "id": "cartagena",
-        "name": "Cartagena",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Cartagena"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -463,11 +439,7 @@
       "type": "Feature",
       "properties": {
         "id": "catemu",
-        "name": "Catemu",
-        "zone": "ZONA ESTE",
-        "color": "#dc2626",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Catemu"
       },
       "geometry": {
         "type": "Polygon",
@@ -537,11 +509,7 @@
       "type": "Feature",
       "properties": {
         "id": "llaillay",
-        "name": "Llaillay",
-        "zone": "ZONA ESTE",
-        "color": "#dc2626",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Llaillay"
       },
       "geometry": {
         "type": "Polygon",
@@ -595,11 +563,7 @@
       "type": "Feature",
       "properties": {
         "id": "san-felipe",
-        "name": "San Felipe",
-        "zone": "ZONA ESTE",
-        "color": "#dc2626",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "San Felipe"
       },
       "geometry": {
         "type": "Polygon",
@@ -677,11 +641,7 @@
       "type": "Feature",
       "properties": {
         "id": "santa-maria",
-        "name": "Santa María",
-        "zone": "ZONA ESTE",
-        "color": "#dc2626",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Santa María"
       },
       "geometry": {
         "type": "Polygon",
@@ -735,11 +695,7 @@
       "type": "Feature",
       "properties": {
         "id": "villa-alemana",
-        "name": "Villa Alemana",
-        "zone": "ZONA CENTRO",
-        "color": "#059669",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Villa Alemana"
       },
       "geometry": {
         "type": "Polygon",
@@ -785,11 +741,7 @@
       "type": "Feature",
       "properties": {
         "id": "santo-domingo",
-        "name": "Santo Domingo",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Santo Domingo"
       },
       "geometry": {
         "type": "Polygon",
@@ -855,11 +807,7 @@
       "type": "Feature",
       "properties": {
         "id": "san-antonio",
-        "name": "San Antonio",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "San Antonio"
       },
       "geometry": {
         "type": "Polygon",
@@ -913,11 +861,7 @@
       "type": "Feature",
       "properties": {
         "id": "el-tabo",
-        "name": "El Tabo",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "El Tabo"
       },
       "geometry": {
         "type": "Polygon",
@@ -963,11 +907,7 @@
       "type": "Feature",
       "properties": {
         "id": "el-quisco",
-        "name": "El Quisco",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "El Quisco"
       },
       "geometry": {
         "type": "Polygon",
@@ -1009,11 +949,7 @@
       "type": "Feature",
       "properties": {
         "id": "algarrobo",
-        "name": "Algarrobo",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Algarrobo"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1109,11 +1045,7 @@
       "type": "Feature",
       "properties": {
         "id": "casablanca",
-        "name": "Casablanca",
-        "zone": "ZONA CENTRO",
-        "color": "#059669",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Casablanca"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1267,11 +1199,7 @@
       "type": "Feature",
       "properties": {
         "id": "valparaiso",
-        "name": "Valparaíso",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Valparaíso"
       },
       "geometry": {
         "type": "Polygon",
@@ -1341,11 +1269,7 @@
       "type": "Feature",
       "properties": {
         "id": "vina-del-mar",
-        "name": "Viña del Mar",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Viña del Mar"
       },
       "geometry": {
         "type": "Polygon",
@@ -1403,11 +1327,7 @@
       "type": "Feature",
       "properties": {
         "id": "concon",
-        "name": "Concón",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Concón"
       },
       "geometry": {
         "type": "Polygon",
@@ -1445,11 +1365,7 @@
       "type": "Feature",
       "properties": {
         "id": "quintero",
-        "name": "Quintero",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Quintero"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1609,11 +1525,7 @@
       "type": "Feature",
       "properties": {
         "id": "puchuncavi",
-        "name": "Puchuncaví",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Puchuncaví"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1733,11 +1645,7 @@
       "type": "Feature",
       "properties": {
         "id": "zapallar",
-        "name": "Zapallar",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Zapallar"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1845,11 +1753,7 @@
       "type": "Feature",
       "properties": {
         "id": "papudo",
-        "name": "Papudo",
-        "zone": "ZONA COSTA",
-        "color": "#00b4d8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Papudo"
       },
       "geometry": {
         "type": "Polygon",
@@ -1903,11 +1807,7 @@
       "type": "Feature",
       "properties": {
         "id": "la-ligua",
-        "name": "La Ligua",
-        "zone": "ZONA NORTE",
-        "color": "#1d4ed8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "La Ligua"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2231,11 +2131,7 @@
       "type": "Feature",
       "properties": {
         "id": "limache",
-        "name": "Limache",
-        "zone": "ZONA CENTRO",
-        "color": "#059669",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Limache"
       },
       "geometry": {
         "type": "Polygon",
@@ -2301,11 +2197,7 @@
       "type": "Feature",
       "properties": {
         "id": "quillota",
-        "name": "Quillota",
-        "zone": "ZONA NORTE",
-        "color": "#1d4ed8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Quillota"
       },
       "geometry": {
         "type": "Polygon",
@@ -2355,11 +2247,7 @@
       "type": "Feature",
       "properties": {
         "id": "la-calera",
-        "name": "La Calera",
-        "zone": "ZONA NORTE",
-        "color": "#1d4ed8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "La Calera"
       },
       "geometry": {
         "type": "Polygon",
@@ -2409,11 +2297,7 @@
       "type": "Feature",
       "properties": {
         "id": "nogales",
-        "name": "Nogales",
-        "zone": "ZONA NORTE",
-        "color": "#1d4ed8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Nogales"
       },
       "geometry": {
         "type": "Polygon",
@@ -2479,11 +2363,7 @@
       "type": "Feature",
       "properties": {
         "id": "calle-larga",
-        "name": "Calle Larga",
-        "zone": "ZONA ESTE",
-        "color": "#dc2626",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Calle Larga"
       },
       "geometry": {
         "type": "Polygon",
@@ -2559,11 +2439,7 @@
       "type": "Feature",
       "properties": {
         "id": "la-cruz",
-        "name": "La Cruz",
-        "zone": "ZONA NORTE",
-        "color": "#1d4ed8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "La Cruz"
       },
       "geometry": {
         "type": "Polygon",
@@ -2609,11 +2485,7 @@
       "type": "Feature",
       "properties": {
         "id": "putaendo",
-        "name": "Putaendo",
-        "zone": "ZONA ESTE",
-        "color": "#dc2626",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Putaendo"
       },
       "geometry": {
         "type": "Polygon",
@@ -2711,11 +2583,7 @@
       "type": "Feature",
       "properties": {
         "id": "san-esteban",
-        "name": "San Esteban",
-        "zone": "ZONA ESTE",
-        "color": "#dc2626",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "San Esteban"
       },
       "geometry": {
         "type": "Polygon",
@@ -2801,11 +2669,7 @@
       "type": "Feature",
       "properties": {
         "id": "los-andes",
-        "name": "Los Andes",
-        "zone": "ZONA ESTE",
-        "color": "#dc2626",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Los Andes"
       },
       "geometry": {
         "type": "Polygon",
@@ -2919,11 +2783,7 @@
       "type": "Feature",
       "properties": {
         "id": "hijuelas",
-        "name": "Hijuelas",
-        "zone": "ZONA NORTE",
-        "color": "#1d4ed8",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Hijuelas"
       },
       "geometry": {
         "type": "Polygon",
@@ -2977,11 +2837,7 @@
       "type": "Feature",
       "properties": {
         "id": "quilpue",
-        "name": "Quilpué",
-        "zone": "ZONA CENTRO",
-        "color": "#059669",
-        "days": "Lunes a Viernes",
-        "scheduleNote": "Salidas diarias y despachos programados"
+        "name": "Quilpué"
       },
       "geometry": {
         "type": "Polygon",
