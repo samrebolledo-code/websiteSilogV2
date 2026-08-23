@@ -1798,44 +1798,57 @@ html[data-theme="light"] .theme-switch-thumb {
 }
 
 /* ==========================================================================
-   OPTIMIZACIÓN DEL MAPA Y POPUP MODAL EN TABLET Y MÓVIL
+   MAPA AMPLIADO 3X Y POPUP MODAL COMPACTO EN TABLET Y MÓVIL
    ========================================================================== */
 .map-popup-close-btn {
   display: none;
 }
 
 @media (max-width: 992px) {
-  /* Alargar el mapa en pantallas móviles y tablets para visibilidad óptima */
+  /* Mapa verdaderamente ampliado (3x más grande con scroll horizontal suave) */
+  .map-layout,
+  .map-wrapper,
+  #map-vector-container,
+  .sil-svg-map-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
   .sil-svg-wrapper {
-    height: clamp(420px, 60vh, 520px) !important;
+    height: 460px !important;
     aspect-ratio: auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    overflow: hidden !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
     position: relative;
   }
 
   .sil-coverage-svg {
-    width: 100% !important;
+    min-width: 660px !important;
+    width: auto !important;
     height: 100% !important;
-    max-width: 100% !important;
     display: block !important;
-    object-fit: contain;
   }
 
   .map-svg-label {
-    font-size: 0.60rem;
+    font-size: 0.68rem;
     font-weight: 800;
   }
 
-  /* Popup Modal flotante sobre el mapa */
+  /* Popup Modal Compacto y Elegante (no ocupa toda la pantalla) */
   .map-info-card-container {
     position: fixed;
     inset: 0;
     z-index: 99999;
-    background: rgba(6, 11, 24, 0.78);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(6, 11, 24, 0.65);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -1852,9 +1865,10 @@ html[data-theme="light"] .theme-switch-thumb {
 
   #map-info-card {
     width: 100%;
-    max-width: 520px;
+    max-width: 440px;
+    margin: 0 auto;
     transform: translateY(100%);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .map-info-card-container.is-open #map-info-card {
@@ -1862,34 +1876,84 @@ html[data-theme="light"] .theme-switch-thumb {
   }
 
   .sil-detail-card {
-    border-radius: 24px 24px 0 0 !important;
+    border-radius: 20px 20px 0 0 !important;
     border-bottom: none !important;
-    max-height: 85vh;
+    max-height: 52vh !important;
     overflow-y: auto;
-    box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
     position: relative;
-    padding: 1.5rem 1.25rem 1.25rem 1.25rem;
+    padding: 1rem 1.1rem 1rem 1.1rem !important;
   }
 
-  /* Botón de Cierre (X) en la esquina superior del popup */
+  .sil-comuna-heading {
+    font-size: 1.25rem !important;
+    margin: 0.15rem 0 !important;
+  }
+
+  .sil-provincia-subtitle {
+    font-size: 0.76rem !important;
+  }
+
+  .sil-zone-title {
+    font-size: 0.65rem !important;
+  }
+
+  .sil-detail-divider {
+    margin: 0.5rem 0 !important;
+  }
+
+  .sil-detail-list {
+    gap: 0.4rem !important;
+  }
+
+  .sil-detail-row {
+    gap: 0.5rem !important;
+  }
+
+  .sil-detail-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .detail-svg-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .sil-detail-label {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  .sil-detail-value {
+    font-size: 0.80rem !important;
+  }
+
+  .sil-action-btn {
+    padding: 0.65rem 1rem !important;
+    font-size: 0.85rem !important;
+    margin-top: 0.65rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* Botón de Cierre (X) compacto */
   .map-popup-close-btn {
     display: flex !important;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 32px;
-    height: 32px;
+    top: 0.85rem;
+    right: 0.85rem;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: #ffffff;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1;
     cursor: pointer;
     z-index: 10;
-    transition: background 0.2s ease;
   }
 
   html[data-theme="light"] .map-popup-close-btn {
