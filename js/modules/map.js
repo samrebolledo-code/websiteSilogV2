@@ -486,6 +486,10 @@ export function initInteractiveMap() {
   mapContainer.innerHTML = `
     <div class="sil-svg-map-card">
       <div class="sil-svg-wrapper">
+        <div class="mobile-map-scroll-hint">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          Desliza para explorar comunas
+        </div>
         <svg class="sil-coverage-svg" viewBox="0 0 860 560" role="img" aria-label="Mapa de cobertura de Transportes SIL en la Región de Valparaíso">
           <text x="25" y="160" class="ocean-text">OCÉANO PACÍFICO</text>
 

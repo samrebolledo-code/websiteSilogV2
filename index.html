@@ -19,9 +19,9 @@
   <!-- Fuentes y Hojas de Estilo -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/main.css?v=1140" />
-  <link rel="stylesheet" href="css/components.css?v=1140" />
-  <link rel="stylesheet" href="css/utilities.css?v=1140" />
+  <link rel="stylesheet" href="css/main.css?v=1150" />
+  <link rel="stylesheet" href="css/components.css?v=1150" />
+  <link rel="stylesheet" href="css/utilities.css?v=1150" />
 
   <style>
     html, body {
@@ -38,22 +38,26 @@
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo" aria-label="Transportes SIL Inicio">
-        <img src="assets/logo.png?v=1140" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+        <img src="assets/logo.png?v=1150" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <span class="brand-title-fallback">TRANSPORTES <span>SIL</span></span>
       </a>
 
-      <div style="display: flex; align-items: center; gap: 0.75rem;">
-        <!-- Selector de Tema Claro / Oscuro -->
-        <button type="button" id="theme-toggle" class="theme-toggle-switch" aria-label="Cambiar Tema Claro / Oscuro SIL" title="Cambiar a Modo Claro">
+      <div class="header-actions">
+        <!-- Selector Visual de Tema Claro / Oscuro con Iconos Sun/Moon SVG -->
+        <button type="button" id="theme-toggle" class="theme-toggle-switch" aria-label="Cambiar tema" title="Cambiar tema">
           <span class="theme-switch-track">
-            <span class="theme-icon icon-sun">Claro</span>
-            <span class="theme-icon icon-moon">Oscuro</span>
+            <span class="theme-icon icon-sun">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M22 12h-2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </span>
+            <span class="theme-icon icon-moon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </span>
             <span class="theme-switch-thumb"></span>
           </span>
         </button>
 
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir Menú de Navegación" aria-expanded="false">
-          Menú
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
 
@@ -96,7 +100,7 @@
     </div>
   </section>
 
-  <!-- Ventajas del servicio -->
+  <!-- Ventajas del servicio con Iconos SVG Lucide -->
   <section class="section">
     <div class="container">
       <div class="section-subtitle">Por qué elegirnos</div>
@@ -107,42 +111,72 @@
 
       <div class="features-grid">
         <article class="feature-card">
-          <h3 class="feature-title">20 Años de Experiencia</h3>
+          <div class="feature-header">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+            <h3 class="feature-title">20 Años de Experiencia</h3>
+          </div>
           <p class="feature-desc">
             Trayectoria en el transporte de carga entre Santiago y la V Región.
           </p>
         </article>
 
         <article class="feature-card">
-          <h3 class="feature-title">Despachos Diarios</h3>
+          <div class="feature-header">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+            </div>
+            <h3 class="feature-title">Despachos Diarios</h3>
+          </div>
           <p class="feature-desc">
             Salidas de lunes a viernes para mantener la continuidad de tus entregas.
           </p>
         </article>
 
         <article class="feature-card">
-          <h3 class="feature-title">Amplia Cobertura</h3>
+          <div class="feature-header">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8c0 3.613-3.801 7.275-5.418 8.706a1 1 0 0 1-1.344 0C9.62 15.275 5.82 11.613 5.82 8a6.18 6.18 0 0 1 12.36 0Z"/><circle cx="11.91" cy="8" r="2"/><path d="M9 19H3v-2l3-1"/><path d="M15 19h6v-2l-3-1"/></svg>
+            </div>
+            <h3 class="feature-title">Amplia Cobertura</h3>
+          </div>
           <p class="feature-desc">
             Atención en las principales comunas industriales y comerciales de la V Región.
           </p>
         </article>
 
         <article class="feature-card">
-          <h3 class="feature-title">Flota Propia</h3>
+          <div class="feature-header">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            </div>
+            <h3 class="feature-title">Flota Propia</h3>
+          </div>
           <p class="feature-desc">
             Operación respaldada por vehículos propios y personal capacitado.
           </p>
         </article>
 
         <article class="feature-card">
-          <h3 class="feature-title">Atención Personalizada</h3>
+          <div class="feature-header">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h3a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5Z"/><path d="M17 14h3a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-5Z"/><path d="M3 14v-3a9 9 0 0 1 18 0v3"/></svg>
+            </div>
+            <h3 class="feature-title">Atención Personalizada</h3>
+          </div>
           <p class="feature-desc">
             Contacto directo para resolver cada necesidad de despacho.
           </p>
         </article>
 
         <article class="feature-card">
-          <h3 class="feature-title">Cumplimiento Riguroso</h3>
+          <div class="feature-header">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="feature-title">Cumplimiento Riguroso</h3>
+          </div>
           <p class="feature-desc">
             Cumplimiento de los tiempos y condiciones acordadas con cada cliente.
           </p>
@@ -163,7 +197,8 @@
           </p>
 
           <div class="fraccionada-box">
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--clr-blue-500);"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg>
               ¿Qué es la carga fraccionada palletizada?
             </h3>
             <p style="font-size: 0.95rem;">
@@ -243,14 +278,20 @@
         <form id="calculator-form">
           <div class="form-row-two">
             <div class="form-group">
-              <label for="calc-origin">Origen:</label>
+              <label for="calc-origin" style="display: flex; align-items: center; gap: 0.4rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Origen:
+              </label>
               <select id="calc-origin" class="form-control" disabled>
                 <option value="Santiago" selected>Santiago (Región Metropolitana)</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="calc-destination">Destino (V Región):</label>
+              <label for="calc-destination" style="display: flex; align-items: center; gap: 0.4rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                Destino (V Región):
+              </label>
               <select id="calc-destination" class="form-control" required>
               </select>
             </div>
@@ -258,19 +299,28 @@
 
           <div class="form-row-two mt-4">
             <div class="form-group">
-              <label for="calc-pallets">Cantidad de Pallets:</label>
+              <label for="calc-pallets" style="display: flex; align-items: center; gap: 0.4rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg>
+                Cantidad de Pallets:
+              </label>
               <input type="number" id="calc-pallets" class="form-control" min="1" max="28" placeholder="Ej: 1" required />
             </div>
 
             <div class="form-group">
-              <label for="calc-weight">Peso total de la carga (kg):</label>
+              <label for="calc-weight" style="display: flex; align-items: center; gap: 0.4rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="3"/><path d="M6.5 8a2 2 0 0 0-1.905 1.385L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.9-2.5l-2.495-9.115A2 2 0 0 0 17.5 8z"/></svg>
+                Peso total de la carga (kg):
+              </label>
               <input type="number" id="calc-weight" class="form-control" min="1" step="any" placeholder="Ej: 900" required />
             </div>
           </div>
 
           <div class="dimensions-row mt-4">
             <div class="form-group">
-              <label for="calc-length" id="label-length">Largo por pallet (cm):</label>
+              <label for="calc-length" id="label-length" style="display: flex; align-items: center; gap: 0.4rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>
+                Largo por pallet (cm):
+              </label>
               <input type="number" id="calc-length" class="form-control" min="0.01" step="any" placeholder="120" required />
             </div>
             <div class="form-group">
@@ -286,8 +336,9 @@
             </small>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block mt-6">
-            Calcular Cotización Estimada →
+          <button type="submit" class="btn btn-primary btn-block mt-6" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+            <span>Calcular Cotización Estimada →</span>
           </button>
         </form>
 
@@ -300,8 +351,9 @@
           <div class="result-iva-note">+ IVA</div>
           
           <div style="max-width: 420px; margin: 0 auto;">
-            <button id="btn-quote-whatsapp" class="btn btn-whatsapp btn-block">
-              Cotizar por WhatsApp
+            <button id="btn-quote-whatsapp" class="btn btn-whatsapp btn-block" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="icon-whatsapp"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.179L2 22l4.954-1.383C8.384 21.493 10.134 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.644 0-3.174-.442-4.502-1.212l-.323-.189-2.956.826.84-2.883-.207-.33A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+              <span>Cotizar por WhatsApp</span>
             </button>
           </div>
         </div>
@@ -319,7 +371,7 @@
     </div>
   </section>
 
-  <!-- Mapa interactivo de cobertura -->
+  <!-- Mapa interactivo de cobertura (INTACTO SOBERANO) -->
   <section id="cobertura" class="section map-section">
     <div class="container">
       <div class="section-subtitle">Zonas de atención</div>
@@ -426,7 +478,7 @@
     </div>
   </section>
 
-  <!-- Contacto -->
+  <!-- Contacto con Iconos SVG Profesionales -->
   <section id="contacto" class="section">
     <div class="container">
       <div class="section-subtitle">Atención Directa</div>
@@ -438,6 +490,9 @@
       <div class="contact-layout">
         <div class="contact-info-list">
           <div class="contact-item">
+            <div class="contact-icon" style="display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color: #25D366;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.179L2 22l4.954-1.383C8.384 21.493 10.134 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.644 0-3.174-.442-4.502-1.212l-.323-.189-2.956.826.84-2.883-.207-.33A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+            </div>
             <div>
               <h4 style="font-size: 1.1rem; color: var(--clr-white);">WhatsApp</h4>
               <p style="color: var(--text-soft);">+56 9 1234 5678</p>
@@ -446,6 +501,9 @@
           </div>
 
           <div class="contact-item">
+            <div class="contact-icon" style="display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
             <div>
               <h4 style="font-size: 1.1rem; color: var(--clr-white);">Teléfono</h4>
               <p style="color: var(--text-soft);">+56 2 2345 6789</p>
@@ -454,6 +512,9 @@
           </div>
 
           <div class="contact-item">
+            <div class="contact-icon" style="display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
             <div>
               <h4 style="font-size: 1.1rem; color: var(--clr-white);">Correo Electrónico</h4>
               <p style="color: var(--text-soft);">contacto@transportessil.cl</p>
@@ -462,6 +523,9 @@
           </div>
 
           <div class="contact-item">
+            <div class="contact-icon" style="display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
             <div>
               <h4 style="font-size: 1.1rem; color: var(--clr-white);">Base Operativa</h4>
               <p style="color: var(--text-soft);">Santiago — Región de Valparaíso</p>
@@ -497,8 +561,9 @@
               <textarea id="contact-message" class="form-control" rows="4" required placeholder="Describe tu necesidad de transporte..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block">
-              Enviar Mensaje Comercial →
+            <button type="submit" class="btn btn-primary btn-block" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span>Enviar Mensaje Comercial →</span>
             </button>
           </form>
 
@@ -510,14 +575,16 @@
 
   <!-- Botón Flotante de WhatsApp -->
   <a href="#" id="floating-whatsapp" class="floating-wa-btn" aria-label="Cotizar por WhatsApp">
-    WA
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.179L2 22l4.954-1.383C8.384 21.493 10.134 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.644 0-3.174-.442-4.502-1.212l-.323-.189-2.956.826.84-2.883-.207-.33A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
   </a>
 
   <!-- Chatbot Modal de WhatsApp -->
   <div id="whatsapp-chatbot-modal" class="chatbot-modal">
     <div class="chatbot-header">
       <div class="chatbot-header-info">
-        <div class="chatbot-avatar">SIL</div>
+        <div class="chatbot-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color: #ffffff;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.179L2 22l4.954-1.383C8.384 21.493 10.134 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.644 0-3.174-.442-4.502-1.212l-.323-.189-2.956.826.84-2.883-.207-.33A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+        </div>
         <div class="chatbot-header-text">
           <h4>Transportes SIL</h4>
           <div class="chatbot-status">
@@ -534,14 +601,17 @@
         ¿En qué podemos ayudarte?
       </div>
       <div class="chatbot-options-list">
-        <button class="chatbot-option-btn" data-action="ejecutivo">
-          Hablar con un ejecutivo
+        <button class="chatbot-option-btn" data-action="ejecutivo" style="display: flex; align-items: center; gap: 8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Hablar con un ejecutivo</span>
         </button>
-        <button class="chatbot-option-btn" data-action="especial">
-          Cotizar flete especial
+        <button class="chatbot-option-btn" data-action="especial" style="display: flex; align-items: center; gap: 8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+          <span>Cotizar flete especial</span>
         </button>
-        <button class="chatbot-option-btn" data-action="consulta">
-          Realizar otra consulta
+        <button class="chatbot-option-btn" data-action="consulta" style="display: flex; align-items: center; gap: 8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <span>Realizar otra consulta</span>
         </button>
       </div>
     </div>
@@ -553,7 +623,7 @@
       <div class="footer-grid">
         <div>
           <div class="brand-logo mb-4">
-            <img src="assets/logo.png?v=1140" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
+            <img src="assets/logo.png?v=1150" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
             <span class="brand-title-fallback" style="color: #ffffff !important;">TRANSPORTES <span style="color: #3b82f6;">SIL</span></span>
           </div>
           <p style="font-size: 0.9rem; color: #94a3b8 !important;">
@@ -574,9 +644,18 @@
 
         <div>
           <h4 style="font-size: 1rem; margin-bottom: 1rem; color: #ffffff !important;">Contacto</h4>
-          <p style="font-size: 0.9rem; color: #94a3b8 !important; margin-bottom: 0.5rem;">Santiago — V Región</p>
-          <p style="font-size: 0.9rem; color: #94a3b8 !important; margin-bottom: 0.5rem;">WhatsApp: +56 9 1234 5678</p>
-          <p style="font-size: 0.9rem; color: #94a3b8 !important;">contacto@transportessil.cl</p>
+          <p style="font-size: 0.9rem; color: #94a3b8 !important; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Santiago — V Región
+          </p>
+          <p style="font-size: 0.9rem; color: #94a3b8 !important; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color: #25D366;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.179L2 22l4.954-1.383C8.384 21.493 10.134 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.644 0-3.174-.442-4.502-1.212l-.323-.189-2.956.826.84-2.883-.207-.33A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+            WhatsApp: +56 9 1234 5678
+          </p>
+          <p style="font-size: 0.9rem; color: #94a3b8 !important; display: flex; align-items: center; gap: 6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            contacto@transportessil.cl
+          </p>
         </div>
       </div>
 
@@ -586,6 +665,6 @@
     </div>
   </footer>
 
-  <script type="module" src="js/app.js?v=1140"></script>
+  <script type="module" src="js/app.js?v=1150"></script>
 </body>
 </html>

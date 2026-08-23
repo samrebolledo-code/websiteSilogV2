@@ -17,7 +17,9 @@ function startApp() {
   const themeToggleBtn = document.getElementById('theme-toggle');
   if (themeToggleBtn) {
     const updateTitle = (theme) => {
-      themeToggleBtn.setAttribute('title', theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+      const label = theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+      themeToggleBtn.setAttribute('title', label);
+      themeToggleBtn.setAttribute('aria-label', label);
     };
 
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
