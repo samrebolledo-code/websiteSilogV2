@@ -1,9 +1,4 @@
-/**
- * Transportes SIL - Módulo de Formulario de Contacto Comercial
- * 
- * Gestiona las validaciones de formulario comercial B2B/Público,
- * estados de envío y retroalimentación al usuario.
- */
+// Manejo del formulario de contacto.
 
 export function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -21,11 +16,10 @@ export function initContactForm() {
     const message = document.getElementById('contact-message')?.value.trim();
 
     if (!name || !email || !message) {
-      showAlert('Por favor, completa los campos requeridos (Nombre, Correo y Mensaje).', 'error');
+      showAlert('Por favor completa los campos requeridos (Nombre, Correo y Mensaje).', 'error');
       return;
     }
 
-    // Simulación limpia de envío comercial listo para conectar endpoint backend
     const submitBtn = form.querySelector('button[type="submit"]');
     if (submitBtn) {
       submitBtn.disabled = true;
@@ -33,7 +27,7 @@ export function initContactForm() {
     }
 
     setTimeout(() => {
-      showAlert(`¡Gracias, ${name}! Tu mensaje ha sido recibido. Te contactaremos a la brevedad.`, 'success');
+      showAlert(`Gracias, ${name}. Hemos recibido tu mensaje. Te responderemos a la brevedad.`, 'success');
       form.reset();
       if (submitBtn) {
         submitBtn.disabled = false;

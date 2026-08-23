@@ -1,8 +1,4 @@
-/**
- * Transportes SIL - Configuración Oficial de Cobertura V Región de Valparaíso (36 Comunas Continentales)
- * 
- * Fuente única de verdad operacional para las 36 comunas continentales de la V Región.
- */
+// Configuración de comunas y cobertura de la Región de Valparaíso.
 
 export const DEFAULT_SERVICE_DAYS = "Lunes a Viernes";
 
@@ -63,8 +59,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA NORTE",
       colorClass: "zone-norte",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos y retiros programados",
+      hasService: true,
       popular: false
     },
     {
@@ -74,8 +70,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA NORTE",
       colorClass: "zone-norte",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos y retiros programados",
+      hasService: true,
       popular: false
     },
     {
@@ -118,8 +114,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA CENTRO",
       colorClass: "zone-centro",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -151,8 +147,8 @@ export const COVERAGE_DATA = {
       zone: "Sin Ruta Directa SIL",
       colorClass: "zone-neutral",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -162,8 +158,8 @@ export const COVERAGE_DATA = {
       zone: "Sin Ruta Directa SIL",
       colorClass: "zone-neutral",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -173,8 +169,8 @@ export const COVERAGE_DATA = {
       zone: "Sin Ruta Directa SIL",
       colorClass: "zone-neutral",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -184,8 +180,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA NORTE",
       colorClass: "zone-norte",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -195,8 +191,8 @@ export const COVERAGE_DATA = {
       zone: "Sin Ruta Directa SIL",
       colorClass: "zone-neutral",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -206,8 +202,8 @@ export const COVERAGE_DATA = {
       zone: "Sin Ruta Directa SIL",
       colorClass: "zone-neutral",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -217,8 +213,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA NORTE",
       colorClass: "zone-norte",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -228,8 +224,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA NORTE",
       colorClass: "zone-norte",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -250,8 +246,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA COSTA",
       colorClass: "zone-costa",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -261,8 +257,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA COSTA",
       colorClass: "zone-costa",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -272,8 +268,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA COSTA",
       colorClass: "zone-costa",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -283,8 +279,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA COSTA",
       colorClass: "zone-costa",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -294,8 +290,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA COSTA",
       colorClass: "zone-costa",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -316,8 +312,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA ESTE",
       colorClass: "zone-este",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -327,8 +323,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA ESTE",
       colorClass: "zone-este",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -338,8 +334,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA ESTE",
       colorClass: "zone-este",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -349,8 +345,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA ESTE",
       colorClass: "zone-este",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -360,8 +356,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA ESTE",
       colorClass: "zone-este",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -382,8 +378,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA ESTE",
       colorClass: "zone-este",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -393,8 +389,8 @@ export const COVERAGE_DATA = {
       zone: "Sin Ruta Directa SIL",
       colorClass: "zone-neutral",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     },
     {
@@ -404,8 +400,8 @@ export const COVERAGE_DATA = {
       zone: "ZONA ESTE",
       colorClass: "zone-este",
       days: DEFAULT_SERVICE_DAYS,
-      scheduleNote: "Consulta disponibilidad comercial",
-      hasService: false,
+      scheduleNote: "Despachos programados",
+      hasService: true,
       popular: false
     }
   ]

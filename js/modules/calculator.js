@@ -1,10 +1,4 @@
-/**
- * Transportes SIL - Controlador de la Calculadora de Cotización
- * 
- * Gestiona los eventos de la calculadora, validaciones de unidades de medida
- * mediante control segmentado en la esquina superior derecha del cotizador,
- * e invocación del motor tarifario con soporte para Camión Completo + Sobrante Fraccionado.
- */
+// Lógica del cotizador de envíos y manejo de eventos.
 
 import { getEnabledComunas, getComunaInfo } from '../config/coverage.js';
 import { calculateQuote } from '../config/tariffs.js';
@@ -163,7 +157,7 @@ function displayResult(result) {
     breakdownEl.className = 'result-breakdown';
   }
 
-  breakdownEl.textContent = `📦 Volumen Total: ${result.totalVolumeM3} m³ | ${result.breakdownDetails}`;
+  breakdownEl.textContent = `Volumen total: ${result.totalVolumeM3} m³ | ${result.breakdownDetails}`;
 
   resultCard.classList.remove('hidden');
   resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

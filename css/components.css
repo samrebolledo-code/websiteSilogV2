@@ -592,12 +592,18 @@
 /* ==========================================================================
    7. MAPA DE COBERTURA VECTORIAL SVG ESTÁTICO (36 COMUNAS V REGIÓN CONTINENTAL)
    ========================================================================== */
+.map-section {
+  padding: clamp(4rem, 8vw, 6.5rem) 0 !important;
+  position: relative;
+}
+
 .map-layout {
   display: grid;
   grid-template-columns: 1.8fr 1fr; /* 65%-68% mapa, 32%-35% tarjeta */
   gap: var(--space-xl);
   align-items: stretch;
   width: 100%;
+  margin-top: 1rem;
 }
 
 @media (max-width: 992px) {
@@ -617,18 +623,18 @@
   position: relative;
   width: 100%;
   border-radius: 20px;
-  border: 1.5px solid var(--border-subtle, rgba(255, 255, 255, 0.12));
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12));
   overflow: hidden;
-  background: var(--map-bg, #070d1e);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  background: radial-gradient(ellipse at 50% 30%, #0d1a3a 0%, #060b18 100%);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
 }
 
 html[data-theme="light"] .sil-svg-map-card {
-  --map-bg: #f8fafc;
-  border-color: #cbd5e1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: radial-gradient(ellipse at 50% 30%, #ffffff 0%, #f1f5f9 100%);
+  border-color: #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .sil-svg-wrapper {
@@ -647,9 +653,9 @@ html[data-theme="light"] .sil-svg-map-card {
 
 /* Texto Océano Pacífico (Vertical a la izquierda) */
 .ocean-text {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  fill: rgba(148, 163, 184, 0.3);
+  fill: rgba(148, 163, 184, 0.32);
   letter-spacing: 4px;
   writing-mode: tb;
   pointer-events: none;
@@ -659,25 +665,31 @@ html[data-theme="light"] .ocean-text {
   fill: #94a3b8;
 }
 
-/* Polígonos de Comunas SVG */
+@media (max-width: 640px) {
+  .ocean-text {
+    display: none;
+  }
+}
+
+/* Polígonos de Comunas SVG (Líneas finas refinadas) */
 .coverage-comuna {
-  stroke: rgba(255, 255, 255, 0.22);
-  stroke-width: 0.9px;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 0.8px;
   stroke-linejoin: round;
   cursor: pointer;
   pointer-events: auto;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 180ms ease, fill-opacity 180ms ease, stroke 180ms ease, stroke-width 180ms ease, filter 180ms ease;
 }
 
 html[data-theme="light"] .coverage-comuna {
   stroke: #ffffff;
-  stroke-width: 1.2px;
+  stroke-width: 1.1px;
 }
 
-/* Zonas de Colores Corporativas */
+/* Zonas de Colores Corporativas Sobrias y Elegantes */
 .coverage-comuna.zone-costa {
   fill: #00b4d8;
-  fill-opacity: 0.88;
+  fill-opacity: 0.85;
 }
 html[data-theme="light"] .coverage-comuna.zone-costa {
   fill: #0284c7;
@@ -686,7 +698,7 @@ html[data-theme="light"] .coverage-comuna.zone-costa {
 
 .coverage-comuna.zone-centro {
   fill: #059669;
-  fill-opacity: 0.88;
+  fill-opacity: 0.85;
 }
 html[data-theme="light"] .coverage-comuna.zone-centro {
   fill: #10b981;
@@ -695,7 +707,7 @@ html[data-theme="light"] .coverage-comuna.zone-centro {
 
 .coverage-comuna.zone-norte {
   fill: #1d4ed8;
-  fill-opacity: 0.88;
+  fill-opacity: 0.85;
 }
 html[data-theme="light"] .coverage-comuna.zone-norte {
   fill: #2563eb;
@@ -704,39 +716,39 @@ html[data-theme="light"] .coverage-comuna.zone-norte {
 
 .coverage-comuna.zone-este {
   fill: #dc2626;
-  fill-opacity: 0.88;
+  fill-opacity: 0.85;
 }
 html[data-theme="light"] .coverage-comuna.zone-este {
   fill: #ef4444;
   fill-opacity: 0.85;
 }
 
-/* OTRAS COMUNAS / NEUTRALES */
+/* OTRAS COMUNAS / NEUTRALES (En segundo plano sutil) */
 .coverage-comuna.zone-neutral {
   fill: #1e293b;
-  fill-opacity: 0.82;
-  stroke: rgba(255, 255, 255, 0.15);
+  fill-opacity: 0.78;
+  stroke: rgba(255, 255, 255, 0.12);
 }
 
 html[data-theme="light"] .coverage-comuna.zone-neutral {
   fill: #e2e8f0;
-  fill-opacity: 0.85;
+  fill-opacity: 0.82;
   stroke: #cbd5e1;
 }
 
-/* Hover en Polígono */
+/* Hover en Polígono (Transición suave sin rebote) */
 .coverage-comuna:hover {
   fill-opacity: 1 !important;
   stroke: #ffffff !important;
-  stroke-width: 1.8px !important;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  stroke-width: 1.5px !important;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
 }
 
 /* Selección Elegante */
 .coverage-comuna.selected {
   fill-opacity: 1 !important;
-  stroke-width: 2.2px !important;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
+  stroke-width: 2px !important;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.45));
 }
 
 .coverage-comuna.zone-costa.selected { stroke: #38bdf8 !important; }
@@ -745,15 +757,16 @@ html[data-theme="light"] .coverage-comuna.zone-neutral {
 .coverage-comuna.zone-este.selected { stroke: #f87171 !important; }
 .coverage-comuna.zone-neutral.selected { stroke: #94a3b8 !important; }
 
-/* Etiquetas SVG en Mayúsculas / Title Case sobre el Mapa */
+/* Etiquetas SVG sobre el Mapa */
 .map-svg-label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.56rem;
   font-weight: 700;
   fill: #ffffff;
   text-anchor: middle;
   dominant-baseline: central;
-  pointer-events: none; /* Clics atraviesan hacia el polígono inferior */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  pointer-events: none; /* Clics atraviesan directamente al polígono inferior */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
   letter-spacing: 0.3px;
 }
 
@@ -764,18 +777,18 @@ html[data-theme="light"] .map-svg-label {
 
 /* Marcador Santiago Origen */
 .santiago-pill-bg {
-  fill: #091326;
-  stroke: rgba(59, 130, 246, 0.5);
-  stroke-width: 1.2px;
+  fill: #081124;
+  stroke: rgba(59, 130, 246, 0.4);
+  stroke-width: 1px;
 }
 
 html[data-theme="light"] .santiago-pill-bg {
   fill: #ffffff;
-  stroke: #2563eb;
+  stroke: #cbd5e1;
 }
 
 .santiago-pin-circle {
-  fill: #dc2626;
+  fill: #ef4444;
 }
 
 .santiago-pill-text {
@@ -797,19 +810,19 @@ html[data-theme="light"] .santiago-pill-text {
 /* Curva Decorativa Sutil desde Santiago */
 .route-connection-line {
   fill: none;
-  stroke: rgba(56, 189, 248, 0.5);
-  stroke-width: 1.5px;
+  stroke: rgba(56, 189, 248, 0.4);
+  stroke-width: 1.2px;
   stroke-dasharray: 4 4;
   pointer-events: none;
 }
 
-/* Leyenda Horizontal en la parte inferior del Mapa */
+/* Leyenda Horizontal Integrada en la parte inferior */
 .sil-map-legend {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  background: rgba(9, 17, 36, 0.95);
+  background: rgba(8, 15, 33, 0.95);
   padding: 0.75rem 1.25rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   flex-wrap: wrap;
@@ -820,14 +833,21 @@ html[data-theme="light"] .sil-map-legend {
   border-color: #e2e8f0;
 }
 
+@media (max-width: 640px) {
+  .sil-map-legend {
+    justify-content: flex-start;
+    gap: 0.6rem 1rem;
+  }
+}
+
 .legend-item {
   display: flex;
   align-items: center;
   gap: 0.45rem;
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-soft, #ffffff);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
 
 .legend-dot {

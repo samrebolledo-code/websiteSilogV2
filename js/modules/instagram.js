@@ -1,34 +1,27 @@
-/**
- * Transportes SIL - Módulo de Galería & Novedades de Instagram
- * 
- * Componente independiente de costo cero y alta resiliencia.
- * Muestra publicaciones de flota y operaciones reales con fallback
- * elegante y enlace directo al perfil official @transportes_sil.
- */
+// Galería de fotos con novedades y operaciones.
 
 export function initInstagramSection() {
   const container = document.getElementById('instagram-feed-grid');
   if (!container) return;
 
-  // Publicaciones/Tarjetas visuales de operaciones reales
   const posts = [
     {
       id: 1,
-      caption: "Carga fraccionada palletizada lista para salir desde Santiago hacia Viña del Mar y Valparaíso. 🚛📦 #TransportesSIL #LogisticaChile",
+      caption: "Carga fraccionada palletizada lista para salir desde Santiago hacia Viña del Mar y Valparaíso. #TransportesSIL #LogisticaChile",
       image: "assets/images/warehouse.jpg",
       tag: "Despacho Diario",
       date: "Hace 2 días"
     },
     {
       id: 2,
-      caption: "Unidad de flota propia en ruta V Región. Salidas confirmadas de lunes a viernes con cobertura total. 🛣️🇨🇱 #CargaPalletizada",
+      caption: "Unidad de flota propia en ruta V Región. Salidas de lunes a viernes. #CargaPalletizada",
       image: "assets/images/hero-truck.jpg",
       tag: "Flota Propia",
       date: "Hace 4 días"
     },
     {
       id: 3,
-      caption: "Consolidación de carga palletizada en bodegas de Santiago. Compromiso, seguridad y puntualidad garantizada. 🛡️✨ #LogisticaB2B",
+      caption: "Consolidación de carga palletizada en bodegas de Santiago. #LogisticaChile",
       image: "assets/images/warehouse.jpg",
       tag: "Operaciones",
       date: "Hace 1 semana"
@@ -38,7 +31,7 @@ export function initInstagramSection() {
   container.innerHTML = posts.map(post => `
     <article class="insta-card">
       <div class="insta-card-img-wrapper">
-        <img src="${post.image}" alt="Transportes SIL - Publicación Instagram" loading="lazy" class="insta-card-img" />
+        <img src="${post.image}" alt="Transportes SIL - Operación de transporte" loading="lazy" class="insta-card-img" />
         <span class="insta-tag-badge">${post.tag}</span>
       </div>
       <div class="insta-card-content">

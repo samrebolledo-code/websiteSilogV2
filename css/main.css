@@ -1,10 +1,8 @@
-/* ==========================================================================
-   TRANSPORTES SIL - DESIGN SYSTEM & MAIN STYLES (AGENCY GRADE V1003)
-   ========================================================================== */
+/* Estilos generales y variables */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap');
 
-/* Variables Base & Tokens Tarifarios */
+/* Variables base */
 :root {
   --clr-blue-600: #2563eb;
   --clr-blue-500: #3b82f6;
@@ -33,7 +31,7 @@
   --shadow-glow-blue: 0 0 25px rgba(37, 99, 235, 0.35);
 }
 
-/* 🌙 TEMA OSCURO (DARK MODE - DEFAULT) */
+/* Tema oscuro */
 :root, html[data-theme="dark"] {
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
@@ -53,7 +51,7 @@
   --border-subtle: rgba(255, 255, 255, 0.1);
 }
 
-/* ☀️ TEMA CLARO (LIGHT MODE - ALTA LEGIBILIDAD PROFESIONAL) */
+/* Tema claro */
 html[data-theme="light"] {
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;

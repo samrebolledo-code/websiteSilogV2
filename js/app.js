@@ -1,10 +1,4 @@
-/**
- * Transportes SIL - Aplicación Principal (Entry Point)
- * 
- * Inicializa todos los módulos, la navegación responsive, el chatbot flotante
- * de WhatsApp, Theme Switcher (Claro/Oscuro) y los comportamientos de scroll suave.
- * Soporta ejecución segura previniendo condiciones de carrera si DOMContentLoaded ya ocurrió.
- */
+// Inicializa los módulos y la navegación principal de la aplicación.
 
 import { initCalculator } from './modules/calculator.js';
 import { initInteractiveMap } from './modules/map.js';
@@ -13,18 +7,17 @@ import { initInstagramSection } from './modules/instagram.js';
 import { initWhatsAppChatbot } from './modules/whatsapp.js';
 
 function startApp() {
-  // 1. Inicializar Módulos Principales
   initCalculator();
   initInteractiveMap();
   initContactForm();
   initInstagramSection();
   initWhatsAppChatbot();
 
-  // 2. Control de Tema Claro / Oscuro (Theme Switcher Track)
+  // Control de tema claro/oscuro
   const themeToggleBtn = document.getElementById('theme-toggle');
   if (themeToggleBtn) {
     const updateTitle = (theme) => {
-      themeToggleBtn.setAttribute('title', theme === 'dark' ? 'Cambiar a Modo Claro' : 'Cambiar a Modo Oscuro');
+      themeToggleBtn.setAttribute('title', theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
     };
 
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
@@ -39,7 +32,7 @@ function startApp() {
     });
   }
 
-  // 3. Navegación Móvil (Menú Hamburguesa)
+  // Menú de navegación en móviles
   const navToggle = document.getElementById('mobile-menu-toggle');
   const navMenu = document.getElementById('nav-menu');
 
@@ -50,7 +43,6 @@ function startApp() {
       navToggle.setAttribute('aria-expanded', isExpanded);
     });
 
-    // Cerrar menú al hacer clic en un enlace
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -60,7 +52,6 @@ function startApp() {
   }
 }
 
-// Ejecución a prueba de fallos: Si DOMContentLoaded ya pasó, arranca inmediatamente
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', startApp);
 } else {

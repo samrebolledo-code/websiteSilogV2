@@ -1,20 +1,4 @@
-/**
- * Transportes SIL - Motor de Cálculo Comercial y Tarifario
- * 
- * REGLAS DE NEGOCIO Y PRIVACIDAD DE DATOS:
- * 1. Tarifa por Kilo: $77.78 / kg
- * 2. Tarifa por Volumen: $48.611 / m3
- * 3. Conversión de Unidades de Dimensión:
- *    - Metros (m): factor 1
- *    - Centímetros (cm): factor 0.01 (divide por 100)
- *    - Pulgadas (in): factor 0.0254 (multiplica por 0.0254)
- * 4. Capacidad de Camiones (Full Truckload):
- *    - Se pueden agregar o modificar todos los camiones que quieras en el arreglo 'truckTypes'.
- * 5. Lógica Mixta (Grandes Cargas):
- *    - Si la carga excede la capacidad de un camión completo (en peso, m3 o pallets),
- *      se calcula la cantidad de camiones completos a tarifa plana y el remanente (sobrante)
- *      se cobra como Carga Fraccionada.
- */
+// Cálculo de tarifas para envíos de carga fraccionada y camión completo.
 
 export const TARIFF_CONFIG = {
   currency: "CLP",
@@ -25,7 +9,7 @@ export const TARIFF_CONFIG = {
     ratePerM3: 48611
   },
 
-  // 🚛 CONFIGURACIÓN DE CAMIONES DE LA FLOTA:
+  // Configuración de tipos de camiones:
   // Puedes agregar, quitar o editar todos los camiones que desees en este arreglo.
   truckTypes: [
     {

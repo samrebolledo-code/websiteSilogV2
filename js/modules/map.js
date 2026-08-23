@@ -1,8 +1,4 @@
-/**
- * Transportes SIL - Módulo de Mapa Interactivo de Cobertura V Región
- * 
- * Función única centralizada de selección y actualización de tarjeta.
- */
+// Lógica del mapa interactivo de comunas de la V Región.
 
 import { getComunaInfo, DEFAULT_SERVICE_DAYS, validateCoverageData } from '../config/coverage.js';
 import { preselectDestination } from './calculator.js';
