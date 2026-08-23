@@ -1842,20 +1842,26 @@ html[data-theme="light"] .theme-switch-thumb {
   }
 
   /* Popup Modal Compacto y Elegante (no ocupa toda la pantalla) */
+  /* Popup Modal Flotante Centrado (Ancho reducido max 340px, esquinas redondeadas) */
   .map-info-card-container {
     position: fixed;
     inset: 0;
     z-index: 99999;
-    background: rgba(6, 11, 24, 0.65);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: rgba(15, 23, 42, 0.65) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s ease;
-    padding: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  html[data-theme="light"] .map-info-card-container {
+    background: rgba(15, 23, 42, 0.55) !important;
   }
 
   .map-info-card-container.is-open {
@@ -1864,45 +1870,50 @@ html[data-theme="light"] .theme-switch-thumb {
   }
 
   #map-info-card {
-    width: 100%;
-    max-width: 380px;
+    width: calc(100% - 32px);
+    max-width: 340px;
     margin: 0 auto;
-    transform: translateY(100%);
+    transform: scale(0.92);
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .map-info-card-container.is-open #map-info-card {
-    transform: translateY(0);
+    transform: scale(1);
   }
 
   .sil-detail-card {
-    border-radius: 18px 18px 0 0 !important;
-    border-bottom: none !important;
-    max-height: 240px !important;
-    overflow: hidden !important;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
     position: relative;
-    padding: 0.85rem 1rem 0.85rem 1rem !important;
+    padding: 1.1rem 1.2rem !important;
+    background: var(--bg-card, #0f172a);
+  }
+
+  html[data-theme="light"] .sil-detail-card {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25) !important;
   }
 
   .sil-comuna-heading {
-    font-size: 1.15rem !important;
-    margin: 0.1rem 0 !important;
+    font-size: 1.3rem !important;
+    margin: 0.15rem 0 !important;
   }
 
   .sil-provincia-subtitle {
-    font-size: 0.72rem !important;
+    font-size: 0.78rem !important;
   }
 
   .sil-zone-title {
-    font-size: 0.62rem !important;
+    font-size: 0.65rem !important;
   }
 
   .sil-action-btn {
-    padding: 0.6rem 1rem !important;
-    font-size: 0.85rem !important;
-    margin-top: 0.6rem !important;
-    border-radius: 10px !important;
+    padding: 0.7rem 1rem !important;
+    font-size: 0.88rem !important;
+    margin-top: 0.85rem !important;
+    border-radius: 12px !important;
   }
 
   /* Botón de Cierre (X) compacto */
@@ -1911,15 +1922,15 @@ html[data-theme="light"] .theme-switch-thumb {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    width: 26px;
-    height: 26px;
+    top: 0.85rem;
+    right: 0.85rem;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1;
     cursor: pointer;
     z-index: 10;
