@@ -670,50 +670,6 @@ function showComunaDetail(info) {
             <span class="sil-detail-value blue-highlight">${daysText}</span>
           </div>
         </div>
-
-        <div class="sil-detail-row">
-          <div class="sil-detail-icon">
-            <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-          </div>
-          <div class="sil-detail-text">
-            <span class="sil-detail-label">TIEMPO DE ENTREGA</span>
-            <span class="sil-detail-value">24 a 48 horas hábiles desde retiro en Santiago</span>
-          </div>
-        </div>
-
-        <div class="sil-detail-row">
-          <div class="sil-detail-icon">
-            <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="1" y="3" width="15" height="13"></rect>
-              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-              <circle cx="5.5" cy="18.5" r="2.5"></circle>
-              <circle cx="18.5" cy="18.5" r="2.5"></circle>
-            </svg>
-          </div>
-          <div class="sil-detail-text">
-            <span class="sil-detail-label">MODALIDAD DE ENVÍO</span>
-            <span class="sil-detail-value">Carga fraccionada y completa</span>
-          </div>
-        </div>
-
-        <div class="sil-detail-row">
-          <div class="sil-detail-icon">
-            <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <div class="sil-detail-text">
-            <span class="sil-detail-label">COBERTURA</span>
-            <span class="sil-detail-value">
-              ${isConfigured 
-                ? `Habilitado para retiros en Santiago y entrega directa en ${comunaName}.`
-                : `Comuna territorial de la V Región. Consulta disponibilidad comercial.`}
-            </span>
-          </div>
-        </div>
       </div>
 
       ${isConfigured ? `
