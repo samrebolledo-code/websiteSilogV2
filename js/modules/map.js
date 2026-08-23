@@ -486,10 +486,6 @@ export function initInteractiveMap() {
   mapContainer.innerHTML = `
     <div class="sil-svg-map-card">
       <div class="sil-svg-wrapper">
-        <div class="mobile-map-scroll-hint">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-          Desliza para explorar comunas
-        </div>
         <svg class="sil-coverage-svg" viewBox="0 0 860 560" role="img" aria-label="Mapa de cobertura de Transportes SIL en la Región de Valparaíso">
           <text x="25" y="160" class="ocean-text">OCÉANO PACÍFICO</text>
 
@@ -546,29 +542,54 @@ export function initInteractiveMap() {
 
 function setupMapInteractions() {
   const mapContainer = document.getElementById('map-vector-container');
-  if (!mapContainer) return;
+  const infoContainer = document.querySelector('.map-info-card-container');
 
-  mapContainer.addEventListener('click', (e) => {
-    const target = e.target.closest('[data-comuna-id]') || e.target.closest('[data-comuna]');
-    if (!target) return;
+  if (mapContainer) {
+    mapContainer.addEventListener('click', (e) => {
+      const target = e.target.closest('[data-comuna-id]') || e.target.closest('[data-comuna]');
+      if (!target) return;
 
-    const comunaId = target.getAttribute('data-comuna-id') || target.getAttribute('data-comuna');
-    if (comunaId) {
-      selectComuna(comunaId, false);
-    }
-  });
+      const comunaId = target.getAttribute('data-comuna-id') || target.getAttribute('data-comuna');
+      if (comunaId) {
+        selectComuna(comunaId, false, true);
+      }
+    });
+  }
+
+  if (infoContainer) {
+    infoContainer.addEventListener('click', (e) => {
+      if (e.target === infoContainer) {
+        closeMapPopup();
+      }
+    });
+  }
 
   document.addEventListener('click', (e) => {
     if (e.target && e.target.classList.contains('btn-quote-comuna')) {
       const comunaId = e.target.getAttribute('data-comuna-id') || e.target.getAttribute('data-comuna');
       if (comunaId) {
+        closeMapPopup();
         preselectDestination(comunaId, true);
       }
     }
   });
 }
 
-export function selectComuna(comunaId, scrollToCalc = false) {
+export function openMapPopup() {
+  const infoContainer = document.querySelector('.map-info-card-container');
+  if (infoContainer) {
+    infoContainer.classList.add('is-open');
+  }
+}
+
+export function closeMapPopup() {
+  const infoContainer = document.querySelector('.map-info-card-container');
+  if (infoContainer) {
+    infoContainer.classList.remove('is-open');
+  }
+}
+
+export function selectComuna(comunaId, scrollToCalc = false, isUserClick = false) {
   const info = getComunaInfo(comunaId);
   if (!info) {
     console.error(`No se encontró información para la comuna: ${comunaId}`);
@@ -588,6 +609,10 @@ export function selectComuna(comunaId, scrollToCalc = false) {
 
   updateRouteCurve(comunaId);
   showComunaDetail(info);
+
+  if (isUserClick) {
+    openMapPopup();
+  }
 
   if (info.hasService) {
     preselectDestination(comunaId, scrollToCalc);
@@ -621,6 +646,7 @@ function showComunaDetail(info) {
 
   infoCard.innerHTML = `
     <div class="sil-detail-card animate-fade-in">
+      <button type="button" class="map-popup-close-btn" id="map-popup-close-btn" aria-label="Cerrar información">&times;</button>
       <div class="sil-detail-header">
         <span class="sil-zone-title ${isConfigured ? 'configured-zone' : 'neutral-zone'}">${zoneName.toUpperCase()}</span>
         <h2 class="sil-comuna-heading">${comunaName}</h2>
@@ -701,4 +727,12 @@ function showComunaDetail(info) {
       `}
     </div>
   `;
+
+  const closeBtn = document.getElementById('map-popup-close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeMapPopup();
+    });
+  }
 }
