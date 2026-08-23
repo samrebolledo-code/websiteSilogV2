@@ -186,19 +186,20 @@ function hideError() {
 }
 
 /**
- * Selecciona automáticamente la comuna en la calculadora y realiza scroll suave.
+ * Selecciona automáticamente la comuna en la calculadora.
+ * Solo realiza scroll si scrollToCalc es verdadero (ej. al presionar el botón de cotizar).
  */
-export function preselectDestination(comunaId) {
+export function preselectDestination(comunaId, scrollToCalc = false) {
   const selectDestination = document.getElementById('calc-destination');
   const calcSection = document.getElementById('cotizar');
 
   if (selectDestination) {
     selectDestination.value = comunaId;
     selectDestination.classList.add('highlight-pulse');
-    setTimeout(() => selectDestination.classList.remove('highlight-pulse'), 1500);
+    setTimeout(() => selectDestination.classList.remove('highlight-pulse'), 1200);
   }
 
-  if (calcSection) {
+  if (scrollToCalc && calcSection) {
     calcSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     
     setTimeout(() => {

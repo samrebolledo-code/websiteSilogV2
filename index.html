@@ -16,15 +16,12 @@
   <!-- Pre-cargas para evitar el parpadeo de tema (Flicker Prevention) -->
   <script>(function(){try{var saved=localStorage.getItem('sil-theme');var preferred=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',saved==='light'||saved==='dark'?saved:preferred);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 
-  <!-- Leaflet GIS Map Library CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
   <!-- Preconnect Fonts & Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/main.css?v=1042" />
-  <link rel="stylesheet" href="css/components.css?v=1042" />
-  <link rel="stylesheet" href="css/utilities.css?v=1042" />
+  <link rel="stylesheet" href="css/main.css?v=1120" />
+  <link rel="stylesheet" href="css/components.css?v=1120" />
+  <link rel="stylesheet" href="css/utilities.css?v=1120" />
 
   <style>
     /* Prevención Estricta de Scroll Horizontal en cualquier celular */
@@ -44,7 +41,7 @@
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo" aria-label="Transportes SIL Inicio">
-        <img src="assets/logo.png?v=1042" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+        <img src="assets/logo.png?v=1120" alt="Transportes SIL Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <span class="brand-title-fallback">TRANSPORTES <span>SIL</span></span>
       </a>
 
@@ -275,7 +272,7 @@
             </div>
 
             <div class="form-group">
-              <label for="calc-destination">Destino (V Región - 36 Comunas):</label>
+              <label for="calc-destination">Destino (V Región):</label>
               <select id="calc-destination" class="form-control" required>
                 <!-- Cargado dinámicamente desde js/config/coverage.js con Valparaíso seleccionado por defecto -->
               </select>
@@ -352,29 +349,97 @@
   </section>
 
   <!-- ==========================================================================
-       7. MAPA INTERACTIVO DE COBERTURA GIS (V REGIÓN COMPLETA - 36 COMUNAS LEAFLET REAL GEOJSON)
+       7. MAPA INTERACTIVO DE COBERTURA (V REGIÓN CONTINENTAL - SVG VECTORIAL ESTÁTICO DE 36 COMUNAS)
        ========================================================================== -->
   <section id="cobertura" class="map-section">
     <div class="container">
       <div class="section-subtitle">Zonas de atención</div>
-      <h2 class="section-title">Mapa de Cobertura V Región (36 Comunas)</h2>
+      <h2 class="section-title">Mapa de Cobertura V Región</h2>
       <p class="section-description">
-        Haz clic en cualquiera de las 36 comunas de la 5ta Región de Valparaíso para revisar los días de atención y cotizar tu envío.
+        Haz clic en cualquiera de las 36 comunas continentales de la Región de Valparaíso para revisar los días de atención y cotizar tu envío.
       </p>
 
       <div class="map-layout">
-        <!-- Contenedor del Mapa Leaflet GIS Real GeoJSON (Réplica Exacta 36 Comunas) -->
+        <!-- Contenedor del Mapa SVG Vectorial Estático Enfocado Exclusivamente en V Región -->
         <div class="map-wrapper">
           <div id="map-vector-container">
             <!-- Renderizado por js/modules/map.js -->
           </div>
-          <div id="map-tooltip" class="map-tooltip-box hidden"></div>
         </div>
 
-        <!-- Panel Contextual de Información de Comuna (Réplica Exacta) -->
+        <!-- Panel Contextual de Información de Comuna (Pre-renderizado exacto imagen referencia) -->
         <div class="map-info-card-container">
           <div id="map-info-card">
-            <!-- Renderizado dinámicamente por js/modules/map.js -->
+            <div class="sil-detail-card">
+              <div class="sil-detail-header">
+                <span class="sil-zone-title configured-zone">ZONA COSTA</span>
+                <h2 class="sil-comuna-heading">Valparaíso</h2>
+                <span class="sil-provincia-subtitle">Provincia de Valparaíso</span>
+              </div>
+
+              <div class="sil-detail-divider"></div>
+
+              <div class="sil-detail-list">
+                <div class="sil-detail-row">
+                  <div class="sil-detail-icon">
+                    <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                  </div>
+                  <div class="sil-detail-text">
+                    <span class="sil-detail-label">DÍAS DE ATENCIÓN</span>
+                    <span class="sil-detail-value blue-highlight">Lunes a Viernes</span>
+                  </div>
+                </div>
+
+                <div class="sil-detail-row">
+                  <div class="sil-detail-icon">
+                    <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div class="sil-detail-text">
+                    <span class="sil-detail-label">TIEMPO DE ENTREGA</span>
+                    <span class="sil-detail-value">24 a 48 horas hábiles desde retiro en Santiago</span>
+                  </div>
+                </div>
+
+                <div class="sil-detail-row">
+                  <div class="sil-detail-icon">
+                    <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="1" y="3" width="15" height="13"></rect>
+                      <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                      <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                      <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                    </svg>
+                  </div>
+                  <div class="sil-detail-text">
+                    <span class="sil-detail-label">MODALIDAD DE ENVÍO</span>
+                    <span class="sil-detail-value">Carga fraccionada y completa</span>
+                  </div>
+                </div>
+
+                <div class="sil-detail-row">
+                  <div class="sil-detail-icon">
+                    <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <div class="sil-detail-text">
+                    <span class="sil-detail-label">COBERTURA</span>
+                    <span class="sil-detail-value">Habilitado para retiros en Santiago y entrega directa en Valparaíso.</span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-block btn-quote-comuna sil-action-btn" data-comuna-id="valparaiso">
+                Cotizar mi envío a Valparaíso →
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -535,7 +600,7 @@
       <div class="footer-grid">
         <div>
           <div class="brand-logo mb-4">
-            <img src="assets/logo.png?v=1042" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
+            <img src="assets/logo.png?v=1120" alt="Transportes SIL" class="brand-logo-img" onerror="this.style.display='none'" />
             <span class="brand-title-fallback" style="color: #ffffff !important;">TRANSPORTES <span style="color: #3b82f6;">SIL</span></span>
           </div>
           <p style="font-size: 0.9rem; color: #94a3b8 !important;">
@@ -568,10 +633,7 @@
     </div>
   </footer>
 
-  <!-- Leaflet GIS Map Library JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-  <!-- Entry Script con Query Versioning v1042 para Forzar Recarga Sin Caché -->
-  <script type="module" src="js/app.js?v=1042"></script>
+  <!-- Entry Script con Query Versioning v1120 para Forzar Recarga Sin Caché -->
+  <script type="module" src="js/app.js?v=1120"></script>
 </body>
 </html>

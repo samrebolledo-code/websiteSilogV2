@@ -1,344 +1,423 @@
 /**
- * Transportes SIL - Configuración de Cobertura V Región de Valparaíso (36 Comunas Continentales)
+ * Transportes SIL - Configuración Oficial de Cobertura V Región de Valparaíso (36 Comunas Continentales)
  * 
- * Este archivo centraliza la lista de las 36 comunas de la V Región de Valparaíso,
- * días de atención, zonas geográficas y estado.
+ * Configuración centralizada de las 36 comunas continentales de la Región de Valparaíso.
+ * Días de atención configurados temporalmente en "Lunes a Viernes" como valor único centralizado.
  */
+
+export const DEFAULT_SERVICE_DAYS = "Lunes a Viernes";
 
 export const COVERAGE_DATA = {
   region: "V Región de Valparaíso",
   originDefault: "Santiago",
-  generalSchedule: "Lunes a Viernes (Salidas Diarias)",
+  generalSchedule: DEFAULT_SERVICE_DAYS,
+  totalComunasCount: 36,
   comunas: [
     {
-      "id": "rinconada",
-      "name": "Rinconada",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "valparaiso",
+      name: "Valparaíso",
+      provincia: "Provincia de Valparaíso",
+      zone: "ZONA COSTA",
+      colorClass: "zone-costa",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Salidas diarias de consolidado",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "cabildo",
-      "name": "Cabildo",
-      "zone": "ZONA NORTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "vina-del-mar",
+      name: "Viña del Mar",
+      provincia: "Provincia de Valparaíso",
+      zone: "ZONA COSTA",
+      colorClass: "zone-costa",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Salidas diarias AM / PM",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "petorca",
-      "name": "Petorca",
-      "zone": "ZONA NORTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "concon",
+      name: "Concón",
+      provincia: "Provincia de Valparaíso",
+      zone: "ZONA COSTA",
+      colorClass: "zone-costa",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Ruta diaria sector industrial y comercial",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "panquehue",
-      "name": "Panquehue",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "casablanca",
+      name: "Casablanca",
+      provincia: "Provincia de Valparaíso",
+      zone: "ZONA CENTRO",
+      colorClass: "zone-centro",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Paso directo en Ruta 68",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "olmue",
-      "name": "Olmué",
-      "zone": "ZONA CENTRO",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "quintero",
+      name: "Quintero",
+      provincia: "Provincia de Valparaíso",
+      zone: "ZONA NORTE",
+      colorClass: "zone-norte",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "cartagena",
-      "name": "Cartagena",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "puchuncavi",
+      name: "Puchuncaví",
+      provincia: "Provincia de Valparaíso",
+      zone: "ZONA NORTE",
+      colorClass: "zone-norte",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "catemu",
-      "name": "Catemu",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "quilpue",
+      name: "Quilpué",
+      provincia: "Provincia de Marga Marga",
+      zone: "ZONA CENTRO",
+      colorClass: "zone-centro",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Frecuencia diaria garantizada",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "llaillay",
-      "name": "Llaillay",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "villa-alemana",
+      name: "Villa Alemana",
+      provincia: "Provincia de Marga Marga",
+      zone: "ZONA CENTRO",
+      colorClass: "zone-centro",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Frecuencia diaria garantizada",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "san-felipe",
-      "name": "San Felipe",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": true
+      id: "limache",
+      name: "Limache",
+      provincia: "Provincia de Marga Marga",
+      zone: "ZONA CENTRO",
+      colorClass: "zone-centro",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Despachos programados",
+      hasService: true,
+      popular: false
     },
     {
-      "id": "santa-maria",
-      "name": "Santa María",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "olmue",
+      name: "Olmué",
+      provincia: "Provincia de Marga Marga",
+      zone: "ZONA CENTRO",
+      colorClass: "zone-centro",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "villa-alemana",
-      "name": "Villa Alemana",
-      "zone": "ZONA CENTRO",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": true
+      id: "quillota",
+      name: "Quillota",
+      provincia: "Provincia de Quillota",
+      zone: "ZONA NORTE",
+      colorClass: "zone-norte",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Despachos diarios a bodegas y locales",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "santo-domingo",
-      "name": "Santo Domingo",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "la-calera",
+      name: "La Calera",
+      provincia: "Provincia de Quillota",
+      zone: "ZONA NORTE",
+      colorClass: "zone-norte",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Frecuencia regular de transporte",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "san-antonio",
-      "name": "San Antonio",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": true
+      id: "la-cruz",
+      name: "La Cruz",
+      provincia: "Provincia de Quillota",
+      zone: "Sin Ruta Directa SIL",
+      colorClass: "zone-neutral",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "el-tabo",
-      "name": "El Tabo",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "hijuelas",
+      name: "Hijuelas",
+      provincia: "Provincia de Quillota",
+      zone: "Sin Ruta Directa SIL",
+      colorClass: "zone-neutral",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "el-quisco",
-      "name": "El Quisco",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "nogales",
+      name: "Nogales",
+      provincia: "Provincia de Quillota",
+      zone: "Sin Ruta Directa SIL",
+      colorClass: "zone-neutral",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "algarrobo",
-      "name": "Algarrobo",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "la-ligua",
+      name: "La Ligua",
+      provincia: "Provincia de Petorca",
+      zone: "ZONA NORTE",
+      colorClass: "zone-norte",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "casablanca",
-      "name": "Casablanca",
-      "zone": "ZONA CENTRO",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Paso directo en Ruta 68",
-      "enabled": true,
-      "popular": true
+      id: "cabildo",
+      name: "Cabildo",
+      provincia: "Provincia de Petorca",
+      zone: "Sin Ruta Directa SIL",
+      colorClass: "zone-neutral",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "valparaiso",
-      "name": "Valparaíso",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": true
+      id: "petorca",
+      name: "Petorca",
+      provincia: "Provincia de Petorca",
+      zone: "Sin Ruta Directa SIL",
+      colorClass: "zone-neutral",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "vina-del-mar",
-      "name": "Viña del Mar",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": true
+      id: "papudo",
+      name: "Papudo",
+      provincia: "Provincia de Petorca",
+      zone: "ZONA NORTE",
+      colorClass: "zone-norte",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "concon",
-      "name": "Concón",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": true
+      id: "zapallar",
+      name: "Zapallar",
+      provincia: "Provincia de Petorca",
+      zone: "ZONA NORTE",
+      colorClass: "zone-norte",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "quintero",
-      "name": "Quintero",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "san-antonio",
+      name: "San Antonio",
+      provincia: "Provincia de San Antonio",
+      zone: "ZONA COSTA",
+      colorClass: "zone-costa",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Conexión directa puerto y zona industrial",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "puchuncavi",
-      "name": "Puchuncaví",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "algarrobo",
+      name: "Algarrobo",
+      provincia: "Provincia de San Antonio",
+      zone: "ZONA COSTA",
+      colorClass: "zone-costa",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "zapallar",
-      "name": "Zapallar",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "cartagena",
+      name: "Cartagena",
+      provincia: "Provincia de San Antonio",
+      zone: "ZONA COSTA",
+      colorClass: "zone-costa",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "papudo",
-      "name": "Papudo",
-      "zone": "ZONA COSTA",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "el-quisco",
+      name: "El Quisco",
+      provincia: "Provincia de San Antonio",
+      zone: "ZONA COSTA",
+      colorClass: "zone-costa",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "la-ligua",
-      "name": "La Ligua",
-      "zone": "ZONA NORTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "el-tabo",
+      name: "El Tabo",
+      provincia: "Provincia de San Antonio",
+      zone: "ZONA COSTA",
+      colorClass: "zone-costa",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "limache",
-      "name": "Limache",
-      "zone": "ZONA CENTRO",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "santo-domingo",
+      name: "Santo Domingo",
+      provincia: "Provincia de San Antonio",
+      zone: "ZONA COSTA",
+      colorClass: "zone-costa",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "quillota",
-      "name": "Quillota",
-      "zone": "ZONA NORTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": true
+      id: "san-felipe",
+      name: "San Felipe",
+      provincia: "Provincia de San Felipe de Aconcagua",
+      zone: "ZONA ESTE",
+      colorClass: "zone-este",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Ruta cordillerana programada",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "la-calera",
-      "name": "La Calera",
-      "zone": "ZONA NORTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": true
+      id: "catemu",
+      name: "Catemu",
+      provincia: "Provincia de San Felipe de Aconcagua",
+      zone: "ZONA ESTE",
+      colorClass: "zone-este",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "nogales",
-      "name": "Nogales",
-      "zone": "ZONA NORTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "llaillay",
+      name: "Llaillay",
+      provincia: "Provincia de San Felipe de Aconcagua",
+      zone: "ZONA ESTE",
+      colorClass: "zone-este",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "calle-larga",
-      "name": "Calle Larga",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "panquehue",
+      name: "Panquehue",
+      provincia: "Provincia de San Felipe de Aconcagua",
+      zone: "ZONA ESTE",
+      colorClass: "zone-este",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "la-cruz",
-      "name": "La Cruz",
-      "zone": "ZONA NORTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "putaendo",
+      name: "Putaendo",
+      provincia: "Provincia de San Felipe de Aconcagua",
+      zone: "ZONA ESTE",
+      colorClass: "zone-este",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "putaendo",
-      "name": "Putaendo",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "santa-maria",
+      name: "Santa María",
+      provincia: "Provincia de San Felipe de Aconcagua",
+      zone: "ZONA ESTE",
+      colorClass: "zone-este",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "san-esteban",
-      "name": "San Esteban",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "los-andes",
+      name: "Los Andes",
+      provincia: "Provincia de Los Andes",
+      zone: "ZONA ESTE",
+      colorClass: "zone-este",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Ruta cordillerana programada",
+      hasService: true,
+      popular: true
     },
     {
-      "id": "los-andes",
-      "name": "Los Andes",
-      "zone": "ZONA ESTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": true
+      id: "calle-larga",
+      name: "Calle Larga",
+      provincia: "Provincia de Los Andes",
+      zone: "ZONA ESTE",
+      colorClass: "zone-este",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "hijuelas",
-      "name": "Hijuelas",
-      "zone": "ZONA NORTE",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": false
+      id: "rinconada",
+      name: "Rinconada",
+      provincia: "Provincia de Los Andes",
+      zone: "Sin Ruta Directa SIL",
+      colorClass: "zone-neutral",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     },
     {
-      "id": "quilpue",
-      "name": "Quilpué",
-      "zone": "ZONA CENTRO",
-      "days": "Lunes a Viernes",
-      "scheduleNote": "Salidas diarias y despachos programados",
-      "enabled": true,
-      "popular": true
+      id: "san-esteban",
+      name: "San Esteban",
+      provincia: "Provincia de Los Andes",
+      zone: "ZONA ESTE",
+      colorClass: "zone-este",
+      days: DEFAULT_SERVICE_DAYS,
+      scheduleNote: "Consulta disponibilidad comercial",
+      hasService: false,
+      popular: false
     }
   ]
 };
 
 export function getEnabledComunas() {
-  return COVERAGE_DATA.comunas.filter(c => c.enabled);
+  return COVERAGE_DATA.comunas.filter(c => c.hasService);
+}
+
+export function getAllComunas() {
+  return COVERAGE_DATA.comunas;
 }
 
 export function getComunaInfo(idOrName) {

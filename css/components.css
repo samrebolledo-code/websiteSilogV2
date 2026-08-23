@@ -590,11 +590,11 @@
 }
 
 /* ==========================================================================
-   7. MAPA DE COBERTURA GIS (RÉPLICA EXACTA DISEÑO DE REFERENCIA SIL)
+   7. MAPA DE COBERTURA VECTORIAL SVG ESTÁTICO (36 COMUNAS V REGIÓN CONTINENTAL)
    ========================================================================== */
 .map-layout {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: 1.8fr 1fr; /* 65%-68% mapa, 32%-35% tarjeta */
   gap: var(--space-xl);
   align-items: stretch;
   width: 100%;
@@ -613,76 +613,212 @@
   position: relative;
 }
 
-.sil-map-card {
+.sil-svg-map-card {
   position: relative;
   width: 100%;
   border-radius: 20px;
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border: 1.5px solid var(--border-subtle, rgba(255, 255, 255, 0.12));
   overflow: hidden;
-  background: #060d1e;
+  background: var(--map-bg, #070d1e);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
 }
 
-#map {
+html[data-theme="light"] .sil-svg-map-card {
+  --map-bg: #f8fafc;
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.sil-svg-wrapper {
+  position: relative;
   width: 100%;
-  height: 540px;
-  background: #060d1e;
+  height: auto;
+  aspect-ratio: 860 / 560;
 }
 
-@media (max-width: 992px) {
-  #map {
-    height: 440px;
-  }
+.sil-coverage-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
 }
 
-@media (max-width: 600px) {
-  #map {
-    height: 380px;
-  }
-}
-
-/* Texto Océano Pacífico Lateral */
-.ocean-label {
-  position: absolute;
-  top: 60px;
-  left: 20px;
-  color: rgba(148, 163, 184, 0.5);
+/* Texto Océano Pacífico (Vertical a la izquierda) */
+.ocean-text {
   font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 3px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  user-select: none;
+  fill: rgba(148, 163, 184, 0.3);
+  letter-spacing: 4px;
+  writing-mode: tb;
   pointer-events: none;
-  z-index: 400;
 }
 
-/* Leyenda de Zonas Inferior */
+html[data-theme="light"] .ocean-text {
+  fill: #94a3b8;
+}
+
+/* Polígonos de Comunas SVG */
+.coverage-comuna {
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 0.9px;
+  stroke-linejoin: round;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[data-theme="light"] .coverage-comuna {
+  stroke: #ffffff;
+  stroke-width: 1.2px;
+}
+
+/* Zonas de Colores Corporativas */
+.coverage-comuna.zone-costa {
+  fill: #00b4d8;
+  fill-opacity: 0.88;
+}
+html[data-theme="light"] .coverage-comuna.zone-costa {
+  fill: #0284c7;
+  fill-opacity: 0.85;
+}
+
+.coverage-comuna.zone-centro {
+  fill: #059669;
+  fill-opacity: 0.88;
+}
+html[data-theme="light"] .coverage-comuna.zone-centro {
+  fill: #10b981;
+  fill-opacity: 0.85;
+}
+
+.coverage-comuna.zone-norte {
+  fill: #1d4ed8;
+  fill-opacity: 0.88;
+}
+html[data-theme="light"] .coverage-comuna.zone-norte {
+  fill: #2563eb;
+  fill-opacity: 0.85;
+}
+
+.coverage-comuna.zone-este {
+  fill: #dc2626;
+  fill-opacity: 0.88;
+}
+html[data-theme="light"] .coverage-comuna.zone-este {
+  fill: #ef4444;
+  fill-opacity: 0.85;
+}
+
+/* OTRAS COMUNAS / NEUTRALES */
+.coverage-comuna.zone-neutral {
+  fill: #1e293b;
+  fill-opacity: 0.82;
+  stroke: rgba(255, 255, 255, 0.15);
+}
+
+html[data-theme="light"] .coverage-comuna.zone-neutral {
+  fill: #e2e8f0;
+  fill-opacity: 0.85;
+  stroke: #cbd5e1;
+}
+
+/* Hover en Polígono */
+.coverage-comuna:hover {
+  fill-opacity: 1 !important;
+  stroke: #ffffff !important;
+  stroke-width: 1.8px !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* Selección Elegante */
+.coverage-comuna.selected {
+  fill-opacity: 1 !important;
+  stroke-width: 2.2px !important;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
+}
+
+.coverage-comuna.zone-costa.selected { stroke: #38bdf8 !important; }
+.coverage-comuna.zone-centro.selected { stroke: #34d399 !important; }
+.coverage-comuna.zone-norte.selected { stroke: #60a5fa !important; }
+.coverage-comuna.zone-este.selected { stroke: #f87171 !important; }
+.coverage-comuna.zone-neutral.selected { stroke: #94a3b8 !important; }
+
+/* Etiquetas SVG en Mayúsculas / Title Case sobre el Mapa */
+.map-svg-label {
+  font-size: 0.56rem;
+  font-weight: 700;
+  fill: #ffffff;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: auto;
+  cursor: pointer;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.3px;
+}
+
+html[data-theme="light"] .map-svg-label {
+  fill: #0f172a;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+
+/* Marcador Santiago Origen */
+.santiago-pill-bg {
+  fill: #091326;
+  stroke: rgba(59, 130, 246, 0.5);
+  stroke-width: 1.2px;
+}
+
+html[data-theme="light"] .santiago-pill-bg {
+  fill: #ffffff;
+  stroke: #2563eb;
+}
+
+.santiago-pin-circle {
+  fill: #dc2626;
+}
+
+.santiago-pill-text {
+  font-size: 0.68rem;
+  font-weight: 800;
+  fill: #ffffff;
+}
+
+html[data-theme="light"] .santiago-pill-text {
+  fill: #0f172a;
+}
+
+.santiago-sub {
+  font-size: 0.55rem;
+  fill: #94a3b8;
+  font-weight: 700;
+}
+
+/* Curva Decorativa Sutil desde Santiago */
+.route-connection-line {
+  fill: none;
+  stroke: rgba(56, 189, 248, 0.5);
+  stroke-width: 1.5px;
+  stroke-dasharray: 4 4;
+  pointer-events: none;
+}
+
+/* Leyenda Horizontal en la parte inferior del Mapa */
 .sil-map-legend {
-  position: absolute;
-  bottom: 16px;
-  right: 20px;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  background: rgba(10, 18, 38, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.6rem 1.25rem;
-  border-radius: 99px;
-  z-index: 500;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(9, 17, 36, 0.95);
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
-  .sil-map-legend {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin: 10px auto;
-    justify-content: center;
-    flex-wrap: wrap;
-    border-radius: 12px;
-  }
+html[data-theme="light"] .sil-map-legend {
+  background: #ffffff;
+  border-color: #e2e8f0;
 }
 
 .legend-item {
@@ -691,101 +827,39 @@
   gap: 0.45rem;
   font-size: 0.72rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-soft, #ffffff);
   letter-spacing: 0.5px;
 }
 
 .legend-dot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   display: inline-block;
 }
 
-.legend-dot.norte { background: #1d4ed8; box-shadow: 0 0 8px #1d4ed8; }
-.legend-dot.centro { background: #059669; box-shadow: 0 0 8px #059669; }
-.legend-dot.este { background: #dc2626; box-shadow: 0 0 8px #dc2626; }
-.legend-dot.costa { background: #00b4d8; box-shadow: 0 0 8px #00b4d8; }
+.legend-dot.norte { background: #1d4ed8; }
+.legend-dot.centro { background: #059669; }
+.legend-dot.este { background: #dc2626; }
+.legend-dot.costa { background: #00b4d8; }
+.legend-dot.neutral { background: #1e293b; border: 1px solid #94a3b8; }
 
-/* Marcador Origen Santiago (Flotante) */
-.sil-origin-wrapper {
-  background: transparent !important;
-  border: none !important;
-}
-
-.sil-origin-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(10, 18, 38, 0.95);
-  border: 1.5px solid rgba(59, 130, 246, 0.4);
-  padding: 0.4rem 0.85rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  white-space: nowrap;
-}
-
-.origin-pin {
-  font-size: 1.1rem;
-}
-
-.origin-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.origin-text strong {
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-}
-
-.origin-text small {
-  font-size: 0.65rem;
-  color: #94a3b8;
-  font-weight: 700;
-}
-
-/* Nombres de Comunas sobre Polígonos */
-.comuna-label-wrapper {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  pointer-events: none !important;
-}
-
-.comuna-text-bold {
-  font-size: 0.75rem;
-  font-weight: 900;
-  color: #ffffff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 6px rgba(0, 0, 0, 0.8);
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-  user-select: none;
-  pointer-events: none;
-}
-
-@media (max-width: 600px) {
-  .comuna-text-bold {
-    font-size: 0.62rem;
-    letter-spacing: 0px;
-  }
-}
-
-/* Panel Contextual Lateral Réplica */
+/* Panel Contextual Lateral Derecho */
 .map-info-card-container {
-  background: #091326;
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: var(--bg-card, #091326);
+  border: 1.5px solid var(--border-subtle, rgba(255, 255, 255, 0.12));
   border-radius: 20px;
   padding: clamp(1.5rem, 3.5vw, 2rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-lg, 0 20px 50px rgba(0, 0, 0, 0.5));
   box-sizing: border-box;
+}
+
+html[data-theme="light"] .map-info-card-container {
+  background: #ffffff;
+  border-color: #cbd5e1;
 }
 
 .sil-detail-card {
@@ -797,28 +871,45 @@
 .sil-detail-header {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
 
 .sil-zone-title {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: #2563eb;
   letter-spacing: 1.5px;
+}
+
+.sil-zone-title.configured-zone {
+  color: #3b82f6;
+}
+
+.sil-zone-title.neutral-zone {
+  color: #94a3b8;
 }
 
 .sil-comuna-heading {
   font-size: 2rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-heading, #ffffff);
   margin: 0;
   line-height: 1.1;
 }
 
+html[data-theme="light"] .sil-comuna-heading {
+  color: #0f172a;
+}
+
+.sil-provincia-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted, #94a3b8);
+  font-weight: 600;
+}
+
 .sil-detail-divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border-subtle, rgba(255, 255, 255, 0.1));
   width: 100%;
 }
 
@@ -835,9 +926,18 @@
 }
 
 .sil-detail-icon {
-  font-size: 1.35rem;
-  line-height: 1;
+  width: 24px;
+  height: 24px;
   color: #3b82f6;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-svg-icon {
+  width: 22px;
+  height: 22px;
 }
 
 .sil-detail-text {
@@ -850,38 +950,44 @@
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: #64748b;
+  color: var(--text-muted, #64748b);
   letter-spacing: 1px;
 }
 
 .sil-detail-value {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--text-soft, #e2e8f0);
   line-height: 1.4;
 }
 
+html[data-theme="light"] .sil-detail-value {
+  color: #334155;
+}
+
 .blue-highlight {
-  color: #3b82f6 !important;
+  color: #2563eb !important;
   font-weight: 700 !important;
 }
 
 .sil-action-btn {
-  background: #1d4ed8 !important;
-  border: none !important;
   border-radius: 12px !important;
   padding: 0.95rem 1.25rem !important;
   font-weight: 700 !important;
   font-size: 0.95rem !important;
-  margin-top: 0.75rem !important;
-  box-shadow: 0 4px 16px rgba(29, 78, 216, 0.4) !important;
-  transition: all 0.25s ease !important;
+  margin-top: 0.5rem !important;
+  text-align: center;
+  text-decoration: none;
 }
 
-.sil-action-btn:hover {
-  background: #2563eb !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5) !important;
+.sil-action-btn.neutral-btn {
+  background: #475569 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.sil-action-btn.neutral-btn:hover {
+  background: #334155 !important;
 }
 
 /* 8. Instagram Feed Grid Section */
