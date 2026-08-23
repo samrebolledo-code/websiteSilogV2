@@ -676,6 +676,7 @@ html[data-theme="light"] .ocean-text {
   stroke: rgba(255, 255, 255, 0.18);
   stroke-width: 0.8px;
   stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
   cursor: pointer;
   pointer-events: auto;
   transition: fill 180ms ease, fill-opacity 180ms ease, stroke 180ms ease, stroke-width 180ms ease, filter 180ms ease;

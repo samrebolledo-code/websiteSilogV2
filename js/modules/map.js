@@ -13,12 +13,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "Sin Ruta Directa SIL",
     "colorClass": "zone-neutral",
     "hasService": false,
-    "path": "M 519.1,228.3 L 542.1,235.4 L 533.9,257.9 L 546.5,262.4 L 535.3,272.9 L 515.0,271.2 L 493.5,235.5 L 519.1,228.3 Z",
-    "cx": 525.6,
-    "cy": 249.0,
-    "labelX": 525.6,
-    "labelY": 249.0,
-    "isInset": false
+    "path": "M 475.1,228.2 L 486.5,234.8 L 482.4,256.1 L 488.7,260.4 L 483.1,270.2 L 473.0,268.6 L 462.3,234.9 L 475.1,228.2 Z",
+    "cx": 478.3,
+    "cy": 247.7,
+    "labelX": 478.3,
+    "labelY": 247.7
   },
   {
     "id": "cabildo",
@@ -27,12 +26,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "Sin Ruta Directa SIL",
     "colorClass": "zone-neutral",
     "hasService": false,
-    "path": "M 634.7,67.1 L 652.4,85.0 L 642.6,98.4 L 563.0,107.5 L 542.9,135.0 L 489.3,124.5 L 478.1,128.4 L 460.0,144.1 L 486.7,157.4 L 470.5,180.6 L 437.8,174.3 L 411.7,180.8 L 365.2,179.6 L 369.3,158.9 L 334.7,149.5 L 326.7,140.2 L 329.9,127.1 L 347.8,122.0 L 343.0,106.7 L 364.7,112.3 L 397.6,94.2 L 429.5,99.7 L 465.9,79.4 L 493.4,84.2 L 602.1,76.8 L 634.7,67.1 Z",
-    "cx": 464.4,
-    "cy": 122.3,
-    "labelX": 464.4,
-    "labelY": 122.3,
-    "isInset": false
+    "path": "M 532.5,76.7 L 541.3,93.5 L 536.4,106.0 L 496.9,114.6 L 486.9,140.4 L 460.3,130.5 L 454.7,134.1 L 445.7,148.9 L 459.0,161.4 L 450.9,183.3 L 434.7,177.3 L 421.7,183.4 L 398.6,182.3 L 400.6,162.9 L 383.4,154.0 L 379.5,145.3 L 381.1,133.0 L 390.0,128.2 L 387.6,113.8 L 398.3,119.1 L 414.7,102.1 L 430.5,107.3 L 448.6,88.3 L 462.3,92.7 L 516.3,85.8 L 532.5,76.7 Z",
+    "cx": 447.9,
+    "cy": 128.5,
+    "labelX": 447.9,
+    "labelY": 128.5
   },
   {
     "id": "petorca",
@@ -41,12 +39,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "Sin Ruta Directa SIL",
     "colorClass": "zone-neutral",
     "hasService": false,
-    "path": "M 510.4,11.8 L 527.7,22.1 L 542.9,19.7 L 544.4,41.9 L 592.7,53.4 L 598.5,45.8 L 632.3,52.5 L 632.9,63.5 L 602.1,76.8 L 493.4,84.2 L 465.9,79.4 L 429.5,99.7 L 397.6,94.2 L 364.7,112.3 L 343.0,106.7 L 319.6,88.5 L 308.7,52.3 L 376.0,25.1 L 371.5,13.5 L 411.1,17.8 L 420.9,26.6 L 510.4,11.8 Z",
-    "cx": 472.6,
-    "cy": 54.5,
-    "labelX": 472.6,
-    "labelY": 54.5,
-    "isInset": false
+    "path": "M 470.7,25.0 L 479.3,34.6 L 486.9,32.4 L 487.6,53.1 L 511.6,63.9 L 514.5,56.8 L 531.3,63.1 L 531.6,73.3 L 516.3,85.8 L 462.3,92.7 L 448.6,88.3 L 430.5,107.3 L 414.7,102.1 L 398.3,119.1 L 387.6,113.8 L 375.9,96.7 L 370.5,62.8 L 404.0,37.3 L 401.7,26.5 L 421.4,30.6 L 426.3,38.8 L 470.7,25.0 Z",
+    "cx": 451.9,
+    "cy": 65.0,
+    "labelX": 451.9,
+    "labelY": 65.0
   },
   {
     "id": "panquehue",
@@ -55,12 +52,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA ESTE",
     "colorClass": "zone-este",
     "hasService": false,
-    "path": "M 505.1,215.5 L 489.9,236.4 L 413.2,235.0 L 413.0,228.6 L 488.5,209.1 L 505.1,215.5 Z",
-    "cx": 469.1,
-    "cy": 223.3,
-    "labelX": 461.1,
-    "labelY": 223.3,
-    "isInset": false
+    "path": "M 468.1,216.1 L 460.6,235.8 L 422.5,234.5 L 422.3,228.4 L 459.9,210.1 L 468.1,216.1 Z",
+    "cx": 450.2,
+    "cy": 223.5,
+    "labelX": 450.2,
+    "labelY": 223.5
   },
   {
     "id": "olmue",
@@ -69,12 +65,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA CENTRO",
     "colorClass": "zone-centro",
     "hasService": false,
-    "path": "M 337.0,271.7 L 377.5,281.1 L 389.5,298.2 L 372.7,311.1 L 329.1,318.1 L 290.6,284.2 L 292.9,276.7 L 337.0,271.7 Z",
-    "cx": 340.8,
-    "cy": 289.1,
-    "labelX": 340.8,
-    "labelY": 289.1,
-    "isInset": false
+    "path": "M 384.6,269.2 L 404.7,278.0 L 410.7,294.2 L 402.3,306.4 L 380.7,313.0 L 361.5,280.9 L 362.7,273.8 L 384.6,269.2 Z",
+    "cx": 386.5,
+    "cy": 285.6,
+    "labelX": 386.5,
+    "labelY": 285.6
   },
   {
     "id": "cartagena",
@@ -83,12 +78,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA COSTA",
     "colorClass": "zone-costa",
     "hasService": false,
-    "path": "M 110.0,438.7 L 120.4,429.1 L 160.0,429.4 L 176.8,417.2 L 194.7,421.1 L 215.0,411.5 L 239.9,411.8 L 232.3,422.0 L 243.0,447.0 L 206.8,454.7 L 110.0,438.7 Z M 115.8,438.1 L 115.8,438.1 L 115.7,438.1 L 115.8,438.0 L 115.8,438.1 Z",
-    "cx": 161.7,
-    "cy": 432.0,
-    "labelX": 155.7,
-    "labelY": 432.0,
-    "isInset": false
+    "path": "M 271.8,427.4 L 277.0,418.3 L 296.7,418.5 L 305.0,406.9 L 313.9,410.6 L 324.0,401.5 L 336.4,401.8 L 332.6,411.5 L 337.9,435.3 L 319.9,442.6 L 271.8,427.4 Z M 274.7,426.7 L 274.7,426.8 L 274.6,426.7 L 274.7,426.7 L 274.7,426.7 Z",
+    "cx": 297.5,
+    "cy": 421.0,
+    "labelX": 297.5,
+    "labelY": 421.0
   },
   {
     "id": "catemu",
@@ -97,12 +91,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA ESTE",
     "colorClass": "zone-este",
     "hasService": false,
-    "path": "M 438.2,174.4 L 470.5,180.6 L 447.4,209.2 L 455.6,220.2 L 413.0,228.6 L 413.3,235.0 L 398.6,228.5 L 388.9,236.2 L 366.1,211.6 L 375.0,192.5 L 365.4,183.0 L 381.1,176.0 L 398.5,181.1 L 438.2,174.4 Z",
-    "cx": 410.7,
-    "cy": 202.2,
-    "labelX": 410.7,
-    "labelY": 202.2,
-    "isInset": false
+    "path": "M 434.9,177.4 L 450.9,183.3 L 439.5,210.1 L 443.5,220.6 L 422.3,228.4 L 422.5,234.5 L 415.2,228.4 L 410.4,235.7 L 399.0,212.4 L 403.5,194.4 L 398.7,185.5 L 406.5,178.9 L 415.1,183.8 L 434.9,177.4 Z",
+    "cx": 421.2,
+    "cy": 203.6,
+    "labelX": 421.2,
+    "labelY": 203.6
   },
   {
     "id": "llaillay",
@@ -111,12 +104,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA ESTE",
     "colorClass": "zone-este",
     "hasService": false,
-    "path": "M 405.0,227.9 L 428.5,237.7 L 493.9,235.5 L 511.1,263.1 L 460.4,262.5 L 431.5,266.3 L 417.0,276.6 L 383.5,277.7 L 371.9,238.5 L 405.0,227.9 Z",
-    "cx": 430.8,
-    "cy": 251.4,
-    "labelX": 430.8,
-    "labelY": 251.4,
-    "isInset": false
+    "path": "M 418.4,227.8 L 430.0,237.0 L 462.6,234.9 L 471.1,261.0 L 445.9,260.4 L 431.6,264.0 L 424.3,273.7 L 407.7,274.8 L 402.0,237.8 L 418.4,227.8 Z",
+    "cx": 431.2,
+    "cy": 249.9,
+    "labelX": 431.2,
+    "labelY": 249.9
   },
   {
     "id": "san-felipe",
@@ -125,12 +117,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA ESTE",
     "colorClass": "zone-este",
     "hasService": true,
-    "path": "M 479.9,190.4 L 506.9,199.0 L 504.0,204.3 L 540.0,197.2 L 530.8,221.5 L 553.1,228.4 L 542.1,235.4 L 518.1,232.9 L 518.0,224.6 L 496.1,228.6 L 507.4,216.5 L 494.1,209.5 L 455.6,220.2 L 447.5,209.0 L 467.8,185.5 L 479.9,190.4 Z",
-    "cx": 502.6,
-    "cy": 212.1,
-    "labelX": 502.6,
-    "labelY": 212.1,
-    "isInset": false
+    "path": "M 455.6,192.4 L 469.0,200.6 L 467.6,205.6 L 485.4,198.8 L 480.9,221.8 L 491.9,228.3 L 486.5,234.8 L 474.6,232.5 L 474.5,224.7 L 463.6,228.5 L 469.2,217.0 L 462.6,210.5 L 443.5,220.6 L 439.5,209.9 L 449.6,187.9 L 455.6,192.4 Z",
+    "cx": 466.9,
+    "cy": 212.9,
+    "labelX": 466.9,
+    "labelY": 212.9
   },
   {
     "id": "santa-maria",
@@ -139,12 +130,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA ESTE",
     "colorClass": "zone-este",
     "hasService": false,
-    "path": "M 586.9,164.5 L 606.7,173.8 L 583.2,182.0 L 580.7,199.7 L 562.2,207.4 L 565.2,232.1 L 530.8,221.5 L 531.3,213.6 L 558.8,175.3 L 586.9,164.5 Z",
-    "cx": 569.3,
-    "cy": 193.4,
-    "labelX": 569.3,
-    "labelY": 193.4,
-    "isInset": false
+    "path": "M 508.7,168.1 L 518.6,176.8 L 506.9,184.6 L 505.7,201.2 L 496.5,208.5 L 498.0,231.7 L 480.9,221.8 L 481.1,214.3 L 494.8,178.3 L 508.7,168.1 Z",
+    "cx": 500.0,
+    "cy": 195.3,
+    "labelX": 500.0,
+    "labelY": 195.3
   },
   {
     "id": "villa-alemana",
@@ -153,12 +143,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA CENTRO",
     "colorClass": "zone-centro",
     "hasService": true,
-    "path": "M 212.1,297.1 L 211.7,287.9 L 242.2,296.7 L 258.0,287.4 L 273.9,314.3 L 254.6,318.0 L 229.9,311.7 L 212.1,297.1 Z",
-    "cx": 236.8,
-    "cy": 301.3,
-    "labelX": 246.8,
-    "labelY": 301.3,
-    "isInset": false
+    "path": "M 322.5,293.1 L 322.4,284.4 L 337.5,292.7 L 345.4,283.9 L 353.2,309.4 L 343.6,312.9 L 331.4,306.9 L 322.5,293.1 Z",
+    "cx": 334.8,
+    "cy": 297.1,
+    "labelX": 334.8,
+    "labelY": 295.1
   },
   {
     "id": "santo-domingo",
@@ -167,12 +156,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA COSTA",
     "colorClass": "zone-costa",
     "hasService": false,
-    "path": "M 35.1,504.4 L 91.4,484.9 L 108.3,456.6 L 122.4,461.1 L 150.4,493.4 L 141.6,528.2 L 130.7,526.7 L 68.7,551.7 L 55.3,541.7 L 41.2,545.9 L 28.5,538.1 L 15.9,542.7 L 35.1,504.4 Z",
-    "cx": 78.8,
-    "cy": 513.8,
-    "labelX": 78.8,
-    "labelY": 513.8,
-    "isInset": false
+    "path": "M 234.6,490.0 L 262.5,471.3 L 271.0,444.4 L 278.0,448.6 L 291.9,479.4 L 287.5,512.6 L 282.1,511.2 L 251.3,535.0 L 244.7,525.5 L 237.7,529.5 L 231.3,522.0 L 225.1,526.4 L 234.6,490.0 Z",
+    "cx": 256.3,
+    "cy": 498.9,
+    "labelX": 256.3,
+    "labelY": 498.9
   },
   {
     "id": "san-antonio",
@@ -181,12 +169,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA COSTA",
     "colorClass": "zone-costa",
     "hasService": true,
-    "path": "M 110.8,452.9 L 109.8,438.6 L 206.5,454.8 L 240.3,445.6 L 238.5,455.1 L 194.5,474.4 L 227.9,496.6 L 198.5,505.0 L 156.4,501.7 L 110.8,452.9 Z",
-    "cx": 179.4,
-    "cy": 467.8,
-    "labelX": 179.4,
-    "labelY": 475.8,
-    "isInset": false
+    "path": "M 272.2,440.8 L 271.7,427.3 L 319.8,442.6 L 336.6,433.9 L 335.7,442.9 L 313.8,461.3 L 330.4,482.4 L 315.8,490.5 L 294.9,487.3 L 272.2,440.8 Z",
+    "cx": 306.3,
+    "cy": 455.0,
+    "labelX": 306.3,
+    "labelY": 455.0
   },
   {
     "id": "el-tabo",
@@ -195,12 +182,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA COSTA",
     "colorClass": "zone-costa",
     "hasService": false,
-    "path": "M 106.2,424.7 L 86.3,409.5 L 108.4,404.2 L 125.2,413.3 L 176.8,417.2 L 162.0,428.7 L 132.1,433.1 L 106.2,424.7 Z",
-    "cx": 125.4,
-    "cy": 419.4,
-    "labelX": 119.4,
-    "labelY": 419.4,
-    "isInset": false
+    "path": "M 269.9,414.0 L 260.0,399.6 L 271.0,394.6 L 279.4,403.2 L 305.0,406.9 L 297.6,417.8 L 282.8,422.0 L 269.9,414.0 Z",
+    "cx": 279.4,
+    "cy": 409.0,
+    "labelX": 279.4,
+    "labelY": 409.0
   },
   {
     "id": "el-quisco",
@@ -209,12 +195,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA COSTA",
     "colorClass": "zone-costa",
     "hasService": false,
-    "path": "M 81.7,406.8 L 73.1,403.1 L 79.6,388.4 L 99.1,396.9 L 127.0,396.0 L 126.3,405.3 L 81.7,406.8 Z",
-    "cx": 95.5,
-    "cy": 400.5,
-    "labelX": 87.5,
-    "labelY": 400.5,
-    "isInset": false
+    "path": "M 257.8,397.1 L 253.5,393.6 L 256.7,379.6 L 266.4,387.7 L 280.2,386.8 L 279.9,395.6 L 257.8,397.1 Z",
+    "cx": 264.6,
+    "cy": 391.1,
+    "labelX": 264.6,
+    "labelY": 391.1
   },
   {
     "id": "algarrobo",
@@ -223,12 +208,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA COSTA",
     "colorClass": "zone-costa",
     "hasService": false,
-    "path": "M 80.6,381.6 L 80.4,381.6 L 80.3,381.5 L 80.6,381.5 L 80.6,381.6 Z M 79.9,381.5 L 79.3,381.4 L 79.3,381.2 L 80.1,381.3 L 79.9,381.5 Z M 97.5,367.5 L 101.7,357.7 L 151.8,357.4 L 145.6,394.7 L 99.5,397.0 L 79.7,388.4 L 97.4,383.0 L 97.5,367.5 Z",
-    "cx": 92.9,
-    "cy": 379.3,
-    "labelX": 92.9,
-    "labelY": 379.3,
-    "isInset": false
+    "path": "M 257.2,373.1 L 257.1,373.2 L 257.1,373.1 L 257.2,373.1 L 257.2,373.1 Z M 256.9,373.0 L 256.6,372.9 L 256.5,372.7 L 257.0,372.8 L 256.9,373.0 Z M 265.6,359.7 L 267.7,350.5 L 292.6,350.1 L 289.5,385.6 L 266.6,387.7 L 256.8,379.6 L 265.5,374.4 L 265.6,359.7 Z",
+    "cx": 263.3,
+    "cy": 371.0,
+    "labelX": 263.3,
+    "labelY": 371.0
   },
   {
     "id": "casablanca",
@@ -237,12 +221,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA CENTRO",
     "colorClass": "zone-centro",
     "hasService": true,
-    "path": "M 76.0,338.5 L 78.3,327.6 L 111.9,328.7 L 150.4,344.0 L 206.6,343.2 L 225.8,333.4 L 235.5,341.3 L 287.2,351.9 L 302.6,371.2 L 290.4,388.6 L 264.2,399.1 L 236.6,400.5 L 239.8,411.7 L 215.0,411.5 L 194.7,421.1 L 125.2,413.3 L 115.1,407.6 L 129.3,393.0 L 145.6,394.7 L 154.7,359.2 L 124.2,354.7 L 91.7,362.5 L 76.0,338.5 Z M 87.2,357.8 L 87.2,357.8 L 87.2,357.8 L 87.2,357.8 L 87.2,357.8 Z M 75.4,337.6 L 75.6,337.7 L 75.2,337.8 L 75.2,337.7 L 75.4,337.6 Z",
-    "cx": 148.2,
-    "cy": 364.0,
-    "labelX": 148.2,
-    "labelY": 364.0,
-    "isInset": false
+    "path": "M 254.9,332.3 L 256.1,322.0 L 272.8,323.0 L 291.9,337.5 L 319.8,336.8 L 329.4,327.4 L 334.2,335.0 L 359.8,344.9 L 367.5,363.3 L 361.4,379.8 L 348.4,389.7 L 334.7,391.0 L 336.3,401.7 L 324.0,401.5 L 313.9,410.6 L 279.4,403.2 L 274.4,397.8 L 281.4,383.9 L 289.5,385.6 L 294.0,351.8 L 278.9,347.6 L 262.7,355.0 L 254.9,332.3 Z M 260.5,350.5 L 260.5,350.5 L 260.5,350.5 L 260.5,350.5 L 260.5,350.5 Z M 254.6,331.4 L 254.7,331.6 L 254.5,331.6 L 254.5,331.5 L 254.6,331.4 Z",
+    "cx": 290.8,
+    "cy": 356.5,
+    "labelX": 290.8,
+    "labelY": 356.5
   },
   {
     "id": "valparaiso",
@@ -251,12 +234,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA COSTA",
     "colorClass": "zone-costa",
     "hasService": true,
-    "path": "M 127.0,292.7 L 147.2,313.4 L 165.2,310.9 L 180.5,327.2 L 217.3,334.7 L 213.0,340.6 L 150.4,344.0 L 111.9,328.7 L 74.8,327.1 L 57.1,312.1 L 92.5,311.5 L 101.2,289.8 L 113.2,296.1 L 127.0,292.7 Z",
-    "cx": 134.2,
-    "cy": 315.8,
-    "labelX": 122.19999999999999,
-    "labelY": 319.8,
-    "isInset": false
+    "path": "M 280.3,288.9 L 290.3,308.5 L 299.3,306.2 L 306.8,321.6 L 325.1,328.7 L 323.0,334.2 L 291.9,337.5 L 272.8,323.0 L 254.3,321.5 L 245.5,307.3 L 263.1,306.8 L 267.4,286.3 L 273.4,292.2 L 280.3,288.9 Z",
+    "cx": 283.8,
+    "cy": 310.8,
+    "labelX": 281.8,
+    "labelY": 310.8
   },
   {
     "id": "vina-del-mar",
@@ -265,12 +247,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA COSTA",
     "colorClass": "zone-costa",
     "hasService": true,
-    "path": "M 144.8,269.6 L 145.7,268.9 L 161.3,272.6 L 192.3,284.8 L 173.7,294.0 L 180.2,302.7 L 170.1,313.4 L 147.2,313.4 L 127.9,292.1 L 143.5,286.4 L 144.8,269.6 Z",
-    "cx": 157.4,
-    "cy": 288.0,
-    "labelX": 169.4,
-    "labelY": 284.0,
-    "isInset": false
+    "path": "M 289.1,267.2 L 289.5,266.4 L 297.3,270.0 L 312.7,281.4 L 303.5,290.1 L 306.7,298.4 L 301.7,308.5 L 290.3,308.5 L 280.7,288.4 L 288.5,283.0 L 289.1,267.2 Z",
+    "cx": 295.4,
+    "cy": 284.5,
+    "labelX": 293.4,
+    "labelY": 284.5
   },
   {
     "id": "concon",
@@ -279,12 +260,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA COSTA",
     "colorClass": "zone-costa",
     "hasService": true,
-    "path": "M 163.3,260.6 L 207.6,266.0 L 217.1,275.9 L 192.3,284.8 L 142.4,268.0 L 163.3,260.6 Z",
-    "cx": 181.0,
-    "cy": 269.3,
-    "labelX": 197.0,
-    "labelY": 261.3,
-    "isInset": false
+    "path": "M 298.3,258.6 L 320.3,263.8 L 325.0,273.0 L 312.7,281.4 L 287.9,265.6 L 298.3,258.6 Z",
+    "cx": 307.1,
+    "cy": 266.8,
+    "labelX": 307.1,
+    "labelY": 264.8
   },
   {
     "id": "quintero",
@@ -293,12 +273,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA NORTE",
     "colorClass": "zone-norte",
     "hasService": false,
-    "path": "M 156.5,252.9 L 156.4,253.0 L 156.0,253.0 L 156.2,252.9 L 156.5,252.9 Z M 158.1,253.1 L 157.4,253.9 L 156.5,253.2 L 157.8,252.9 L 158.1,253.1 Z M 151.2,222.2 L 151.1,222.2 L 151.1,222.2 L 151.2,222.2 L 151.2,222.2 Z M 148.7,220.7 L 148.7,220.7 L 148.6,220.7 L 148.6,220.6 L 148.7,220.7 Z M 149.2,220.7 L 151.3,218.4 L 160.4,223.8 L 177.5,217.8 L 182.6,228.5 L 204.2,224.0 L 201.6,240.1 L 216.6,244.2 L 188.1,253.7 L 190.9,263.5 L 164.3,262.1 L 149.2,220.7 Z",
-    "cx": 162.6,
-    "cy": 236.3,
-    "labelX": 162.6,
-    "labelY": 236.3,
-    "isInset": false
+    "path": "M 294.9,251.4 L 294.9,251.5 L 294.7,251.5 L 294.8,251.4 L 294.9,251.4 Z M 295.7,251.6 L 295.4,252.3 L 294.9,251.6 L 295.6,251.4 L 295.7,251.6 Z M 292.3,222.4 L 292.3,222.4 L 292.2,222.4 L 292.3,222.4 L 292.3,222.4 Z M 291.0,221.0 L 291.1,221.0 L 291.0,221.0 L 291.0,220.9 L 291.0,221.0 Z M 291.3,221.0 L 292.3,218.9 L 296.8,224.0 L 305.3,218.3 L 307.9,228.3 L 318.6,224.1 L 317.3,239.3 L 324.8,243.1 L 310.6,252.1 L 312.0,261.4 L 298.8,260.1 L 291.3,221.0 Z",
+    "cx": 298.0,
+    "cy": 235.8,
+    "labelX": 298.0,
+    "labelY": 235.8
   },
   {
     "id": "puchuncavi",
@@ -307,12 +286,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA NORTE",
     "colorClass": "zone-norte",
     "hasService": false,
-    "path": "M 171.3,202.6 L 171.1,202.6 L 171.1,202.5 L 171.4,202.5 L 171.3,202.6 Z M 170.7,202.4 L 170.8,202.4 L 170.8,202.5 L 170.6,202.5 L 170.7,202.4 Z M 192.4,186.3 L 204.3,179.8 L 224.7,193.8 L 265.8,199.7 L 250.0,209.8 L 259.1,223.8 L 223.6,245.8 L 201.6,240.1 L 204.2,224.0 L 182.6,228.5 L 168.8,217.7 L 162.5,203.4 L 180.5,203.1 L 192.4,186.3 Z",
-    "cx": 192.6,
-    "cy": 207.0,
-    "labelX": 192.6,
-    "labelY": 207.0,
-    "isInset": false
+    "path": "M 302.3,203.9 L 302.2,203.9 L 302.2,203.8 L 302.3,203.8 L 302.3,203.9 Z M 302.0,203.8 L 302.0,203.8 L 302.0,203.9 L 301.9,203.8 L 302.0,203.8 Z M 312.8,188.6 L 318.7,182.5 L 328.8,195.7 L 349.2,201.2 L 341.4,210.8 L 345.9,223.9 L 328.3,244.6 L 317.3,239.3 L 318.6,224.1 L 307.9,228.3 L 301.0,218.2 L 297.9,204.8 L 306.8,204.5 L 312.8,188.6 Z",
+    "cx": 312.9,
+    "cy": 208.1,
+    "labelX": 312.9,
+    "labelY": 208.1
   },
   {
     "id": "zapallar",
@@ -321,12 +299,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA NORTE",
     "colorClass": "zone-norte",
     "hasService": false,
-    "path": "M 179.1,147.1 L 182.4,143.7 L 196.6,157.7 L 217.3,159.0 L 255.6,143.7 L 300.1,173.5 L 284.5,174.0 L 251.5,192.6 L 224.7,193.8 L 197.9,181.3 L 179.1,147.1 Z M 186.0,168.1 L 186.3,168.8 L 184.7,168.6 L 185.6,168.0 L 186.0,168.1 Z M 182.0,143.8 L 181.2,143.7 L 181.4,143.3 L 182.0,143.3 L 182.0,143.8 Z",
-    "cx": 205.0,
-    "cy": 160.6,
-    "labelX": 205.0,
-    "labelY": 160.6,
-    "isInset": false
+    "path": "M 306.2,151.7 L 307.8,148.6 L 314.8,161.7 L 325.1,163.0 L 344.1,148.6 L 366.3,176.5 L 358.5,177.0 L 342.1,194.6 L 328.8,195.7 L 315.5,183.9 L 306.2,151.7 Z M 309.6,171.4 L 309.7,172.2 L 309.0,171.9 L 309.4,171.4 L 309.6,171.4 Z M 307.6,148.7 L 307.2,148.5 L 307.3,148.2 L 307.6,148.2 L 307.6,148.7 Z",
+    "cx": 319.0,
+    "cy": 164.5,
+    "labelX": 319.0,
+    "labelY": 164.5
   },
   {
     "id": "papudo",
@@ -335,12 +312,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA NORTE",
     "colorClass": "zone-norte",
     "hasService": false,
-    "path": "M 206.9,119.1 L 244.6,117.3 L 263.3,127.9 L 246.6,128.0 L 255.6,143.7 L 217.3,159.0 L 187.8,154.7 L 183.4,144.7 L 196.2,142.8 L 206.9,119.1 Z",
-    "cx": 220.9,
-    "cy": 135.6,
-    "labelX": 220.9,
-    "labelY": 135.6,
-    "isInset": false
+    "path": "M 319.9,125.5 L 338.7,123.7 L 348.0,133.7 L 339.7,133.8 L 344.1,148.6 L 325.1,163.0 L 310.5,158.9 L 308.3,149.5 L 314.6,147.7 L 319.9,125.5 Z",
+    "cx": 326.9,
+    "cy": 141.0,
+    "labelX": 326.9,
+    "labelY": 141.0
   },
   {
     "id": "la-ligua",
@@ -349,12 +325,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA NORTE",
     "colorClass": "zone-norte",
     "hasService": false,
-    "path": "M 153.9,70.7 L 153.8,70.7 L 154.1,70.4 L 154.1,70.7 L 153.9,70.7 Z M 154.6,70.5 L 154.4,70.5 L 154.4,70.4 L 154.5,70.4 L 154.6,70.5 Z M 155.0,69.7 L 155.1,69.8 L 154.8,69.8 L 154.8,69.7 L 155.0,69.7 Z M 151.5,62.9 L 151.2,62.9 L 150.9,62.6 L 151.4,62.7 L 151.5,62.9 Z M 151.1,61.9 L 150.8,61.9 L 150.8,61.8 L 151.0,61.8 L 151.1,61.9 Z M 147.4,60.4 L 147.5,60.3 L 147.8,60.2 L 147.7,60.4 L 147.4,60.4 Z M 148.2,60.4 L 148.1,60.2 L 148.4,60.1 L 148.6,60.3 L 148.2,60.4 Z M 149.3,60.2 L 149.1,60.2 L 149.2,60.1 L 149.4,60.1 L 149.3,60.2 Z M 147.9,59.8 L 147.4,59.8 L 147.3,59.7 L 147.6,59.6 L 147.9,59.8 Z M 174.9,76.2 L 155.3,71.8 L 148.2,54.0 L 165.3,55.0 L 176.7,47.8 L 238.8,61.2 L 299.3,41.8 L 319.6,88.5 L 343.4,102.8 L 347.8,122.0 L 329.9,127.1 L 327.5,141.8 L 369.3,159.0 L 353.7,177.1 L 318.0,169.7 L 300.1,173.5 L 247.0,135.1 L 246.6,128.0 L 263.2,127.9 L 244.6,117.3 L 208.0,117.5 L 179.8,100.9 L 174.9,76.2 Z",
-    "cx": 187.1,
-    "cy": 78.7,
-    "labelX": 187.1,
-    "labelY": 78.7,
-    "isInset": false
+    "path": "M 293.6,80.1 L 293.6,80.0 L 293.7,79.8 L 293.7,80.0 L 293.6,80.1 Z M 294.0,79.8 L 293.9,79.9 L 293.9,79.8 L 293.9,79.8 L 294.0,79.8 Z M 294.2,79.1 L 294.2,79.2 L 294.1,79.2 L 294.1,79.2 L 294.2,79.1 Z M 292.5,72.7 L 292.3,72.7 L 292.1,72.5 L 292.4,72.5 L 292.5,72.7 Z M 292.2,71.8 L 292.1,71.8 L 292.1,71.7 L 292.2,71.7 L 292.2,71.8 Z M 290.4,70.4 L 290.4,70.3 L 290.6,70.3 L 290.6,70.4 L 290.4,70.4 Z M 290.8,70.4 L 290.7,70.3 L 290.9,70.2 L 291.0,70.3 L 290.8,70.4 Z M 291.3,70.2 L 291.2,70.3 L 291.3,70.1 L 291.4,70.2 L 291.3,70.2 Z M 290.6,69.9 L 290.4,69.9 L 290.3,69.8 L 290.5,69.7 L 290.6,69.9 Z M 304.1,85.2 L 294.3,81.1 L 290.8,64.4 L 299.3,65.4 L 304.9,58.6 L 335.8,71.2 L 365.9,53.0 L 375.9,96.7 L 387.8,110.1 L 390.0,128.2 L 381.1,133.0 L 379.9,146.8 L 400.6,162.9 L 392.9,179.9 L 375.2,173.0 L 366.3,176.5 L 339.9,140.4 L 339.7,133.8 L 347.9,133.7 L 338.7,123.7 L 320.5,123.9 L 306.5,108.4 L 304.1,85.2 Z",
+    "cx": 310.1,
+    "cy": 87.6,
+    "labelX": 310.1,
+    "labelY": 87.6
   },
   {
     "id": "limache",
@@ -363,12 +338,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA CENTRO",
     "colorClass": "zone-centro",
     "hasService": true,
-    "path": "M 193.9,262.5 L 223.0,261.3 L 241.8,270.7 L 292.9,276.7 L 330.3,322.8 L 302.5,329.4 L 284.3,324.5 L 259.4,302.2 L 258.0,287.4 L 242.2,296.7 L 196.5,284.5 L 217.1,275.8 L 193.9,262.5 Z",
-    "cx": 248.9,
-    "cy": 289.0,
-    "labelX": 248.9,
-    "labelY": 285.0,
-    "isInset": false
+    "path": "M 313.5,260.4 L 328.0,259.3 L 337.3,268.2 L 362.7,273.8 L 381.3,317.4 L 367.5,323.7 L 358.4,319.0 L 346.1,298.0 L 345.4,283.9 L 337.5,292.7 L 314.8,281.2 L 325.0,273.0 L 313.5,260.4 Z",
+    "cx": 340.8,
+    "cy": 285.5,
+    "labelX": 340.8,
+    "labelY": 285.5
   },
   {
     "id": "quillota",
@@ -377,12 +351,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA NORTE",
     "colorClass": "zone-norte",
     "hasService": true,
-    "path": "M 257.7,237.0 L 325.0,247.2 L 322.1,264.5 L 336.5,271.5 L 280.4,276.9 L 223.0,261.3 L 192.2,262.5 L 188.1,253.7 L 257.7,237.0 Z",
-    "cx": 264.7,
-    "cy": 256.8,
-    "labelX": 264.7,
-    "labelY": 256.8,
-    "isInset": false
+    "path": "M 345.2,236.3 L 378.6,246.0 L 377.2,262.3 L 384.4,268.9 L 356.5,274.0 L 328.0,259.3 L 312.7,260.5 L 310.6,252.1 L 345.2,236.3 Z",
+    "cx": 348.7,
+    "cy": 255.1,
+    "labelX": 348.7,
+    "labelY": 255.1
   },
   {
     "id": "la-calera",
@@ -391,12 +364,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA NORTE",
     "colorClass": "zone-norte",
     "hasService": true,
-    "path": "M 303.4,232.4 L 287.2,225.2 L 301.5,218.7 L 350.8,215.3 L 340.8,227.4 L 309.5,225.8 L 332.9,240.9 L 325.0,247.1 L 303.4,232.4 Z",
-    "cx": 317.2,
-    "cy": 229.5,
-    "labelX": 317.2,
-    "labelY": 229.5,
-    "isInset": false
+    "path": "M 367.9,232.0 L 359.9,225.2 L 366.9,219.1 L 391.5,215.9 L 386.5,227.3 L 370.9,225.8 L 382.5,240.1 L 378.6,245.9 L 367.9,232.0 Z",
+    "cx": 374.7,
+    "cy": 229.3,
+    "labelX": 374.7,
+    "labelY": 229.3
   },
   {
     "id": "nogales",
@@ -405,12 +377,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "Sin Ruta Directa SIL",
     "colorClass": "zone-neutral",
     "hasService": false,
-    "path": "M 320.6,171.7 L 350.2,178.2 L 365.4,172.2 L 369.7,209.9 L 329.6,219.8 L 301.5,218.7 L 281.7,231.5 L 258.3,223.4 L 250.0,209.8 L 265.8,199.7 L 247.6,193.6 L 286.2,173.4 L 320.6,171.7 Z",
-    "cx": 303.6,
-    "cy": 198.0,
-    "labelX": 303.6,
-    "labelY": 198.0,
-    "isInset": false
+    "path": "M 376.4,174.8 L 391.2,181.0 L 398.7,175.4 L 400.8,210.9 L 380.9,220.2 L 366.9,219.1 L 357.1,231.2 L 345.5,223.5 L 341.4,210.8 L 349.2,201.2 L 340.2,195.5 L 359.4,176.5 L 376.4,174.8 Z",
+    "cx": 368.0,
+    "cy": 199.6,
+    "labelX": 368.0,
+    "labelY": 199.6
   },
   {
     "id": "calle-larga",
@@ -419,12 +390,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA ESTE",
     "colorClass": "zone-este",
     "hasService": false,
-    "path": "M 573.4,243.1 L 609.5,250.8 L 654.6,284.5 L 609.5,309.2 L 570.7,269.5 L 541.7,271.2 L 546.5,262.2 L 533.9,257.9 L 542.1,235.3 L 573.4,243.1 Z M 559.7,239.4 L 559.6,239.4 L 559.6,239.4 L 559.6,239.4 L 559.7,239.4 Z",
-    "cx": 570.2,
-    "cy": 254.9,
-    "labelX": 570.2,
-    "labelY": 254.9,
-    "isInset": false
+    "path": "M 502.0,242.1 L 520.0,249.4 L 542.4,281.2 L 520.0,304.5 L 500.7,267.0 L 486.3,268.7 L 488.7,260.1 L 482.4,256.1 L 486.5,234.8 L 502.0,242.1 Z M 495.2,238.6 L 495.2,238.6 L 495.2,238.6 L 495.2,238.6 L 495.2,238.6 Z",
+    "cx": 500.5,
+    "cy": 253.3,
+    "labelX": 500.5,
+    "labelY": 255.3
   },
   {
     "id": "la-cruz",
@@ -433,12 +403,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "Sin Ruta Directa SIL",
     "colorClass": "zone-neutral",
     "hasService": false,
-    "path": "M 268.3,222.8 L 281.7,231.5 L 287.2,225.2 L 295.6,228.3 L 325.0,247.2 L 243.9,237.2 L 253.9,225.0 L 268.3,222.8 Z",
-    "cx": 278.0,
-    "cy": 230.0,
-    "labelX": 268.0,
-    "labelY": 230.0,
-    "isInset": false
+    "path": "M 350.5,223.0 L 357.1,231.2 L 359.9,225.2 L 364.0,228.2 L 378.6,246.0 L 338.3,236.6 L 343.3,225.1 L 350.5,223.0 Z",
+    "cx": 355.3,
+    "cy": 229.8,
+    "labelX": 355.3,
+    "labelY": 229.8
   },
   {
     "id": "putaendo",
@@ -447,12 +416,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA ESTE",
     "colorClass": "zone-este",
     "hasService": false,
-    "path": "M 734.0,124.8 L 721.5,137.0 L 697.3,141.0 L 662.5,173.8 L 652.1,168.0 L 606.9,172.9 L 579.4,163.8 L 549.3,192.4 L 504.5,204.3 L 506.9,199.0 L 469.6,185.0 L 486.7,157.4 L 460.0,144.1 L 478.1,128.4 L 489.2,124.5 L 551.2,133.2 L 562.8,107.6 L 623.7,104.0 L 674.6,75.5 L 736.9,95.4 L 734.0,124.8 Z",
-    "cx": 594.3,
-    "cy": 145.6,
-    "labelX": 594.3,
-    "labelY": 145.6,
-    "isInset": false
+    "path": "M 581.8,130.8 L 575.6,142.2 L 563.6,146.0 L 546.3,176.9 L 541.2,171.4 L 518.7,176.0 L 505.0,167.5 L 490.1,194.3 L 467.8,205.6 L 469.0,200.6 L 450.5,187.4 L 459.0,161.4 L 445.7,148.9 L 454.7,134.1 L 460.2,130.5 L 491.0,138.7 L 496.8,114.6 L 527.0,111.3 L 552.3,84.5 L 583.3,103.3 L 581.8,130.8 Z",
+    "cx": 512.4,
+    "cy": 150.3,
+    "labelX": 512.4,
+    "labelY": 150.3
   },
   {
     "id": "san-esteban",
@@ -461,12 +429,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA ESTE",
     "colorClass": "zone-este",
     "hasService": false,
-    "path": "M 770.3,187.5 L 759.3,219.7 L 674.2,259.0 L 653.0,246.6 L 565.1,232.0 L 562.2,207.4 L 580.7,199.7 L 583.2,182.0 L 618.6,170.3 L 652.3,168.0 L 662.5,173.8 L 697.3,141.0 L 721.5,137.0 L 734.1,124.8 L 775.8,140.9 L 779.8,165.3 L 759.3,178.4 L 770.3,187.5 Z",
-    "cx": 684.4,
-    "cy": 184.5,
-    "labelX": 684.4,
-    "labelY": 184.5,
-    "isInset": false
+    "path": "M 599.9,189.7 L 594.4,220.0 L 552.1,257.1 L 541.6,245.4 L 497.9,231.6 L 496.5,208.5 L 505.7,201.2 L 506.9,184.6 L 524.5,173.6 L 541.2,171.4 L 546.3,176.9 L 563.6,146.0 L 575.6,142.2 L 581.9,130.8 L 602.6,145.9 L 604.6,168.8 L 594.4,181.2 L 599.9,189.7 Z",
+    "cx": 557.2,
+    "cy": 186.9,
+    "labelX": 557.2,
+    "labelY": 186.9
   },
   {
     "id": "los-andes",
@@ -475,12 +442,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA ESTE",
     "colorClass": "zone-este",
     "hasService": true,
-    "path": "M 795.0,297.8 L 766.6,315.8 L 747.0,315.3 L 727.2,336.6 L 718.2,335.5 L 714.7,321.0 L 664.2,310.4 L 648.3,291.2 L 654.6,284.5 L 609.7,250.9 L 542.0,233.4 L 553.6,228.4 L 575.2,238.0 L 653.0,246.6 L 674.2,259.0 L 758.2,220.4 L 764.0,211.5 L 768.7,207.7 L 770.2,207.3 L 770.9,207.2 L 771.3,207.3 L 788.0,228.4 L 840.9,255.7 L 827.2,286.2 L 795.0,297.8 Z",
-    "cx": 715.9,
-    "cy": 263.8,
-    "labelX": 715.9,
-    "labelY": 263.8,
-    "isInset": false
+    "path": "M 612.1,293.8 L 598.0,310.8 L 588.3,310.3 L 578.5,330.5 L 574.0,329.5 L 572.3,315.7 L 547.1,305.6 L 539.2,287.5 L 542.4,281.2 L 520.1,249.5 L 486.4,233.0 L 492.2,228.3 L 503.0,237.3 L 541.6,245.4 L 552.1,257.1 L 593.8,220.8 L 596.7,212.3 L 599.1,208.7 L 599.8,208.3 L 600.2,208.3 L 600.4,208.3 L 608.6,228.3 L 634.9,254.0 L 628.2,282.8 L 612.1,293.8 Z",
+    "cx": 572.8,
+    "cy": 261.6,
+    "labelX": 572.8,
+    "labelY": 261.6
   },
   {
     "id": "hijuelas",
@@ -489,12 +455,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "Sin Ruta Directa SIL",
     "colorClass": "zone-neutral",
     "hasService": false,
-    "path": "M 382.7,278.0 L 346.6,278.0 L 326.3,267.7 L 332.9,240.9 L 309.5,225.8 L 340.8,227.4 L 363.4,210.3 L 388.9,236.2 L 371.9,238.5 L 382.7,278.0 Z",
-    "cx": 354.6,
-    "cy": 248.1,
-    "labelX": 354.6,
-    "labelY": 248.1,
-    "isInset": false
+    "path": "M 407.3,275.0 L 389.4,275.0 L 379.3,265.3 L 382.5,240.1 L 370.9,225.8 L 386.5,227.3 L 397.7,211.2 L 410.4,235.7 L 402.0,237.8 L 407.3,275.0 Z",
+    "cx": 393.3,
+    "cy": 246.8,
+    "labelX": 393.3,
+    "labelY": 246.8
   },
   {
     "id": "quilpue",
@@ -503,12 +468,11 @@ const MAP_COMUNAS_DATA = [
     "zone": "ZONA CENTRO",
     "colorClass": "zone-centro",
     "hasService": true,
-    "path": "M 197.7,284.8 L 211.7,287.9 L 210.9,303.1 L 229.7,311.6 L 270.6,316.8 L 301.7,329.4 L 376.9,307.7 L 391.2,339.5 L 377.4,344.8 L 364.4,341.4 L 357.7,348.6 L 305.3,347.6 L 289.2,353.2 L 235.5,341.3 L 225.8,333.4 L 182.8,327.9 L 171.6,299.3 L 197.7,284.8 Z",
-    "cx": 272.1,
-    "cy": 322.4,
-    "labelX": 280.1,
-    "labelY": 328.4,
-    "isInset": false
+    "path": "M 315.4,281.5 L 322.4,284.4 L 322.0,298.8 L 331.3,306.9 L 351.6,311.8 L 367.0,323.6 L 404.4,303.1 L 411.5,333.2 L 404.7,338.2 L 398.2,335.0 L 394.9,341.9 L 368.9,340.9 L 360.8,346.2 L 334.2,335.0 L 329.4,327.4 L 308.0,322.3 L 302.4,295.2 L 315.4,281.5 Z",
+    "cx": 352.4,
+    "cy": 317.0,
+    "labelX": 352.4,
+    "labelY": 321.0
   }
 ];
 
@@ -516,7 +480,6 @@ export function initInteractiveMap() {
   const mapContainer = document.getElementById('map-vector-container');
   if (!mapContainer) return;
 
-  // Ejecutar validación automática de IDs durante desarrollo
   const geojsonIds = MAP_COMUNAS_DATA.map(c => c.id);
   validateCoverageData(geojsonIds);
 
@@ -524,10 +487,8 @@ export function initInteractiveMap() {
     <div class="sil-svg-map-card">
       <div class="sil-svg-wrapper">
         <svg class="sil-coverage-svg" viewBox="0 0 860 560" role="img" aria-label="Mapa de cobertura de Transportes SIL en la Región de Valparaíso">
-          <!-- Texto Océano Pacífico -->
           <text x="25" y="160" class="ocean-text">OCÉANO PACÍFICO</text>
 
-          <!-- Grupo de 36 Comunas Continentales de la V Región -->
           <g class="mainland-group">
             ${MAP_COMUNAS_DATA.map(c => `
               <path 
@@ -543,7 +504,6 @@ export function initInteractiveMap() {
             `).join('')}
           </g>
 
-          <!-- Nombres de TODAS las Comunas directamente sobre el mapa -->
           <g class="labels-group">
             ${MAP_COMUNAS_DATA.map(c => `
               <text 
@@ -556,10 +516,8 @@ export function initInteractiveMap() {
             `).join('')}
           </g>
 
-          <!-- Línea Curva Punteada Decorativa desde Santiago -->
           <path id="santiago-route-curve" class="route-connection-line" d="M 540 450 Q 420 440 103.7 285.9" />
 
-          <!-- Marcador Santiago Origen fuera de la región -->
           <g class="santiago-marker-group" transform="translate(540, 450)">
             <rect x="-75" y="-16" width="155" height="32" rx="16" class="santiago-pill-bg" />
             <circle cx="-56" cy="0" r="8" class="santiago-pin-circle" />
@@ -568,7 +526,6 @@ export function initInteractiveMap() {
         </svg>
       </div>
 
-      <!-- Leyenda Horizontal en la parte inferior -->
       <div class="sil-map-legend">
         <div class="legend-item"><span class="legend-dot norte"></span> ZONA NORTE</div>
         <div class="legend-item"><span class="legend-dot centro"></span> ZONA CENTRO</div>
@@ -580,8 +537,6 @@ export function initInteractiveMap() {
   `;
 
   setupMapInteractions();
-
-  // Seleccionar Valparaíso por defecto inicialmente
   selectComuna('valparaiso', false);
 }
 
@@ -589,7 +544,6 @@ function setupMapInteractions() {
   const mapContainer = document.getElementById('map-vector-container');
   if (!mapContainer) return;
 
-  // Delegación de eventos robusta (soporta data-comuna y data-comuna-id)
   mapContainer.addEventListener('click', (e) => {
     const target = e.target.closest('[data-comuna-id]') || e.target.closest('[data-comuna]');
     if (!target) return;
@@ -600,7 +554,6 @@ function setupMapInteractions() {
     }
   });
 
-  // Botones de cotización dentro de la tarjeta
   document.addEventListener('click', (e) => {
     if (e.target && e.target.classList.contains('btn-quote-comuna')) {
       const comunaId = e.target.getAttribute('data-comuna-id') || e.target.getAttribute('data-comuna');
@@ -611,9 +564,6 @@ function setupMapInteractions() {
   });
 }
 
-/**
- * Función ÚNICA centralizada de selección de comuna
- */
 export function selectComuna(comunaId, scrollToCalc = false) {
   const info = getComunaInfo(comunaId);
   if (!info) {
@@ -623,7 +573,6 @@ export function selectComuna(comunaId, scrollToCalc = false) {
 
   selectedComunaId = comunaId;
 
-  // 1. Quitar selección anterior y seleccionar la nueva comuna exactamente
   document.querySelectorAll('.coverage-comuna').forEach(p => {
     const pId = p.getAttribute('data-comuna-id') || p.getAttribute('data-comuna');
     if (pId === comunaId) {
@@ -633,13 +582,9 @@ export function selectComuna(comunaId, scrollToCalc = false) {
     }
   });
 
-  // 2. Actualizar curva decorativa hacia Santiago
   updateRouteCurve(comunaId);
-
-  // 3. Actualizar TODA la tarjeta derecha con la nueva información
   showComunaDetail(info);
 
-  // 4. Actualizar destino en la calculadora (sin scroll si es clic directo en mapa)
   if (info.hasService) {
     preselectDestination(comunaId, scrollToCalc);
   }
@@ -660,10 +605,6 @@ function updateRouteCurve(comunaId) {
   curveEl.setAttribute('d', `M ${startX} ${startY} Q ${controlX} ${controlY} ${endX} ${endY}`);
 }
 
-/**
- * Reconstruye la tarjeta derecha garantizando que no queden datos de selecciones anteriores
- * y sin mostrar jamás 'undefined' ni 'null'.
- */
 function showComunaDetail(info) {
   const infoCard = document.getElementById('map-info-card');
   if (!infoCard) return;
@@ -685,7 +626,6 @@ function showComunaDetail(info) {
       <div class="sil-detail-divider"></div>
 
       <div class="sil-detail-list">
-        <!-- Item 1: DÍAS DE ATENCIÓN -->
         <div class="sil-detail-row">
           <div class="sil-detail-icon">
             <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -701,7 +641,6 @@ function showComunaDetail(info) {
           </div>
         </div>
 
-        <!-- Item 2: TIEMPO DE ENTREGA -->
         <div class="sil-detail-row">
           <div class="sil-detail-icon">
             <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -715,7 +654,6 @@ function showComunaDetail(info) {
           </div>
         </div>
 
-        <!-- Item 3: MODALIDAD DE ENVÍO -->
         <div class="sil-detail-row">
           <div class="sil-detail-icon">
             <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -731,7 +669,6 @@ function showComunaDetail(info) {
           </div>
         </div>
 
-        <!-- Item 4: COBERTURA -->
         <div class="sil-detail-row">
           <div class="sil-detail-icon">
             <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
