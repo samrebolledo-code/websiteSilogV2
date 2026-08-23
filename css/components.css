@@ -49,10 +49,14 @@
   color: var(--clr-blue-500);
 }
 
+nav {
+  margin: 0 auto;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: clamp(1rem, 2vw, 2.2rem);
   list-style: none;
 }
 
@@ -1732,9 +1736,31 @@ html[data-theme="light"] .theme-switch-thumb {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 1rem;
   flex-shrink: 0;
   margin-left: auto;
+}
+
+.desktop-cotiza-btn {
+  display: inline-flex;
+}
+
+.mobile-nav-cotiza {
+  display: none;
+}
+
+@media (max-width: 868px) {
+  .desktop-cotiza-btn {
+    display: none !important;
+  }
+
+  .mobile-nav-cotiza {
+    display: block !important;
+  }
+
+  .header-actions {
+    gap: 0.6rem;
+  }
 }
 
 @media (max-width: 640px) {
