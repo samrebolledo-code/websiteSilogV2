@@ -641,7 +641,6 @@ function showComunaDetail(info) {
   const comunaName = (info && info.name) ? info.name : 'Valparaíso';
   const provinciaName = (info && info.provincia) ? info.provincia : 'Provincia de Valparaíso';
   const zoneName = (info && info.zone) ? info.zone : 'ZONA COSTA';
-  const daysText = (info && info.days) ? info.days : DEFAULT_SERVICE_DAYS;
   const isConfigured = !!(info && info.hasService);
 
   infoCard.innerHTML = `
@@ -651,25 +650,6 @@ function showComunaDetail(info) {
         <span class="sil-zone-title ${isConfigured ? 'configured-zone' : 'neutral-zone'}">${zoneName.toUpperCase()}</span>
         <h2 class="sil-comuna-heading">${comunaName}</h2>
         <span class="sil-provincia-subtitle">${provinciaName}</span>
-      </div>
-
-      <div class="sil-detail-divider"></div>
-
-      <div class="sil-detail-list">
-        <div class="sil-detail-row">
-          <div class="sil-detail-icon">
-            <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-          </div>
-          <div class="sil-detail-text">
-            <span class="sil-detail-label">DÍAS DE ATENCIÓN</span>
-            <span class="sil-detail-value blue-highlight">${daysText}</span>
-          </div>
-        </div>
       </div>
 
       ${isConfigured ? `
