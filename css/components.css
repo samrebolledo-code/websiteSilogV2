@@ -36,6 +36,22 @@
   flex-shrink: 0;
 }
 
+.brand-logo-img.logo-dark {
+  display: block;
+}
+
+.brand-logo-img.logo-light {
+  display: none;
+}
+
+html[data-theme="light"] .brand-logo-img.logo-dark {
+  display: none !important;
+}
+
+html[data-theme="light"] .brand-logo-img.logo-light {
+  display: block !important;
+}
+
 .brand-title-fallback {
   font-family: var(--ff-heading);
   font-size: clamp(1rem, 2.5vw, 1.35rem);
