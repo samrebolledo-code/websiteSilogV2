@@ -17,7 +17,20 @@ export const TARIFF_CONFIG = {
 };
 
 /**
+ * Configuración de Kilometraje por Zona para Despacho Express / Dedicado.
+ * Los kilómetros de cada zona están pendientes por definir por el usuario.
+ * NO inventar ni hardcodear valores en el cálculo.
+ */
+export const EXPRESS_ZONE_KILOMETERS = {
+  "ZONA NORTE": undefined,
+  "ZONA CENTRO": undefined,
+  "ZONA ESTE": undefined,
+  "ZONA COSTA": undefined
+};
+
+/**
  * Tabla oficial de vehículos de Despacho Express / Dedicado (ordenados por capacidad).
+ * Los valores base consideran aproximadamente 260 km de recorrido como precio mínimo de referencia.
  */
 export const EXPRESS_VEHICLES = [
   {
@@ -96,13 +109,13 @@ export function convertToMeters(value, unit = 'cm') {
  * @param {string} input.mode - "fraccionada" | "express"
  * @param {string} input.origin - Siempre "Santiago"
  * @param {string} input.destination - ID de comuna destino
+ * @param {string} [input.zoneName] - Zona de la comuna ("ZONA NORTE", "ZONA CENTRO", etc.)
  * @param {number} input.pallets - Cantidad de pallets
  * @param {number} input.weightKg - Peso total real en kg
  * @param {number} input.length - Largo unitario por pallet
  * @param {number} input.width - Ancho unitario por pallet
  * @param {number} input.height - Alto unitario por pallet
  * @param {string} input.unit - Unidad ('m', 'cm', 'in')
- * @param {number} [input.distanceKm] - Distancia en km desde Santiago a la comuna
  */
 export function calculateQuote(input) {
   const mode = (input.mode || "fraccionada").toLowerCase();
@@ -134,7 +147,7 @@ export function calculateQuote(input) {
       pallets,
       totalWeightKg,
       totalVolumeM3,
-      distanceKm: input.distanceKm
+      zoneName: input.zoneName
     });
   } else {
     return calculateFractionalQuote({
@@ -147,6 +160,7 @@ export function calculateQuote(input) {
 
 /**
  * Lógica para Modalidad 1: Carga Fraccionada
+ * (100% INDEPENDIENTE: NO utiliza kilómetros ni tarifas por zona)
  */
 function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3 }) {
   // Regla de Peso Mínimo Facturable: 900 kg por pallet
@@ -194,8 +208,9 @@ function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3 }) {
 
 /**
  * Lógica para Modalidad 2: Despacho Express / Dedicado
+ * (Obtiene kilómetros por ZONA de cobertura a $1.852/km vs Valor Base del Vehículo)
  */
-function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, distanceKm }) {
+function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, zoneName }) {
   // Exceso de capacidad máxima disponible en la flota (15.000 kg o 28,03 m3)
   if (totalWeightKg > 15000 || totalVolumeM3 > 28.03) {
     return {
@@ -216,13 +231,18 @@ function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, distance
     };
   }
 
-  const distKm = (typeof distanceKm === 'number' && !isNaN(distanceKm) && distanceKm > 0) ? distanceKm : 0;
-  const costoDistancia = distKm * TARIFF_CONFIG.expressRates.ratePerKm;
+  // Obtener kilómetros configurados para la ZONA de la comuna
+  const zoneKey = (zoneName || "").toUpperCase();
+  const kmZonaRaw = EXPRESS_ZONE_KILOMETERS[zoneKey];
+  const hasKmZona = typeof kmZonaRaw === 'number' && !isNaN(kmZonaRaw) && kmZonaRaw > 0;
+  const kmZona = hasKmZona ? kmZonaRaw : 0;
+
+  const costoPorDistancia = kmZona * TARIFF_CONFIG.expressRates.ratePerKm;
   const valorBaseVehiculo = assignedVehicle.basePrice;
 
-  // Fórmula Express: MAX(valorBaseVehiculo, distancia * 1852)
-  const estimatedPriceNet = Math.max(valorBaseVehiculo, costoDistancia);
-  const chargedBy = costoDistancia > valorBaseVehiculo ? "distancia" : "base";
+  // Fórmula Express: MAX(valorBaseVehiculo, kmZona * 1852)
+  const estimatedPriceNet = Math.max(valorBaseVehiculo, costoPorDistancia);
+  const chargedBy = (hasKmZona && costoPorDistancia > valorBaseVehiculo) ? "distancia" : "base";
 
   const finalNetCLP = Math.round(estimatedPriceNet / 1000) * 1000;
   const finalIvaCLP = Math.round(finalNetCLP * TARIFF_CONFIG.ivaRate);
@@ -243,10 +263,11 @@ function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, distance
       basePrice: assignedVehicle.basePrice,
       formattedBasePrice: formatCLP(assignedVehicle.basePrice)
     },
-    distanceKm: distKm,
-    hasDistance: distKm > 0,
+    zoneName: zoneName || "V Región",
+    distanceKm: kmZona,
+    hasDistance: hasKmZona,
     costPerKm: TARIFF_CONFIG.expressRates.ratePerKm,
-    distanceCost: costoDistancia,
+    distanceCost: costoPorDistancia,
     chargedBy,
     estimatedPriceNet: finalNetCLP,
     estimatedIva: finalIvaCLP,
@@ -255,7 +276,7 @@ function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, distance
     formattedNet: formatCLP(finalNetCLP),
     formattedIva: formatCLP(finalIvaCLP),
     formattedTotal: formatCLP(finalTotalCLP),
-    formattedDistanceCost: formatCLP(Math.round(costoDistancia))
+    formattedDistanceCost: formatCLP(Math.round(costoPorDistancia))
   };
 }
 

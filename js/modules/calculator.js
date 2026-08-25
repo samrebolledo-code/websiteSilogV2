@@ -75,7 +75,7 @@ export function initCalculator() {
       mode: currentMode,
       origin: "Santiago",
       destination: selectDestination.value,
-      distanceKm: comunaObj ? comunaObj.distanceKm : undefined,
+      zoneName: comunaObj ? comunaObj.zone : undefined,
       pallets: document.getElementById('calc-pallets').value,
       weightKg: document.getElementById('calc-weight').value,
       length: document.getElementById('calc-length').value,
@@ -190,11 +190,11 @@ function displayResult(result) {
       `;
     } else if (result.mode === 'express') {
       const veh = result.assignedVehicle;
+      const zoneLabel = result.zoneName || 'Zona V Región';
+      const distText = result.hasDistance ? `${result.distanceKm} km` : 'Pendiente por definir por el usuario';
       const tagText = result.chargedBy === 'distancia' 
-        ? `Cobro aplicado por DISTANCIA (${result.distanceKm} km × $1.852/km = ${result.formattedDistanceCost})` 
+        ? `Cobro aplicado por DISTANCIA DE ZONA (${result.distanceKm} km × $1.852/km = ${result.formattedDistanceCost})` 
         : `Cobro aplicado por VALOR BASE DEL VEHÍCULO (${veh.formattedBasePrice})`;
-
-      const distLabel = result.hasDistance ? `${result.distanceKm} km` : 'Por definir';
 
       breakdownEl.innerHTML = `
         <div class="breakdown-grid">
@@ -205,10 +205,10 @@ function displayResult(result) {
             <span class="breakdown-value">${veh.maxWeightKg.toLocaleString('es-CL')} kg / ${veh.maxVolumeM3} m³</span>
           </div>
           <div class="breakdown-item">
-            <span class="breakdown-label">Valor Base del Vehículo:</span>
-            <span class="breakdown-value">${veh.formattedBasePrice} CLP</span>
-            <span class="breakdown-label mt-2">Distancia a Destino (Tarifa $1.852/km):</span>
-            <span class="breakdown-value">${distLabel} ➔ ${result.formattedDistanceCost} CLP</span>
+            <span class="breakdown-label">Zona de Cobertura:</span>
+            <span class="breakdown-value">${zoneLabel}</span>
+            <span class="breakdown-label mt-2">Kilometraje de Zona (Tarifa $1.852/km):</span>
+            <span class="breakdown-value">${distText} ${result.hasDistance ? `➔ ${result.formattedDistanceCost}` : ''}</span>
           </div>
         </div>
         <div style="margin-top: 0.75rem; text-align: center;">
