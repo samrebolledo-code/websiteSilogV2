@@ -17,7 +17,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Salidas diarias de consolidado",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "vina-del-mar",
@@ -28,7 +29,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Salidas diarias AM / PM",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "concon",
@@ -39,7 +41,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Ruta diaria sector industrial y comercial",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "casablanca",
@@ -50,7 +53,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Paso directo en Ruta 68",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "quintero",
@@ -61,7 +65,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos y retiros programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "puchuncavi",
@@ -72,7 +77,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos y retiros programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "quilpue",
@@ -83,7 +89,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Frecuencia diaria garantizada",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "villa-alemana",
@@ -94,7 +101,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Frecuencia diaria garantizada",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "limache",
@@ -105,7 +113,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "olmue",
@@ -116,7 +125,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "quillota",
@@ -127,7 +137,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos diarios a bodegas y locales",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "la-calera",
@@ -138,7 +149,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Frecuencia regular de transporte",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "la-cruz",
@@ -149,7 +161,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "hijuelas",
@@ -160,7 +173,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "nogales",
@@ -171,7 +185,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "la-ligua",
@@ -182,7 +197,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "cabildo",
@@ -193,7 +209,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "petorca",
@@ -204,7 +221,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "papudo",
@@ -215,7 +233,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "zapallar",
@@ -226,7 +245,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "san-antonio",
@@ -237,7 +257,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Conexión directa puerto y zona industrial",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "algarrobo",
@@ -248,7 +269,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "cartagena",
@@ -259,7 +281,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "el-quisco",
@@ -270,7 +293,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "el-tabo",
@@ -281,7 +305,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "santo-domingo",
@@ -292,7 +317,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "san-felipe",
@@ -303,7 +329,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Ruta cordillerana programada",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "catemu",
@@ -314,7 +341,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "llaillay",
@@ -325,7 +353,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "panquehue",
@@ -336,7 +365,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "putaendo",
@@ -347,7 +377,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "santa-maria",
@@ -358,7 +389,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "los-andes",
@@ -369,7 +401,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Ruta cordillerana programada",
       hasService: true,
-      popular: true
+      popular: true,
+      distanceKm: undefined
     },
     {
       id: "calle-larga",
@@ -380,7 +413,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "rinconada",
@@ -391,7 +425,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     },
     {
       id: "san-esteban",
@@ -402,7 +437,8 @@ export const COVERAGE_DATA = {
       days: DEFAULT_SERVICE_DAYS,
       scheduleNote: "Despachos programados",
       hasService: true,
-      popular: false
+      popular: false,
+      distanceKm: undefined
     }
   ]
 };

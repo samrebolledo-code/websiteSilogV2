@@ -56,17 +56,24 @@ function handleChatbotAction(action) {
 }
 
 export function buildQuoteWhatsAppUrl(data) {
-  const unitLabel = data.unit || 'm';
+  const unitLabel = data.unit || 'cm';
+  const modeLabel = data.mode === 'express' ? '⚡ Despacho Express / Dedicado' : '🚚 Carga Fraccionada';
+
+  let detailExtra = '';
+  if (data.mode === 'express' && data.assignedVehicle) {
+    detailExtra = `\nVehículo asignado: ${data.assignedVehicle.label}`;
+  }
 
   const text = `Hola, quisiera cotizar un despacho.
 
+Modalidad: ${modeLabel}
 Origen: ${data.origin || 'Santiago'}
 Destino: ${data.destinationName}
 Pallets: ${data.pallets}
-Peso aproximado: ${data.weightKg} kg
-Medidas (${unitLabel}): ${data.length} x ${data.width} x ${data.height}
+Peso total real: ${data.weightKg} kg
+Medidas por pallet (${unitLabel}): ${data.length} x ${data.width} x ${data.height}${detailExtra}
 
-El valor estimado que me aparece en la página es ${data.formattedNet} + IVA.
+El valor estimado en el cotizador web es ${data.formattedNet} + IVA (Total con IVA: ${data.formattedTotal}).
 
 Quisiera confirmar disponibilidad.`;
 
