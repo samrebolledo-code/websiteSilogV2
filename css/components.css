@@ -30,10 +30,11 @@
 }
 
 .brand-logo-img {
-  height: 40px;
-  max-width: 120px;
+  height: 52px;
+  max-width: 220px;
   object-fit: contain;
   flex-shrink: 0;
+  transition: height 0.2s ease;
 }
 
 .brand-logo-img.logo-dark {
@@ -66,7 +67,8 @@ html[data-theme="light"] .brand-logo-img.logo-light {
 }
 
 nav {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: 2rem;
 }
 
 .nav-menu {
@@ -1754,7 +1756,7 @@ html[data-theme="light"] .theme-switch-thumb {
   align-items: center;
   gap: 1rem;
   flex-shrink: 0;
-  margin-left: auto;
+  margin-left: 0;
 }
 
 .desktop-cotiza-btn {
@@ -1766,6 +1768,16 @@ html[data-theme="light"] .theme-switch-thumb {
 }
 
 @media (max-width: 868px) {
+  nav {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .header-actions {
+    margin-left: auto !important;
+    gap: 0.6rem;
+  }
+
   .desktop-cotiza-btn {
     display: none !important;
   }
@@ -1773,6 +1785,7 @@ html[data-theme="light"] .theme-switch-thumb {
   .mobile-nav-cotiza {
     display: block !important;
   }
+}
 
   .header-actions {
     gap: 0.6rem;
