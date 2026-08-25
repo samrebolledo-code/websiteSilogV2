@@ -30,8 +30,9 @@
 }
 
 .brand-logo-img {
-  height: 52px;
-  max-width: 220px;
+  height: 65px !important;
+  max-height: 65px !important;
+  max-width: 240px !important;
   object-fit: contain;
   flex-shrink: 0;
   transition: height 0.2s ease;
@@ -67,8 +68,8 @@ html[data-theme="light"] .brand-logo-img.logo-light {
 }
 
 nav {
-  margin-left: auto;
-  margin-right: 2rem;
+  margin-left: auto !important;
+  margin-right: 2rem !important;
 }
 
 .nav-menu {
@@ -1787,15 +1788,11 @@ html[data-theme="light"] .theme-switch-thumb {
   }
 }
 
-  .header-actions {
-    gap: 0.6rem;
-  }
-}
-
 @media (max-width: 640px) {
   .brand-logo-img {
-    height: 32px;
-    max-width: 95px;
+    height: 42px !important;
+    max-height: 42px !important;
+    max-width: 140px !important;
   }
 
   .brand-title-fallback {
