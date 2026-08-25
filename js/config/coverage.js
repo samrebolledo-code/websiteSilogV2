@@ -10,6 +10,7 @@ export const COVERAGE_DATA = {
   comunas: [
     {
       id: "valparaiso",
+      distanceKm: 260,
       name: "Valparaíso",
       provincia: "Provincia de Valparaíso",
       zone: "ZONA COSTA",
@@ -21,6 +22,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "vina-del-mar",
+      distanceKm: 270,
       name: "Viña del Mar",
       provincia: "Provincia de Valparaíso",
       zone: "ZONA COSTA",
@@ -32,6 +34,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "concon",
+      distanceKm: 300,
       name: "Concón",
       provincia: "Provincia de Valparaíso",
       zone: "ZONA COSTA",
@@ -43,6 +46,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "casablanca",
+      distanceKm: 210,
       name: "Casablanca",
       provincia: "Provincia de Valparaíso",
       zone: "ZONA CENTRO",
@@ -54,6 +58,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "quintero",
+      distanceKm: 320,
       name: "Quintero",
       provincia: "Provincia de Valparaíso",
       zone: "ZONA NORTE",
@@ -65,6 +70,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "puchuncavi",
+      distanceKm: 310,
       name: "Puchuncaví",
       provincia: "Provincia de Valparaíso",
       zone: "ZONA NORTE",
@@ -76,6 +82,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "quilpue",
+      distanceKm: 250,
       name: "Quilpué",
       provincia: "Provincia de Marga Marga",
       zone: "ZONA CENTRO",
@@ -87,6 +94,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "villa-alemana",
+      distanceKm: 260,
       name: "Villa Alemana",
       provincia: "Provincia de Marga Marga",
       zone: "ZONA CENTRO",
@@ -98,6 +106,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "limache",
+      distanceKm: 230,
       name: "Limache",
       provincia: "Provincia de Marga Marga",
       zone: "ZONA CENTRO",
@@ -109,6 +118,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "olmue",
+      distanceKm: 230,
       name: "Olmué",
       provincia: "Provincia de Marga Marga",
       zone: "ZONA CENTRO",
@@ -120,6 +130,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "quillota",
+      distanceKm: 180,
       name: "Quillota",
       provincia: "Provincia de Quillota",
       zone: "ZONA NORTE",
@@ -131,6 +142,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "la-calera",
+      distanceKm: 210,
       name: "La Calera",
       provincia: "Provincia de Quillota",
       zone: "ZONA NORTE",
@@ -142,6 +154,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "la-cruz",
+      distanceKm: 200,
       name: "La Cruz",
       provincia: "Provincia de Quillota",
       zone: "ZONA NORTE",
@@ -153,6 +166,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "hijuelas",
+      distanceKm: 230,
       name: "Hijuelas",
       provincia: "Provincia de Quillota",
       zone: "ZONA NORTE",
@@ -164,6 +178,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "nogales",
+      distanceKm: 220,
       name: "Nogales",
       provincia: "Provincia de Quillota",
       zone: "ZONA NORTE",
@@ -175,6 +190,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "la-ligua",
+      distanceKm: 340,
       name: "La Ligua",
       provincia: "Provincia de Petorca",
       zone: "ZONA NORTE",
@@ -186,6 +202,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "cabildo",
+      distanceKm: 390,
       name: "Cabildo",
       provincia: "Provincia de Petorca",
       zone: "ZONA ESTE",
@@ -197,6 +214,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "petorca",
+      distanceKm: 430,
       name: "Petorca",
       provincia: "Provincia de Petorca",
       zone: "ZONA ESTE",
@@ -208,6 +226,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "papudo",
+      distanceKm: 370,
       name: "Papudo",
       provincia: "Provincia de Petorca",
       zone: "ZONA NORTE",
@@ -219,6 +238,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "zapallar",
+      distanceKm: 360,
       name: "Zapallar",
       provincia: "Provincia de Petorca",
       zone: "ZONA NORTE",
@@ -230,6 +250,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "san-antonio",
+      distanceKm: 260,
       name: "San Antonio",
       provincia: "Provincia de San Antonio",
       zone: "ZONA COSTA",
@@ -241,6 +262,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "algarrobo",
+      distanceKm: 270,
       name: "Algarrobo",
       provincia: "Provincia de San Antonio",
       zone: "ZONA COSTA",
@@ -252,6 +274,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "cartagena",
+      distanceKm: 280,
       name: "Cartagena",
       provincia: "Provincia de San Antonio",
       zone: "ZONA COSTA",
@@ -263,6 +286,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "el-quisco",
+      distanceKm: 280,
       name: "El Quisco",
       provincia: "Provincia de San Antonio",
       zone: "ZONA COSTA",
@@ -274,6 +298,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "el-tabo",
+      distanceKm: 290,
       name: "El Tabo",
       provincia: "Provincia de San Antonio",
       zone: "ZONA COSTA",
@@ -285,6 +310,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "santo-domingo",
+      distanceKm: 280,
       name: "Santo Domingo",
       provincia: "Provincia de San Antonio",
       zone: "ZONA COSTA",
@@ -296,6 +322,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "san-felipe",
+      distanceKm: 210,
       name: "San Felipe",
       provincia: "Provincia de San Felipe de Aconcagua",
       zone: "ZONA ESTE",
@@ -307,6 +334,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "catemu",
+      distanceKm: 190,
       name: "Catemu",
       provincia: "Provincia de San Felipe de Aconcagua",
       zone: "ZONA ESTE",
@@ -329,6 +357,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "panquehue",
+      distanceKm: 200,
       name: "Panquehue",
       provincia: "Provincia de San Felipe de Aconcagua",
       zone: "ZONA ESTE",
@@ -340,6 +369,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "putaendo",
+      distanceKm: 240,
       name: "Putaendo",
       provincia: "Provincia de San Felipe de Aconcagua",
       zone: "ZONA ESTE",
@@ -351,6 +381,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "santa-maria",
+      distanceKm: 220,
       name: "Santa María",
       provincia: "Provincia de San Felipe de Aconcagua",
       zone: "ZONA ESTE",
@@ -362,6 +393,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "los-andes",
+      distanceKm: 150,
       name: "Los Andes",
       provincia: "Provincia de Los Andes",
       zone: "ZONA ESTE",
@@ -373,6 +405,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "calle-larga",
+      distanceKm: 160,
       name: "Calle Larga",
       provincia: "Provincia de Los Andes",
       zone: "ZONA ESTE",
@@ -384,6 +417,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "rinconada",
+      distanceKm: 170,
       name: "Rinconada",
       provincia: "Provincia de Los Andes",
       zone: "ZONA ESTE",
@@ -395,6 +429,7 @@ export const COVERAGE_DATA = {
     },
     {
       id: "san-esteban",
+      distanceKm: 160,
       name: "San Esteban",
       provincia: "Provincia de Los Andes",
       zone: "ZONA ESTE",

@@ -12,25 +12,14 @@ export const TARIFF_CONFIG = {
   },
 
   expressRates: {
-    ratePerKm: 1852
+    includedKm: 260,
+    ratePerExcessKm: 1852
   }
 };
 
 /**
- * Configuración de Kilometraje por Zona para Despacho Express / Dedicado.
- * Los kilómetros de cada zona están pendientes por definir por el usuario.
- * NO inventar ni hardcodear valores en el cálculo.
- */
-export const EXPRESS_ZONE_KILOMETERS = {
-  "ZONA NORTE": undefined,
-  "ZONA CENTRO": undefined,
-  "ZONA ESTE": undefined,
-  "ZONA COSTA": undefined
-};
-
-/**
- * Tabla oficial de vehículos de Despacho Express / Dedicado (ordenados por capacidad).
- * Los valores base consideran aproximadamente 260 km de recorrido como precio mínimo de referencia.
+ * Tabla oficial de vehículos (ordenados por capacidad).
+ * Los valores base incluyen hasta 260 km de recorrido (Lampa -> comuna -> Lampa).
  */
 export const EXPRESS_VEHICLES = [
   {
@@ -77,9 +66,6 @@ export const EXPRESS_VEHICLES = [
   }
 ];
 
-/**
- * Convierte cualquier medida a Metros según la unidad seleccionada.
- */
 export function convertToMeters(value, unit = 'cm') {
   const num = parseFloat(value);
   if (isNaN(num) || num <= 0) return 0;
@@ -102,21 +88,6 @@ export function convertToMeters(value, unit = 'cm') {
   return meters;
 }
 
-/**
- * Calcula el valor comercial estimado para Carga Fraccionada o Despacho Express.
- * 
- * @param {Object} input
- * @param {string} input.mode - "fraccionada" | "express"
- * @param {string} input.origin - Siempre "Santiago"
- * @param {string} input.destination - ID de comuna destino
- * @param {string} [input.zoneName] - Zona de la comuna ("ZONA NORTE", "ZONA CENTRO", etc.)
- * @param {number} input.pallets - Cantidad de pallets
- * @param {number} input.weightKg - Peso total real en kg
- * @param {number} input.length - Largo unitario por pallet
- * @param {number} input.width - Ancho unitario por pallet
- * @param {number} input.height - Alto unitario por pallet
- * @param {string} input.unit - Unidad ('m', 'cm', 'in')
- */
 export function calculateQuote(input) {
   const mode = (input.mode || "fraccionada").toLowerCase();
   const pallets = parseInt(input.pallets, 10);
@@ -147,7 +118,7 @@ export function calculateQuote(input) {
       pallets,
       totalWeightKg,
       totalVolumeM3,
-      zoneName: input.zoneName
+      distanceKm: input.distanceKm
     });
   } else {
     return calculateFractionalQuote({
@@ -159,26 +130,79 @@ export function calculateQuote(input) {
 }
 
 /**
- * Lógica para Modalidad 1: Carga Fraccionada
- * (100% INDEPENDIENTE: NO utiliza kilómetros ni tarifas por zona)
+ * Lógica para Carga Fraccionada:
+ * Evaluará si la carga llena vehículos completos + sobrante fraccionado.
  */
 function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3 }) {
-  // Regla de Peso Mínimo Facturable: 900 kg por pallet
-  const pesoMinimoFacturable = pallets * TARIFF_CONFIG.fractionalRates.minWeightPerPalletKg;
-  const pesoFacturable = Math.max(totalWeightKg, pesoMinimoFacturable);
+  const options = [];
 
-  // Regla de Volumen Mínimo Facturable: 1,44 m3 por pallet
-  const volumenMinimoFacturable = pallets * TARIFF_CONFIG.fractionalRates.minVolumePerPalletM3;
-  const volumenFacturable = Math.max(totalVolumeM3, volumenMinimoFacturable);
+  // Opción 1: Carga 100% Fraccionada (Sin vehículos completos)
+  const pureFrac = calculateSobranteFraccionado(pallets, totalWeightKg, totalVolumeM3);
+  options.push({
+    fullVehicles: [],
+    sobrante: pureFrac,
+    totalPriceNet: pureFrac.valorFraccionado,
+    type: "pura_fraccionada"
+  });
 
-  // Comparación Peso vs Volumen (Se cobra únicamente el MÁXIMO entre ambos)
-  const valorPeso = pesoFacturable * TARIFF_CONFIG.fractionalRates.ratePerKg;
-  const valorVolumen = volumenFacturable * TARIFF_CONFIG.fractionalRates.ratePerM3;
+  // Opción 2: 1 Vehículo Completo único que contiene TODA la carga (si cabe)
+  for (const v of EXPRESS_VEHICLES) {
+    if (totalWeightKg <= v.maxWeightKg && totalVolumeM3 <= v.maxVolumeM3) {
+      if (totalWeightKg >= v.maxWeightKg * 0.70 || totalVolumeM3 >= v.maxVolumeM3 * 0.70) {
+        options.push({
+          fullVehicles: [v],
+          sobrante: null,
+          totalPriceNet: v.basePrice,
+          type: "vehiculo_unico"
+        });
+      }
+    }
+  }
 
-  const estimatedPriceNet = Math.max(valorPeso, valorVolumen);
-  const chargedBy = valorPeso >= valorVolumen ? "peso" : "volumen";
+  // Opción 3: Vehículo(s) Completo(s) + Sobrante Fraccionado
+  for (const vehicle of EXPRESS_VEHICLES) {
+    const maxByWeight = Math.floor(totalWeightKg / vehicle.maxWeightKg);
+    const maxByVolume = Math.floor(totalVolumeM3 / vehicle.maxVolumeM3);
+    const maxVehicles = Math.min(maxByWeight, maxByVolume);
 
-  const finalNetCLP = Math.round(estimatedPriceNet / 1000) * 1000;
+    for (let numVeh = 1; numVeh <= maxVehicles; numVeh++) {
+      const usedWeight = numVeh * vehicle.maxWeightKg;
+      const usedVolume = numVeh * vehicle.maxVolumeM3;
+      
+      const palletsPerVehicle = Math.max(1, Math.floor(vehicle.maxVolumeM3 / 1.44));
+      const usedPallets = Math.min(pallets, numVeh * palletsPerVehicle);
+
+      const remWeight = Math.max(0, totalWeightKg - usedWeight);
+      const remVolume = Math.max(0, totalVolumeM3 - usedVolume);
+      const remPallets = Math.max(0, pallets - usedPallets);
+
+      let sobranteResult = null;
+      let sobrantePrice = 0;
+
+      if (remWeight > 0 || remVolume > 0 || remPallets > 0) {
+        const effectiveRemPallets = remPallets > 0 ? remPallets : Math.max(1, Math.ceil(remVolume / 1.44));
+        sobranteResult = calculateSobranteFraccionado(effectiveRemPallets, remWeight, remVolume);
+        sobrantePrice = sobranteResult.valorFraccionado;
+      }
+
+      const fullVehiclesList = Array(numVeh).fill(vehicle);
+      const fullVehiclesCost = numVeh * vehicle.basePrice;
+      const totalPrice = fullVehiclesCost + sobrantePrice;
+
+      options.push({
+        fullVehicles: fullVehiclesList,
+        sobrante: sobranteResult,
+        totalPriceNet: totalPrice,
+        type: "mixto"
+      });
+    }
+  }
+
+  // Elegir la opción comercial de menor costo para el cliente
+  options.sort((a, b) => a.totalPriceNet - b.totalPriceNet);
+  const bestOption = options[0];
+
+  const finalNetCLP = Math.round(bestOption.totalPriceNet / 1000) * 1000;
   const finalIvaCLP = Math.round(finalNetCLP * TARIFF_CONFIG.ivaRate);
   const finalTotalCLP = finalNetCLP + finalIvaCLP;
 
@@ -189,29 +213,56 @@ function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3 }) {
     pallets,
     realWeightKg: totalWeightKg,
     realVolumeM3: totalVolumeM3.toFixed(2),
-    billableWeightKg: pesoFacturable,
-    billableVolumeM3: volumenFacturable.toFixed(2),
-    priceByWeight: valorPeso,
-    priceByVolume: valorVolumen,
-    chargedBy,
+    fullVehicles: bestOption.fullVehicles,
+    sobrante: bestOption.sobrante,
+    optionType: bestOption.type,
     estimatedPriceNet: finalNetCLP,
     estimatedIva: finalIvaCLP,
     estimatedTotal: finalTotalCLP,
     currency: TARIFF_CONFIG.currency,
     formattedNet: formatCLP(finalNetCLP),
     formattedIva: formatCLP(finalIvaCLP),
-    formattedTotal: formatCLP(finalTotalCLP),
-    formattedPriceByWeight: formatCLP(Math.round(valorPeso)),
-    formattedPriceByVolume: formatCLP(Math.round(valorVolumen))
+    formattedTotal: formatCLP(finalTotalCLP)
   };
 }
 
 /**
- * Lógica para Modalidad 2: Despacho Express / Dedicado
- * (Obtiene kilómetros por ZONA de cobertura a $1.852/km vs Valor Base del Vehículo)
+ * Calcula el valor de una carga fraccionada sobrante aplicando los mínimos de 900 kg y 1,44 m3 por pallet.
  */
-function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, zoneName }) {
-  // Exceso de capacidad máxima disponible en la flota (15.000 kg o 28,03 m3)
+function calculateSobranteFraccionado(pallets, weightKg, volumeM3) {
+  const pMin = pallets * TARIFF_CONFIG.fractionalRates.minWeightPerPalletKg;
+  const pFact = Math.max(weightKg, pMin);
+
+  const vMin = pallets * TARIFF_CONFIG.fractionalRates.minVolumePerPalletM3;
+  const vFact = Math.max(volumeM3, vMin);
+
+  const valorPeso = pFact * TARIFF_CONFIG.fractionalRates.ratePerKg;
+  const valorVolumen = vFact * TARIFF_CONFIG.fractionalRates.ratePerM3;
+
+  const valorFraccionado = Math.max(valorPeso, valorVolumen);
+  const chargedBy = valorPeso >= valorVolumen ? "peso" : "volumen";
+
+  return {
+    pallets,
+    realWeightKg: weightKg,
+    realVolumeM3: volumeM3.toFixed(2),
+    billableWeightKg: pFact,
+    billableVolumeM3: vFact.toFixed(2),
+    valorPeso,
+    valorVolumen,
+    valorFraccionado,
+    chargedBy,
+    formattedValorPeso: formatCLP(Math.round(valorPeso)),
+    formattedValorVolumen: formatCLP(Math.round(valorVolumen)),
+    formattedValorFraccionado: formatCLP(Math.round(valorFraccionado))
+  };
+}
+
+/**
+ * Lógica para Despacho Express / Dedicado:
+ * Selecciona 1 solo vehículo completo + aplica 260 km base e incrementos por km excedente @ $1.852/km.
+ */
+function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, distanceKm }) {
   if (totalWeightKg > 15000 || totalVolumeM3 > 28.03) {
     return {
       success: false,
@@ -220,7 +271,6 @@ function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, zoneName
     };
   }
 
-  // Seleccionar el vehículo más pequeño que satisfaga peso Y volumen simultáneamente
   const assignedVehicle = EXPRESS_VEHICLES.find(v => totalWeightKg <= v.maxWeightKg && totalVolumeM3 <= v.maxVolumeM3);
 
   if (!assignedVehicle) {
@@ -231,18 +281,16 @@ function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, zoneName
     };
   }
 
-  // Obtener kilómetros configurados para la ZONA de la comuna
-  const zoneKey = (zoneName || "").toUpperCase();
-  const kmZonaRaw = EXPRESS_ZONE_KILOMETERS[zoneKey];
-  const hasKmZona = typeof kmZonaRaw === 'number' && !isNaN(kmZonaRaw) && kmZonaRaw > 0;
-  const kmZona = hasKmZona ? kmZonaRaw : 0;
+  const hasDistance = typeof distanceKm === 'number' && !isNaN(distanceKm) && distanceKm > 0;
+  const totalDistanceKm = hasDistance ? distanceKm : 260;
+  const includedKm = TARIFF_CONFIG.expressRates.includedKm;
 
-  const costoPorDistancia = kmZona * TARIFF_CONFIG.expressRates.ratePerKm;
-  const valorBaseVehiculo = assignedVehicle.basePrice;
+  const excessKm = Math.max(0, totalDistanceKm - includedKm);
+  const excessDistanceCost = excessKm * TARIFF_CONFIG.expressRates.ratePerExcessKm;
+  const basePrice = assignedVehicle.basePrice;
 
-  // Fórmula Express: MAX(valorBaseVehiculo, kmZona * 1852)
-  const estimatedPriceNet = Math.max(valorBaseVehiculo, costoPorDistancia);
-  const chargedBy = (hasKmZona && costoPorDistancia > valorBaseVehiculo) ? "distancia" : "base";
+  // Fórmula Express: valorBase + Math.max(0, distanceKm - 260) * 1852
+  const estimatedPriceNet = basePrice + excessDistanceCost;
 
   const finalNetCLP = Math.round(estimatedPriceNet / 1000) * 1000;
   const finalIvaCLP = Math.round(finalNetCLP * TARIFF_CONFIG.ivaRate);
@@ -263,12 +311,11 @@ function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, zoneName
       basePrice: assignedVehicle.basePrice,
       formattedBasePrice: formatCLP(assignedVehicle.basePrice)
     },
-    zoneName: zoneName || "V Región",
-    distanceKm: kmZona,
-    hasDistance: hasKmZona,
-    costPerKm: TARIFF_CONFIG.expressRates.ratePerKm,
-    distanceCost: costoPorDistancia,
-    chargedBy,
+    distanceKm: totalDistanceKm,
+    hasDistance,
+    includedKm,
+    excessKm,
+    excessDistanceCost,
     estimatedPriceNet: finalNetCLP,
     estimatedIva: finalIvaCLP,
     estimatedTotal: finalTotalCLP,
@@ -276,13 +323,10 @@ function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, zoneName
     formattedNet: formatCLP(finalNetCLP),
     formattedIva: formatCLP(finalIvaCLP),
     formattedTotal: formatCLP(finalTotalCLP),
-    formattedDistanceCost: formatCLP(Math.round(costoPorDistancia))
+    formattedExcessCost: formatCLP(Math.round(excessDistanceCost))
   };
 }
 
-/**
- * Formatea un número como divisa CLP limpia ($70.000)
- */
 export function formatCLP(amount) {
   return new Intl.NumberFormat("es-CL", {
     style: "currency",
