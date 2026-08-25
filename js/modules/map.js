@@ -529,6 +529,12 @@ export function initInteractiveMap() {
             <text x="-40" y="4" class="santiago-pill-text">SANTIAGO <tspan class="santiago-sub">(ORIGEN)</tspan></text>
           </g>
         </svg>
+
+        <div class="map-zoom-controls" aria-label="Controles de zoom del mapa">
+          <button type="button" class="zoom-btn zoom-in" id="map-zoom-in" aria-label="Acercar mapa">+</button>
+          <button type="button" class="zoom-btn zoom-out" id="map-zoom-out" aria-label="Alejar mapa">−</button>
+          <button type="button" class="zoom-btn zoom-reset" id="map-zoom-reset" aria-label="Restablecer vista">↺</button>
+        </div>
       </div>
 
       <div class="sil-map-legend">
@@ -542,7 +548,70 @@ export function initInteractiveMap() {
   `;
 
   setupMapInteractions();
+  setupTouchPinchZoom();
   selectComuna('valparaiso', false);
+}
+
+function setupTouchPinchZoom() {
+  const wrapper = document.querySelector('.sil-svg-wrapper');
+  const svg = document.querySelector('.sil-coverage-svg');
+  if (!wrapper || !svg) return;
+
+  let currentScale = 1;
+  let startDist = 0;
+  let startScale = 1;
+  let isPinching = false;
+
+  function updateZoom(newScale) {
+    currentScale = Math.min(Math.max(1, newScale), 3);
+    svg.style.transform = `scale(${currentScale})`;
+    svg.style.transformOrigin = 'center center';
+    svg.style.transition = isPinching ? 'none' : 'transform 0.25s ease';
+  }
+
+  wrapper.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      isPinching = true;
+      startDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      startScale = currentScale;
+    }
+  }, { passive: true });
+
+  wrapper.addEventListener('touchmove', (e) => {
+    if (isPinching && e.touches.length === 2) {
+      const currentDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      if (startDist > 0) {
+        const factor = currentDist / startDist;
+        updateZoom(startScale * factor);
+      }
+    }
+  }, { passive: true });
+
+  wrapper.addEventListener('touchend', (e) => {
+    if (e.touches.length < 2) {
+      isPinching = false;
+    }
+  });
+
+  const zoomInBtn = document.getElementById('map-zoom-in');
+  const zoomOutBtn = document.getElementById('map-zoom-out');
+  const zoomResetBtn = document.getElementById('map-zoom-reset');
+
+  if (zoomInBtn) {
+    zoomInBtn.addEventListener('click', () => updateZoom(currentScale + 0.35));
+  }
+  if (zoomOutBtn) {
+    zoomOutBtn.addEventListener('click', () => updateZoom(currentScale - 0.35));
+  }
+  if (zoomResetBtn) {
+    zoomResetBtn.addEventListener('click', () => updateZoom(1));
+  }
 }
 
 function setupMapInteractions() {
