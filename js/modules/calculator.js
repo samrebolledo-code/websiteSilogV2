@@ -116,9 +116,9 @@ export function initCalculator() {
 }
 
 function updateDimensionLabels(unit) {
-  const labelLength = document.getElementById('label-length');
-  const labelWidth = document.getElementById('label-width');
-  const labelHeight = document.getElementById('label-height');
+  const labelLengthText = document.getElementById('label-length-text') || document.getElementById('label-length');
+  const labelWidthText = document.getElementById('label-width-text') || document.getElementById('label-width');
+  const labelHeightText = document.getElementById('label-height-text') || document.getElementById('label-height');
 
   const inputLength = document.getElementById('calc-length');
   const inputWidth = document.getElementById('calc-width');
@@ -135,9 +135,9 @@ function updateDimensionLabels(unit) {
     placeholderSample = '47.2';
   }
 
-  if (labelLength) labelLength.textContent = `Largo por pallet ${unitSuffix}:`;
-  if (labelWidth) labelWidth.textContent = `Ancho por pallet ${unitSuffix}:`;
-  if (labelHeight) labelHeight.textContent = `Alto por pallet ${unitSuffix}:`;
+  if (labelLengthText) labelLengthText.textContent = `Largo por pallet ${unitSuffix}:`;
+  if (labelWidthText) labelWidthText.textContent = `Ancho por pallet ${unitSuffix}:`;
+  if (labelHeightText) labelHeightText.textContent = `Alto por pallet ${unitSuffix}:`;
 
   if (inputLength) inputLength.placeholder = placeholderSample;
   if (inputWidth) inputWidth.placeholder = placeholderSample;
