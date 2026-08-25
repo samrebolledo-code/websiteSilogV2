@@ -485,6 +485,12 @@ export function initInteractiveMap() {
 
   mapContainer.innerHTML = `
     <div class="sil-svg-map-card">
+      <div class="map-zoom-controls" aria-label="Controles de zoom del mapa">
+        <button type="button" class="zoom-btn zoom-in" id="map-zoom-in" aria-label="Acercar mapa">+</button>
+        <button type="button" class="zoom-btn zoom-out" id="map-zoom-out" aria-label="Alejar mapa">−</button>
+        <button type="button" class="zoom-btn zoom-reset" id="map-zoom-reset" aria-label="Restablecer vista">↺</button>
+      </div>
+
       <div class="sil-svg-wrapper">
         <svg class="sil-coverage-svg" viewBox="0 0 860 560" role="img" aria-label="Mapa de cobertura de Transportes SIL en la Región de Valparaíso">
           <text x="25" y="160" class="ocean-text">OCÉANO PACÍFICO</text>
@@ -529,12 +535,6 @@ export function initInteractiveMap() {
             <text x="-40" y="4" class="santiago-pill-text">SANTIAGO <tspan class="santiago-sub">(ORIGEN)</tspan></text>
           </g>
         </svg>
-
-        <div class="map-zoom-controls" aria-label="Controles de zoom del mapa">
-          <button type="button" class="zoom-btn zoom-in" id="map-zoom-in" aria-label="Acercar mapa">+</button>
-          <button type="button" class="zoom-btn zoom-out" id="map-zoom-out" aria-label="Alejar mapa">−</button>
-          <button type="button" class="zoom-btn zoom-reset" id="map-zoom-reset" aria-label="Restablecer vista">↺</button>
-        </div>
       </div>
 
       <div class="sil-map-legend">
