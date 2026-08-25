@@ -542,7 +542,6 @@ export function initInteractiveMap() {
         <div class="legend-item"><span class="legend-dot centro"></span> ZONA CENTRO</div>
         <div class="legend-item"><span class="legend-dot este"></span> ZONA ESTE</div>
         <div class="legend-item"><span class="legend-dot costa"></span> ZONA COSTA</div>
-        <div class="legend-item"><span class="legend-dot neutral"></span> OTRAS COMUNAS</div>
       </div>
     </div>
   `;
