@@ -1,10 +1,10 @@
 // Inicializa los módulos y la navegación principal de la aplicación.
 
-import { initCalculator } from './modules/calculator.js';
-import { initInteractiveMap } from './modules/map.js';
-import { initContactForm } from './modules/contactForm.js';
-import { initInstagramSection } from './modules/instagram.js';
-import { initWhatsAppChatbot } from './modules/whatsapp.js';
+import { initCalculator } from './modules/calculator.js?v=3200';
+import { initInteractiveMap } from './modules/map.js?v=3200';
+import { initContactForm } from './modules/contactForm.js?v=3200';
+import { initInstagramSection } from './modules/instagram.js?v=3200';
+import { initWhatsAppChatbot } from './modules/whatsapp.js?v=3200';
 
 function startApp() {
   initCalculator();
