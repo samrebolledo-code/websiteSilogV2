@@ -36,9 +36,9 @@
   <!-- Fuentes y Hojas de Estilo -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/main.css?v=3200" />
-  <link rel="stylesheet" href="css/components.css?v=3200" />
-  <link rel="stylesheet" href="css/utilities.css?v=3200" />
+  <link rel="stylesheet" href="css/main.css?v=3300" />
+  <link rel="stylesheet" href="css/components.css?v=3300" />
+  <link rel="stylesheet" href="css/utilities.css?v=3300" />
 
   <style>
     html, body {
@@ -62,6 +62,7 @@
       <nav>
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
           <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
           <li><a href="#como-funciona" class="nav-link">Cómo Funciona</a></li>
           <li><a href="#cobertura" class="nav-link">Cobertura</a></li>
@@ -104,102 +105,84 @@
 
     <div class="container hero-content">
       <div class="hero-badge-pill animate-fade-in">
-        <span>20 años de experiencia en transporte</span>
+        <span>20 años de experiencia logística</span>
       </div>
       <h1 class="hero-headline animate-fade-in">
-        Carga fraccionada todos los días hacia la V Región
+        Transporte, Carga Fraccionada, Express y Almacenamiento
       </h1>
       <p class="hero-claim-text animate-fade-in">
-        Especialistas en transporte de carga palletizada desde Santiago hacia Valparaíso, Viña del Mar, Quilpué, Concón y comunas de la V Región. Despachos diarios de lunes a viernes con flota propia.
+        Soluciones integrales de logística entre Santiago y la V Región: <strong>Carga Fraccionada</strong>, <strong>Despachos Express Dedicados</strong>, <strong>Almacenamiento de Carga</strong> y <strong>Fabricación de Parrillas y Estructuras de Transporte</strong>.
       </p>
       <div class="hero-ctas animate-fade-in">
         <a href="#cotizar" class="btn btn-primary">Cotiza tu envío →</a>
-        <a href="#cobertura" class="btn btn-secondary">Ver mapa de cobertura</a>
+        <a href="#servicios" class="btn btn-secondary">Ver nuestros servicios</a>
       </div>
     </div>
   </section>
 
-  <!-- Ventajas del servicio con Iconos SVG Lucide -->
-  <section class="section">
+  <!-- Servicios Integrales de Transportes SIL -->
+  <section id="servicios" class="section">
     <div class="container">
-      <div class="section-subtitle">Por qué elegirnos</div>
-      <h2 class="section-title">Confianza y respaldo para tu mercadería</h2>
+      <div class="section-subtitle">Nuestros Servicios</div>
+      <h2 class="section-title">Soluciones Logísticas a la Medida de tu Empresa</h2>
       <p class="section-description">
-        Ofrecemos un servicio enfocado en empresas y clientes que buscan puntualidad y trato directo.
+        Ofrecemos un catálogo integral de transporte, bodegaje y fabricación de estructuras para cubrir todas tus necesidades de carga.
       </p>
 
-      <div class="features-grid">
+      <div class="services-full-grid mt-8" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+        
+        <!-- 1. Carga Fraccionada -->
         <article class="feature-card">
           <div class="feature-header">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            <div class="feature-icon" style="background: rgba(37, 99, 235, 0.15); color: #3b82f6;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg>
             </div>
-            <h3 class="feature-title">20 Años de Experiencia</h3>
+            <h3 class="feature-title">🚚 Carga Fraccionada</h3>
           </div>
-          <p class="feature-desc">
-            Trayectoria en el transporte de carga entre Santiago y la V Región.
+          <p class="feature-desc mt-2">
+            Transporta desde 1 pallet sin necesidad de contratar un camión completo. Paga únicamente por el peso o volumen utilizado aprovechando nuestras salidas diarias.
           </p>
         </article>
 
+        <!-- 2. Despachos Express -->
         <article class="feature-card">
           <div class="feature-header">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+            <div class="feature-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
-            <h3 class="feature-title">Despachos Diarios</h3>
+            <h3 class="feature-title">⚡ Despachos Express / Dedicados</h3>
           </div>
-          <p class="feature-desc">
-            Salidas de lunes a viernes para mantener la continuidad de tus entregas.
+          <p class="feature-desc mt-2">
+            Vehículo exclusivo asignado a tu envío para entregas inmediatas y urgentes. Disponemos de furgones y camiones de 5 a 15 toneladas con viaje directo.
           </p>
         </article>
 
+        <!-- 3. Almacenamiento de Carga -->
         <article class="feature-card">
           <div class="feature-header">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8c0 3.613-3.801 7.275-5.418 8.706a1 1 0 0 1-1.344 0C9.62 15.275 5.82 11.613 5.82 8a6.18 6.18 0 0 1 12.36 0Z"/><circle cx="11.91" cy="8" r="2"/><path d="M9 19H3v-2l3-1"/><path d="M15 19h6v-2l-3-1"/></svg>
+            <div class="feature-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
             </div>
-            <h3 class="feature-title">Amplia Cobertura</h3>
+            <h3 class="feature-title">📦 Almacenamiento de Carga</h3>
           </div>
-          <p class="feature-desc">
-            Atención en las principales comunas industriales y comerciales de la V Región.
+          <p class="feature-desc mt-2">
+            Bodegaje, recepción, custodia segura y consolidación de productos en nuestras instalaciones para optimizar la cadena de distribución de tu empresa.
           </p>
         </article>
 
+        <!-- 4. Fabricación de Parrillas y Estructuras -->
         <article class="feature-card">
           <div class="feature-header">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            <div class="feature-icon" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
-            <h3 class="feature-title">Flota Propia</h3>
+            <h3 class="feature-title">🛠️ Fabricación de Parrillas</h3>
           </div>
-          <p class="feature-desc">
-            Operación respaldada por vehículos propios y personal capacitado.
+          <p class="feature-desc mt-2">
+            Diseño y fabricación a medida de parrillas metálicas, estructuras de sujeción y soportes especiales para asegurar el transporte de tu mercadería.
           </p>
         </article>
 
-        <article class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h3a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5Z"/><path d="M17 14h3a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-5Z"/><path d="M3 14v-3a9 9 0 0 1 18 0v3"/></svg>
-            </div>
-            <h3 class="feature-title">Atención Personalizada</h3>
-          </div>
-          <p class="feature-desc">
-            Contacto directo para resolver cada necesidad de despacho.
-          </p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-header">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <h3 class="feature-title">Cumplimiento Riguroso</h3>
-          </div>
-          <p class="feature-desc">
-            Cumplimiento de los tiempos y condiciones acordadas con cada cliente.
-          </p>
-        </article>
       </div>
     </div>
   </section>
@@ -210,9 +193,9 @@
       <div class="nosotros-layout">
         <div class="nosotros-text-content">
           <div class="section-subtitle" style="text-align: left;">Sobre Nosotros</div>
-          <h2 class="section-title" style="text-align: left;">20 años uniendo Santiago y la V Región</h2>
+          <h2 class="section-title" style="text-align: left;">20 años respaldando la logística de tus cargas</h2>
           <p class="mt-4" style="color: var(--text-soft);">
-            En <strong>Transportes SIL</strong> nos especializamos en el transporte terrestre de carga palletizada. Llevamos dos décadas trabajando en el traslado de mercadería entre Santiago y la Región de Valparaíso.
+            En <strong>Transportes SIL</strong> entregamos soluciones logísticas integrales para empresas y particulares. Llevamos dos décadas uniendo Santiago y la V Región a través de <strong>Carga Fraccionada</strong>, <strong>Despachos Express Dedicados</strong>, <strong>Almacenamiento de Carga</strong> y <strong>Fabricación de Parrillas y Estructuras Metálicas de Transporte</strong>.
           </p>
 
           <div class="fraccionada-box">
