@@ -1830,8 +1830,9 @@ html[data-theme="light"] .theme-switch-thumb {
 /* ==========================================================================
    MAPA AMPLIADO 3X Y POPUP MODAL COMPACTO EN TABLET Y MÓVIL
    ========================================================================== */
-.map-popup-close-btn {
-  display: none;
+.map-popup-close-btn,
+.map-zoom-controls {
+  display: none !important;
 }
 
 @media (max-width: 992px) {
@@ -1860,12 +1861,12 @@ html[data-theme="light"] .theme-switch-thumb {
     position: relative;
   }
 
-  /* Controles Flotantes de Zoom (Barra horizontal compacta en la esquina superior de la tarjeta) */
+  /* Controles Flotantes de Zoom (Sólo en Celulares y Tablets) */
   .map-zoom-controls {
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    display: flex;
+    display: flex !important;
     flex-direction: row;
     gap: 0.3rem;
     z-index: 50;
