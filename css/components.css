@@ -790,7 +790,7 @@ html[data-theme="light"] .coverage-comuna.zone-neutral {
 /* Etiquetas SVG sobre el Mapa */
 .map-svg-label {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.58rem;
+  font-size: 0.48rem !important;
   font-weight: 700;
   fill: #ffffff;
   text-anchor: middle;
@@ -798,7 +798,7 @@ html[data-theme="light"] .coverage-comuna.zone-neutral {
   pointer-events: none;
   paint-order: stroke fill;
   stroke: rgba(6, 11, 24, 0.95);
-  stroke-width: 3.5px;
+  stroke-width: 2.8px;
   stroke-linejoin: round;
   letter-spacing: -0.2px;
 }
@@ -806,7 +806,7 @@ html[data-theme="light"] .coverage-comuna.zone-neutral {
 html[data-theme="light"] .map-svg-label {
   fill: #0f172a;
   stroke: rgba(255, 255, 255, 0.95);
-  stroke-width: 3.5px;
+  stroke-width: 2.8px;
   stroke-linejoin: round;
 }
 
