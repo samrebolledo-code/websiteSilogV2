@@ -490,18 +490,23 @@ export function initInteractiveMap() {
           <text x="25" y="160" class="ocean-text">OCÉANO PACÍFICO</text>
 
           <g class="mainland-group">
-            ${MAP_COMUNAS_DATA.map(c => `
-              <path 
-                id="path-${c.id}"
-                class="coverage-comuna ${c.colorClass} ${c.id === selectedComunaId ? 'selected' : ''}" 
-                data-comuna-id="${c.id}" 
-                data-comuna="${c.id}"
-                data-name="${c.name}"
-                d="${c.path}" 
-              >
-                <title>${c.name} (${c.zone})</title>
-              </path>
-            `).join('')}
+            ${MAP_COMUNAS_DATA.map(c => {
+              const info = getComunaInfo(c.id);
+              const colorClass = info ? info.colorClass : c.colorClass;
+              const zone = info ? info.zone : c.zone;
+              return `
+                <path 
+                  id="path-${c.id}"
+                  class="coverage-comuna ${colorClass} ${c.id === selectedComunaId ? 'selected' : ''}" 
+                  data-comuna-id="${c.id}" 
+                  data-comuna="${c.id}"
+                  data-name="${c.name}"
+                  d="${c.path}" 
+                >
+                  <title>${c.name} (${zone})</title>
+                </path>
+              `;
+            }).join('')}
           </g>
 
           <g class="labels-group">
