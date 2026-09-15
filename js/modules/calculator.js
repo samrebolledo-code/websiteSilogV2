@@ -176,7 +176,7 @@ function displayResult(result) {
         const distLabel = `${result.distanceKm || 260} km (Recorrido iday vuelta)`;
         const excessKmLabel = result.excessKm > 0 ? `${result.excessKm} km` : '0 km (Dentro de los 260 km incluidos)';
         const excessCostLabel = result.excessKm > 0
-          ? `+ $${Math.round(result.excessDistanceCost).toLocaleString('es-CL')} CLP (${result.excessKm} km × $1.852/km)`
+          ? `+ $${Math.round(result.excessDistanceCost).toLocaleString('es-CL')} CLP (${result.excessKm} km × $1.000/km)`
           : '$0 CLP (Incluido en valor base)';
 
         fullVehiclesGridItemsHtml = `
@@ -268,7 +268,7 @@ function displayResult(result) {
       const veh = result.assignedVehicle;
       const distLabel = `${result.distanceKm} km (Recorrido iday vuelta)`;
       const excessKmLabel = result.excessKm > 0 ? `${result.excessKm} km` : '0 km (Dentro de los 260 km incluidos)';
-      const excessCostLabel = result.excessKm > 0 ? `+ ${result.formattedExcessCost} CLP (${result.excessKm} km × $1.852/km)` : '$0 CLP (Incluido en valor base)';
+      const excessCostLabel = result.excessKm > 0 ? `+ ${result.formattedExcessCost} CLP (${result.excessKm} km × $1.000/km)` : '$0 CLP (Incluido en valor base)';
 
       breakdownEl.innerHTML = `
         <div class="breakdown-grid">

@@ -13,7 +13,7 @@ export const TARIFF_CONFIG = {
 
   expressRates: {
     includedKm: 260,
-    ratePerExcessKm: 1852
+    ratePerExcessKm: 1000
   }
 };
 
@@ -309,7 +309,7 @@ function calculateSobranteFraccionado(pallets, weightKg, volumeM3) {
 
 /**
  * Lógica para Despacho Express / Dedicado:
- * Selecciona 1 solo vehículo completo + aplica 260 km base e incrementos por km excedente @ $1.852/km.
+ * Selecciona 1 solo vehículo completo + aplica 260 km base e incrementos por km excedente @ $1.000/km.
  */
 function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, distanceKm }) {
   if (totalWeightKg > 15000 || totalVolumeM3 > 28.03 || pallets > 14) {
@@ -340,7 +340,7 @@ function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, distance
   const excessDistanceCost = excessKm * TARIFF_CONFIG.expressRates.ratePerExcessKm;
   const basePrice = assignedVehicle.basePrice;
 
-  // Fórmula Express: valorBase + Math.max(0, distanceKm - 260) * 1852
+  // Fórmula Express: valorBase + Math.max(0, distanceKm - 260) * 1000
   const estimatedPriceNet = basePrice + excessDistanceCost;
 
   const finalNetCLP = Math.round(estimatedPriceNet / 1000) * 1000;
