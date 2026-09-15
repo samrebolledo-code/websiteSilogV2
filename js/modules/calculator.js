@@ -1,7 +1,7 @@
 // Lógica del cotizador de envíos y manejo de eventos.
 
-import { getEnabledComunas, getComunaInfo } from '../config/coverage.js?v=14000';
-import { calculateQuote } from '../config/tariffs.js?v=14000';
+import { getEnabledComunas, getComunaInfo } from '../config/coverage.js?v=99999';
+import { calculateQuote } from '../config/tariffs.js?v=99999';
 import { buildQuoteWhatsAppUrl, openWhatsApp } from './whatsapp.js';
 
 let currentQuoteResult = null;
