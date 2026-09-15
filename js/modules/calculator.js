@@ -25,7 +25,7 @@ export function initCalculator() {
   enabledComunas.forEach((comuna, idx) => {
     const opt = document.createElement('option');
     opt.value = comuna.id;
-    opt.textContent = `${comuna.name} (${comuna.days})`;
+    opt.textContent = comuna.name;
     if (comuna.id === 'valparaiso' || idx === 0) {
       opt.selected = true;
     }
