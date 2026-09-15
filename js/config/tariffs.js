@@ -175,10 +175,10 @@ function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3 }) {
     type: "pura_fraccionada"
   });
 
-  // Opción 2: 1 Vehículo Completo único que contiene TODA la carga (si cabe)
+  // Opción 2: 1 Vehículo Completo único que contiene TODA la carga (si cabe en peso, volumen y pallets)
   for (const v of EXPRESS_VEHICLES) {
-    if (totalWeightKg <= v.maxWeightKg && totalVolumeM3 <= v.maxVolumeM3) {
-      if (totalWeightKg >= v.maxWeightKg * 0.70 || totalVolumeM3 >= v.maxVolumeM3 * 0.70) {
+    if (totalWeightKg <= v.maxWeightKg && totalVolumeM3 <= v.maxVolumeM3 && pallets <= (v.maxPallets || 99)) {
+      if (totalWeightKg >= v.maxWeightKg * 0.70 || totalVolumeM3 >= v.maxVolumeM3 * 0.70 || pallets >= (v.maxPallets || 99) * 0.70) {
         options.push({
           fullVehicles: [v],
           sobrante: null,
@@ -293,7 +293,7 @@ function calculateSobranteFraccionado(pallets, weightKg, volumeM3) {
  * Selecciona 1 solo vehículo completo + aplica 260 km base e incrementos por km excedente @ $1.852/km.
  */
 function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, distanceKm }) {
-  if (totalWeightKg > 15000 || totalVolumeM3 > 28.03) {
+  if (totalWeightKg > 15000 || totalVolumeM3 > 28.03 || pallets > 14) {
     return {
       success: false,
       isOverCapacity: true,
@@ -301,7 +301,9 @@ function calculateExpressQuote({ pallets, totalWeightKg, totalVolumeM3, distance
     };
   }
 
-  const assignedVehicle = EXPRESS_VEHICLES.find(v => totalWeightKg <= v.maxWeightKg && totalVolumeM3 <= v.maxVolumeM3);
+  const assignedVehicle = EXPRESS_VEHICLES.find(
+    v => totalWeightKg <= v.maxWeightKg && totalVolumeM3 <= v.maxVolumeM3 && pallets <= (v.maxPallets || 99)
+  );
 
   if (!assignedVehicle) {
     return {
