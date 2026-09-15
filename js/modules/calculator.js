@@ -166,33 +166,35 @@ function displayResult(result) {
 
   if (breakdownEl) {
     if (result.mode === 'fraccionada') {
-      let fullVehiclesHtml = '';
+      let fullVehiclesGridItemsHtml = '';
       if (result.fullVehicles && result.fullVehicles.length > 0) {
-        const fullVehiclesListText = result.fullVehicles.map(v => {
-          const baseFormatted = `$${v.basePrice.toLocaleString('es-CL')}`;
-          if (result.excessKm > 0) {
-            const vehTotalNet = v.basePrice + result.excessDistanceCost;
-            return `${v.label} (${baseFormatted} base + ${result.formattedExcessDistanceCost} km adic. = $${Math.round(vehTotalNet).toLocaleString('es-CL')} CLP)`;
-          } else {
-            return `${v.label} (${baseFormatted} CLP base)`;
-          }
-        }).join(', ');
+        const veh = result.fullVehicles[0];
+        const numVeh = result.fullVehicles.length;
+        const vehLabelText = numVeh > 1 ? `${numVeh}x ${veh.label}` : veh.label;
+        const totalBaseCost = result.fullVehicles.reduce((sum, v) => sum + v.basePrice, 0);
 
-        const excessKmInfo = result.excessKm > 0
-          ? `<span class="breakdown-label mt-2">Km Excedentes Destino (>260 km):</span>
-             <span class="breakdown-value">${result.excessKm} km ➔ +${result.formattedExcessDistanceCost} CLP ($1.852/km)</span>`
-          : `<span class="breakdown-label mt-2">Distancia Comercial Destino:</span>
-             <span class="breakdown-value">${result.distanceKm || 260} km (Incluido en tarifa base)</span>`;
+        const distLabel = `${result.distanceKm || 260} km (Recorrido iday vuelta)`;
+        const excessKmLabel = result.excessKm > 0 ? `${result.excessKm} km` : '0 km (Dentro de los 260 km incluidos)';
+        const excessCostLabel = result.excessKm > 0
+          ? `+ $${Math.round(result.excessDistanceCost).toLocaleString('es-CL')} CLP (${result.excessKm} km × $1.852/km)`
+          : '$0 CLP (Incluido en valor base)';
 
-        fullVehiclesHtml = `
+        fullVehiclesGridItemsHtml = `
           <div class="breakdown-item">
-            <span class="breakdown-label">Vehículo(s) Completo(s) Sugerido(s):</span>
-            <span class="breakdown-value">${fullVehiclesListText}</span>
-            ${excessKmInfo}
+            <span class="breakdown-label">Vehículo Completo Recomendado:</span>
+            <span class="breakdown-value">${vehLabelText} (${veh.maxWeightKg.toLocaleString('es-CL')} kg / ${veh.maxVolumeM3} m³)</span>
+            <span class="breakdown-label mt-2">Valor Base (Incluye 260 km):</span>
+            <span class="breakdown-value">$${totalBaseCost.toLocaleString('es-CL')} CLP</span>
+          </div>
+          <div class="breakdown-item">
+            <span class="breakdown-label">Distancia Comercial Total:</span>
+            <span class="breakdown-value">${distLabel}</span>
+            <span class="breakdown-label mt-2">Km Excedentes (>260 km):</span>
+            <span class="breakdown-value">${excessKmLabel} ➔ ${excessCostLabel}</span>
           </div>
         `;
       } else {
-        fullVehiclesHtml = `
+        fullVehiclesGridItemsHtml = `
           <div class="breakdown-item">
             <span class="breakdown-label">Vehículo Completo:</span>
             <span class="breakdown-value">No aplica (Carga 100% fraccionada)</span>
@@ -207,18 +209,11 @@ function displayResult(result) {
         const tagText = s.chargedBy === 'peso' ? 'Cobro mayor del sobrante por PESO' : 'Cobro mayor del sobrante por VOLUMEN';
 
         sobranteHtml = `
-          <div class="breakdown-item">
+          <div class="breakdown-item" style="grid-column: 1 / -1;">
             <span class="breakdown-label">Carga Sobrante (${s.pallets} pallet/bulto):</span>
             <span class="breakdown-value">${s.realWeightKg} kg real (${s.billableWeightKg} kg fact.) / ${s.realVolumeM3} m³ real (${s.billableVolumeM3} m³ fact.)</span>
             <span class="breakdown-label mt-2">Valor del Sobrante Fraccionado:</span>
             <span class="breakdown-value">${s.formattedValorFraccionado} CLP</span>
-          </div>
-        `;
-      } else {
-        sobranteHtml = `
-          <div class="breakdown-item">
-            <span class="breakdown-label">Carga Sobrante:</span>
-            <span class="breakdown-value">Sin sobrante (100% en vehículo completo)</span>
           </div>
         `;
       }
@@ -226,9 +221,10 @@ function displayResult(result) {
       let recommendationNoticeHtml = '';
       if (result.fullVehicles && result.fullVehicles.length > 0) {
         const vehNames = result.fullVehicles.map(v => v.label).join(' + ');
+        const totalBaseCost = result.fullVehicles.reduce((sum, v) => sum + v.basePrice, 0);
         const excessDetailStr = result.excessKm > 0
-          ? ` ($${result.fullVehicles.map(v => `$${v.basePrice.toLocaleString('es-CL')}`).join('+')} base + ${result.formattedExcessDistanceCost} por ${result.excessKm} km excedentes)`
-          : ` ($${result.fullVehicles.map(v => `$${v.basePrice.toLocaleString('es-CL')}`).join('+')} base)`;
+          ? ` ($${totalBaseCost.toLocaleString('es-CL')} base + $${Math.round(result.excessDistanceCost).toLocaleString('es-CL')} por ${result.excessKm} km excedentes)`
+          : ` ($${totalBaseCost.toLocaleString('es-CL')} base)`;
 
         const savingsHtml = result.savingsNet > 0
           ? `<div style="margin-top: 0.6rem; padding: 0.45rem 0.75rem; background: #dcfce7; border: 1px solid #86efac; border-radius: 6px; display: inline-block; font-size: 0.85rem; font-weight: 700; color: #166534;">
@@ -259,7 +255,7 @@ function displayResult(result) {
 
       breakdownEl.innerHTML = `
         <div class="breakdown-grid">
-          ${fullVehiclesHtml}
+          ${fullVehiclesGridItemsHtml}
           ${sobranteHtml}
         </div>
         ${recommendationNoticeHtml}
