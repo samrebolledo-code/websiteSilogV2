@@ -240,9 +240,12 @@ function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3, dista
   options.sort((a, b) => a.totalPriceNet - b.totalPriceNet);
   const bestOption = options[0];
 
+  const pureFracNet = Math.round(pureFrac.valorFraccionado / 1000) * 1000;
   const finalNetCLP = Math.round(bestOption.totalPriceNet / 1000) * 1000;
   const finalIvaCLP = Math.round(finalNetCLP * TARIFF_CONFIG.ivaRate);
   const finalTotalCLP = finalNetCLP + finalIvaCLP;
+
+  const savingsNet = Math.max(0, pureFracNet - finalNetCLP);
 
   return {
     success: true,
@@ -254,6 +257,14 @@ function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3, dista
     fullVehicles: bestOption.fullVehicles,
     sobrante: bestOption.sobrante,
     optionType: bestOption.type,
+    pureFracNet,
+    formattedPureFracNet: formatCLP(pureFracNet),
+    distanceKm: totalDistanceKm,
+    excessKm,
+    excessDistanceCost,
+    formattedExcessDistanceCost: formatCLP(Math.round(excessDistanceCost)),
+    savingsNet,
+    formattedSavingsNet: formatCLP(savingsNet),
     estimatedPriceNet: finalNetCLP,
     estimatedIva: finalIvaCLP,
     estimatedTotal: finalTotalCLP,

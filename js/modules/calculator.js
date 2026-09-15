@@ -168,11 +168,27 @@ function displayResult(result) {
     if (result.mode === 'fraccionada') {
       let fullVehiclesHtml = '';
       if (result.fullVehicles && result.fullVehicles.length > 0) {
-        const fullVehiclesListText = result.fullVehicles.map(v => `${v.label} ($${v.basePrice.toLocaleString('es-CL')})`).join(', ');
+        const fullVehiclesListText = result.fullVehicles.map(v => {
+          const baseFormatted = `$${v.basePrice.toLocaleString('es-CL')}`;
+          if (result.excessKm > 0) {
+            const vehTotalNet = v.basePrice + result.excessDistanceCost;
+            return `${v.label} (${baseFormatted} base + ${result.formattedExcessDistanceCost} km adic. = $${Math.round(vehTotalNet).toLocaleString('es-CL')} CLP)`;
+          } else {
+            return `${v.label} (${baseFormatted} CLP base)`;
+          }
+        }).join(', ');
+
+        const excessKmInfo = result.excessKm > 0
+          ? `<span class="breakdown-label mt-2">Km Excedentes Destino (>260 km):</span>
+             <span class="breakdown-value">${result.excessKm} km ➔ +${result.formattedExcessDistanceCost} CLP ($1.852/km)</span>`
+          : `<span class="breakdown-label mt-2">Distancia Comercial Destino:</span>
+             <span class="breakdown-value">${result.distanceKm || 260} km (Incluido en tarifa base)</span>`;
+
         fullVehiclesHtml = `
           <div class="breakdown-item">
-            <span class="breakdown-label">Vehículo(s) Completo(s):</span>
+            <span class="breakdown-label">Vehículo(s) Completo(s) Sugerido(s):</span>
             <span class="breakdown-value">${fullVehiclesListText}</span>
+            ${excessKmInfo}
           </div>
         `;
       } else {
@@ -210,15 +226,31 @@ function displayResult(result) {
       let recommendationNoticeHtml = '';
       if (result.fullVehicles && result.fullVehicles.length > 0) {
         const vehNames = result.fullVehicles.map(v => v.label).join(' + ');
+        const excessDetailStr = result.excessKm > 0
+          ? ` ($${result.fullVehicles.map(v => `$${v.basePrice.toLocaleString('es-CL')}`).join('+')} base + ${result.formattedExcessDistanceCost} por ${result.excessKm} km excedentes)`
+          : ` ($${result.fullVehicles.map(v => `$${v.basePrice.toLocaleString('es-CL')}`).join('+')} base)`;
+
+        const savingsHtml = result.savingsNet > 0
+          ? `<div style="margin-top: 0.6rem; padding: 0.45rem 0.75rem; background: #dcfce7; border: 1px solid #86efac; border-radius: 6px; display: inline-block; font-size: 0.85rem; font-weight: 700; color: #166534;">
+              🎉 ¡Ahorras ${result.formattedSavingsNet} CLP al contratar Vehículo Completo en lugar de Carga Fraccionada pura!
+             </div>`
+          : '';
+
         recommendationNoticeHtml = `
-          <div class="recommendation-box" style="margin-top: 1rem; padding: 0.9rem 1.1rem; background: var(--clr-primary-light, #eff4fe); border: 1px solid #bfdbfe; border-left: 4px solid var(--clr-primary, #0756E8); border-radius: 8px; text-align: left;">
+          <div class="recommendation-box" style="margin-top: 1rem; padding: 1rem 1.15rem; background: var(--clr-primary-light, #eff4fe); border: 1px solid #bfdbfe; border-left: 4px solid var(--clr-primary, #0756E8); border-radius: 8px; text-align: left;">
             <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--clr-primary, #0756E8); flex-shrink: 0; margin-top: 2px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <div>
-                <h5 style="font-size: 0.9rem; font-weight: 700; color: #063B9E; margin: 0 0 0.25rem 0;">💡 Recomendación Conveniente: ${vehNames} Completo</h5>
-                <p style="font-size: 0.85rem; color: #334155; margin: 0; line-height: 1.45;">
-                  Dado el peso o volumen de tu carga (ocupa la mayor parte de la capacidad), se recomienda contratar <strong>${vehNames} completo</strong>. Cobrar por tarifa fraccionada individual superaría este valor. ¡Aprovechas la capacidad total del vehículo al costo más conveniente!
-                </p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--clr-primary, #0756E8); flex-shrink: 0; margin-top: 2px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div style="width: 100%;">
+                <h5 style="font-size: 0.95rem; font-weight: 700; color: #063B9E; margin: 0 0 0.4rem 0;">💡 Comparativa de Tarifas: Recomendación de Vehículo Completo</h5>
+                <div style="font-size: 0.85rem; color: #334155; line-height: 1.5;">
+                  <p style="margin: 0 0 0.35rem 0;">
+                    • <strong>Tarifa Fraccionada Pura (por pallet):</strong> <span style="text-decoration: line-through; color: #64748b;">${result.formattedPureFracNet} CLP</span>
+                  </p>
+                  <p style="margin: 0 0 0.35rem 0;">
+                    • <strong>Tarifa Vehículo Completo Recomendado:</strong> <strong style="color: #0756E8;">${result.formattedNet} CLP</strong>${excessDetailStr}
+                  </p>
+                </div>
+                ${savingsHtml}
               </div>
             </div>
           </div>
