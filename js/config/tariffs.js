@@ -26,42 +26,72 @@ export const EXPRESS_VEHICLES = [
     id: "furgon_chico",
     label: "Furgón chico",
     maxWeightKg: 650,
+    surfaceM2: 2.16,
     maxVolumeM3: 2.38,
+    lengthM: 1.60,
+    widthM: 1.20,
+    heightM: 1.10,
+    maxPallets: 1,
     basePrice: 203885
   },
   {
     id: "furgon_grande",
     label: "Furgón grande",
     maxWeightKg: 800,
+    surfaceM2: 3.13,
     maxVolumeM3: 3.75,
+    lengthM: 2.40,
+    widthM: 1.25,
+    heightM: 1.20,
+    maxPallets: 2,
     basePrice: 203885
   },
   {
     id: "camion_5t",
     label: "Camión 5 toneladas",
     maxWeightKg: 5000,
+    surfaceM2: 14.34,
     maxVolumeM3: 21.50,
+    lengthM: 6.10,
+    widthM: 2.35,
+    heightM: 1.50,
+    maxPallets: 10,
     basePrice: 266252
   },
   {
     id: "camion_8t",
     label: "Camión 8 toneladas",
     maxWeightKg: 8000,
+    surfaceM2: 15.28,
     maxVolumeM3: 22.91,
+    lengthM: 6.50,
+    widthM: 2.40,
+    heightM: 1.50,
+    maxPallets: 12,
     basePrice: 320350
   },
   {
     id: "camion_12t",
     label: "Camión 12 toneladas",
     maxWeightKg: 12000,
+    surfaceM2: 16.56,
     maxVolumeM3: 25.40,
+    lengthM: 6.90,
+    widthM: 2.40,
+    heightM: 1.55,
+    maxPallets: 13,
     basePrice: 355000
   },
   {
     id: "camion_15t",
     label: "Camión 15 toneladas",
     maxWeightKg: 15000,
+    surfaceM2: 17.52,
     maxVolumeM3: 28.03,
+    lengthM: 7.30,
+    widthM: 2.40,
+    heightM: 1.60,
+    maxPallets: 14,
     basePrice: 367780
   }
 ];
