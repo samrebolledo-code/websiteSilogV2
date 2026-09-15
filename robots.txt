@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samrebolledo-code.github.io/websiteSilogV2/sitemap.xml

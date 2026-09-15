@@ -207,14 +207,33 @@ function displayResult(result) {
         `;
       }
 
+      let recommendationNoticeHtml = '';
+      if (result.fullVehicles && result.fullVehicles.length > 0) {
+        const vehNames = result.fullVehicles.map(v => v.label).join(' + ');
+        recommendationNoticeHtml = `
+          <div class="recommendation-box" style="margin-top: 1rem; padding: 0.9rem 1.1rem; background: var(--clr-primary-light, #eff4fe); border: 1px solid #bfdbfe; border-left: 4px solid var(--clr-primary, #0756E8); border-radius: 8px; text-align: left;">
+            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--clr-primary, #0756E8); flex-shrink: 0; margin-top: 2px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div>
+                <h5 style="font-size: 0.9rem; font-weight: 700; color: #063B9E; margin: 0 0 0.25rem 0;">💡 Recomendación Conveniente: ${vehNames} Completo</h5>
+                <p style="font-size: 0.85rem; color: #334155; margin: 0; line-height: 1.45;">
+                  Dado el peso o volumen de tu carga (ocupa la mayor parte de la capacidad), se recomienda contratar <strong>${vehNames} completo</strong>. Cobrar por tarifa fraccionada individual superaría este valor. ¡Aprovechas la capacidad total del vehículo al costo más conveniente!
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
       breakdownEl.innerHTML = `
         <div class="breakdown-grid">
           ${fullVehiclesHtml}
           ${sobranteHtml}
         </div>
+        ${recommendationNoticeHtml}
         <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.15); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
           <span style="font-size: 0.85rem; color: var(--text-soft);">Neto: <strong>${result.formattedNet} CLP</strong> | IVA 19%: <strong>${result.formattedIva} CLP</strong></span>
-          <span style="font-size: 1rem; font-weight: 700; color: #38bdf8;">Total Final: ${result.formattedTotal} CLP</span>
+          <span style="font-size: 1rem; font-weight: 700; color: var(--clr-primary, #0756E8);">Total Final: ${result.formattedTotal} CLP</span>
         </div>
       `;
     } else if (result.mode === 'express') {

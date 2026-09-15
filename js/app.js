@@ -1,10 +1,10 @@
 // Inicializa los módulos y la navegación principal de la aplicación.
 
-import { initCalculator } from './modules/calculator.js?v=3200';
-import { initInteractiveMap } from './modules/map.js?v=3200';
-import { initContactForm } from './modules/contactForm.js?v=3200';
-import { initInstagramSection } from './modules/instagram.js?v=3200';
-import { initWhatsAppChatbot } from './modules/whatsapp.js?v=3200';
+import { initCalculator } from './modules/calculator.js?v=6000';
+import { initInteractiveMap } from './modules/map.js?v=6000';
+import { initContactForm } from './modules/contactForm.js?v=6000';
+import { initInstagramSection } from './modules/instagram.js?v=6000';
+import { initWhatsAppChatbot } from './modules/whatsapp.js?v=6000';
 
 function startApp() {
   initCalculator();
@@ -34,21 +34,69 @@ function startApp() {
     });
   }
 
-  // Menú de navegación en móviles
+  // Menú de navegación y Dropdown "Más"
   const navToggle = document.getElementById('mobile-menu-toggle');
   const navMenu = document.getElementById('nav-menu');
+  const dropdownToggle = document.getElementById('dropdown-toggle');
+  const navDropdown = document.getElementById('nav-dropdown');
+
+  if (dropdownToggle && navDropdown) {
+    dropdownToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const isOpen = navDropdown.classList.toggle('is-open');
+      dropdownToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navDropdown.contains(e.target)) {
+        navDropdown.classList.remove('is-open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navDropdown.classList.contains('is-open')) {
+        navDropdown.classList.remove('is-open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
   if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       const isExpanded = navMenu.classList.contains('active');
-      navToggle.setAttribute('aria-expanded', isExpanded);
+      navToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
     });
 
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', false);
+        if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+        if (navDropdown) {
+          navDropdown.classList.remove('is-open');
+          if (dropdownToggle) dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+
+  // Control del Botón Flotante "Volver Arriba" (Scroll to Top)
+  const scrollTopBtn = document.getElementById('scroll-top-btn');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
   }

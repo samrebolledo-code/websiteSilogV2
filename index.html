@@ -1,44 +1,102 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transportes SIL — Carga Fraccionada Palletizada Santiago a V Región</title>
   
   <!-- SEO & Open Graph Meta Tags -->
-  <meta name="description" content="Transportes SIL: Servicio de transporte de carga fraccionada palletizada desde Santiago hacia la V Región de Valparaíso. Salidas diarias de lunes a viernes con flota propia." />
-  <meta name="keywords" content="transportes sil, carga fraccionada, transporte pallets, santiago valparaiso, fletes v region, transporte de carga chile" />
-  <meta property="og:title" content="Transportes SIL — Carga Fraccionada Palletizada Santiago a V Región" />
-  <meta property="og:description" content="Calcula el valor estimado de tu envío palletizado. Salidas diarias de lunes a viernes con flota propia." />
+  <title>Transporte de Carga Fraccionada Santiago a Valparaíso | Transportes SIL</title>
+  <meta name="description" content="Envía pallets de Santiago a Valparaíso, Viña del Mar, Quilpué y Villa Alemana. Cotiza online en 30 segundos. Salidas diarias L-V, 20 años de experiencia. Flota propia." />
+  <meta name="keywords" content="transportes sil, carga fraccionada, transporte pallets, santiago valparaiso, fletes v region, transporte de carga chile, valparaiso, vina del mar, quilpue, villa alemana, concon" />
+  <meta property="og:title" content="Transporte de Carga Fraccionada Santiago a Valparaíso | Transportes SIL" />
+  <meta property="og:description" content="Envía pallets de Santiago a la V Región sin pagar un camión completo. Cotiza en 30 segundos y sabe el precio antes de llamar." />
   <meta property="og:image" content="assets/images/hero-truck.jpg" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://samrebolledo-code.github.io/websiteSilogV2/" />
 
-  <!-- JSON-LD Structured Data para SEO Local Google -->
+  <!-- JSON-LD Structured Data: MovingCompany (SEO Local Google) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "MovingCompany",
     "name": "Transportes SIL",
-    "description": "Servicio de transporte de carga fraccionada palletizada desde Santiago hacia la V Región de Valparaíso. Salidas diarias de lunes a viernes con flota propia.",
+    "description": "Transporte de carga fraccionada palletizada entre Santiago y la V Región de Valparaíso",
     "url": "https://samrebolledo-code.github.io/websiteSilogV2/",
     "telephone": "+56912345678",
+    "email": "contacto@transportessil.cl",
+    "priceRange": "$$",
+    "openingHours": "Mo-Fr",
     "areaServed": [
-      { "@type": "AdministrativeArea", "name": "Región de Valparaíso" },
-      { "@type": "City", "name": "Santiago" }
-    ],
-    "serviceType": "Transporte de Carga Fraccionada y Palletizada"
+      "Valparaíso",
+      "Viña del Mar",
+      "Quilpué",
+      "Villa Alemana",
+      "Concón",
+      "Santiago"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD Structured Data: FAQPage (Preguntas Frecuentes) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es la carga fraccionada palletizada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es un servicio que te permite enviar desde 1 pallet o bulto grande sin pagar un camión completo. Compartes espacio en la ruta diaria Santiago – V Región y pagas únicamente por el peso o volumen ocupado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto demora un envío de Santiago a Valparaíso?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El tiempo estándar para carga fraccionada es de 1 a 3 días hábiles desde que retiramos tus productos en Santiago. Para envíos dedicados Express, la entrega se realiza el mismo día o en la fecha acordada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta enviar un pallet a la V Región?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El valor depende del peso, volumen y comuna de destino. Puedes usar nuestra calculadora online en el sitio para obtener el valor estimado exacto en menos de 30 segundos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hacen despachos a Viña del Mar, Quilpué y Villa Alemana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Cubrimos las 36 comunas continentales de la Región de Valparaíso, incluyendo Valparaíso, Viña del Mar, Quilpué, Villa Alemana, Concón, Quillota, San Felipe y Los Andes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo cotizo mi envío?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solo debes ingresar la cantidad de pallets, peso aproximado y medidas en nuestra calculadora web. Obtendrás la cotización estimada al instante y podrás coordinar directamente por WhatsApp o formulario."
+        }
+      }
+    ]
   }
   </script>
 
   <!-- Prevención de parpadeo de tema -->
-  <script>(function(){try{var saved=localStorage.getItem('sil-theme');var preferred=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',saved==='light'||saved==='dark'?saved:preferred);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+  <script>(function(){try{var saved=localStorage.getItem('sil-theme');var preferred=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',saved==='light'||saved==='dark'?saved:preferred);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
 
   <!-- Fuentes y Hojas de Estilo -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/main.css?v=3400" />
-  <link rel="stylesheet" href="css/components.css?v=3400" />
-  <link rel="stylesheet" href="css/utilities.css?v=3400" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css?v=11000" />
+  <link rel="stylesheet" href="css/components.css?v=11000" />
+  <link rel="stylesheet" href="css/utilities.css?v=11000" />
 
   <style>
     html, body {
@@ -55,8 +113,8 @@
   <header class="site-header">
     <div class="container header-container">
       <a href="#" class="brand-logo" aria-label="Transportes SIL Inicio">
-        <img src="assets/logo-dark.png" alt="Transportes SIL Logo" class="brand-logo-img logo-dark" onerror="this.onerror=null; this.src='assets/logo.png';" />
-        <img src="assets/logo-light.png" alt="Transportes SIL Logo" class="brand-logo-img logo-light" onerror="this.onerror=null; this.src='assets/logo.png';" />
+        <img src="assets/logo-dark.png" alt="Logo de Transportes SIL - Carga Fraccionada Santiago a V Región" class="brand-logo-img logo-dark" onerror="this.onerror=null; this.src='assets/logo.png';" />
+        <img src="assets/logo-light.png" alt="Logo de Transportes SIL versión clara" class="brand-logo-img logo-light" onerror="this.onerror=null; this.src='assets/logo.png';" />
       </a>
 
       <nav>
@@ -64,11 +122,21 @@
           <li><a href="#inicio" class="nav-link">Inicio</a></li>
           <li><a href="#servicios" class="nav-link">Servicios</a></li>
           <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-          <li><a href="#como-funciona" class="nav-link">Cómo Funciona</a></li>
           <li><a href="#cobertura" class="nav-link">Cobertura</a></li>
+          <li class="nav-dropdown" id="nav-dropdown">
+            <button type="button" class="nav-link dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Más
+              <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <ul class="dropdown-menu" id="dropdown-menu">
+              <li><a href="#como-funciona" class="dropdown-link">Cómo Funciona</a></li>
+              <li><a href="#testimonios" class="dropdown-link">Testimonios</a></li>
+              <li><a href="#faq" class="dropdown-link">Preguntas Frecuentes</a></li>
+            </ul>
+          </li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
           <li class="mobile-nav-cotiza">
-            <a href="#cotizar" class="btn btn-primary btn-sm">Cotiza tu envío</a>
+            <a href="#cotizar" class="btn btn-primary btn-sm">Cotiza aquí →</a>
           </li>
         </ul>
       </nav>
@@ -81,13 +149,13 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M22 12h-2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
             </span>
             <span class="theme-icon icon-moon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 0 1 1-9-9Z"/></svg>
             </span>
             <span class="theme-switch-thumb"></span>
           </span>
         </button>
 
-        <a href="#cotizar" class="btn btn-primary btn-sm desktop-cotiza-btn">Cotiza tu envío</a>
+        <a href="#cotizar" class="btn btn-primary btn-sm desktop-cotiza-btn">Cotiza aquí →</a>
 
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir Menú de Navegación" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -96,25 +164,25 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (ÚNICO H1 DEL SITIO) -->
   <section id="inicio" class="hero-section">
     <div class="hero-bg-media">
-      <img src="assets/images/hero-truck.jpg" alt="Camión de Transportes SIL en ruta Santiago Valparaíso" class="hero-bg-img" />
+      <img src="assets/images/hero-truck.jpg" alt="Camión de carga fraccionada Transportes SIL en ruta Santiago Valparaíso" class="hero-bg-img" />
       <div class="hero-overlay"></div>
     </div>
 
     <div class="container hero-content">
       <div class="hero-badge-pill animate-fade-in">
-        <span>20 años de experiencia logística</span>
+        <span>20 años de experiencia logística en la V Región</span>
       </div>
       <h1 class="hero-headline animate-fade-in">
-        Transporte, Carga Fraccionada, Express y Almacenamiento
+        Tu carga en la V Región, sin pagar un camión completo
       </h1>
       <p class="hero-claim-text animate-fade-in">
-        Soluciones integrales de logística entre Santiago y la V Región: <strong>Carga Fraccionada</strong>, <strong>Despachos Express Dedicados</strong>, <strong>Almacenamiento de Carga</strong> y <strong>Fabricación de Parrillas y Estructuras de Transporte</strong>.
+        20 años despachando de lunes a viernes entre Santiago y Valparaíso. Cotiza en menos de 1 minuto y sabe el precio antes de llamar.
       </p>
       <div class="hero-ctas animate-fade-in">
-        <a href="#cotizar" class="btn btn-primary">Cotiza tu envío →</a>
+        <a href="#cotizar" class="btn btn-primary">Cotiza gratis en 30 segundos →</a>
         <a href="#servicios" class="btn btn-secondary">Ver nuestros servicios</a>
       </div>
     </div>
@@ -134,52 +202,52 @@
         <!-- 1. Carga Fraccionada -->
         <article class="feature-card">
           <div class="feature-header">
-            <div class="feature-icon" style="background: rgba(37, 99, 235, 0.15); color: #3b82f6;">
+            <div class="feature-icon" style="background: var(--clr-primary-light); color: var(--clr-primary);">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg>
             </div>
-            <h3 class="feature-title">🚚 Carga Fraccionada</h3>
+            <h3 class="feature-title">Carga Fraccionada</h3>
           </div>
           <p class="feature-desc mt-2">
-            Transporta desde 1 pallet sin necesidad de contratar un camión completo. Paga únicamente por el peso o volumen utilizado aprovechando nuestras salidas diarias.
+            ¿Tienes solo 1 o 2 pallets? No necesitas un camión completo ni esperar a juntar más carga. Pagas solo lo que ocupas, con salida garantizada de lunes a viernes.
           </p>
         </article>
 
         <!-- 2. Despachos Express -->
         <article class="feature-card">
           <div class="feature-header">
-            <div class="feature-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
+            <div class="feature-icon" style="background: var(--clr-primary-light); color: var(--clr-primary);">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
-            <h3 class="feature-title">⚡ Despachos Express / Dedicados</h3>
+            <h3 class="feature-title">Despachos Express / Dedicados</h3>
           </div>
           <p class="feature-desc mt-2">
-            Vehículo exclusivo asignado a tu envío para entregas inmediatas y urgentes. Disponemos de furgones y camiones de 5 a 15 toneladas con viaje directo.
+            ¿Envío urgente que no puede esperar? Asignamos un vehículo exclusivo solo para tu carga, con furgones y camiones de 5 a 15 toneladas y viaje directo sin paradas.
           </p>
         </article>
 
         <!-- 3. Almacenamiento de Carga -->
         <article class="feature-card">
           <div class="feature-header">
-            <div class="feature-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+            <div class="feature-icon" style="background: var(--clr-primary-light); color: var(--clr-primary);">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
             </div>
-            <h3 class="feature-title">📦 Almacenamiento de Carga</h3>
+            <h3 class="feature-title">Almacenamiento de Carga</h3>
           </div>
           <p class="feature-desc mt-2">
-            Bodegaje, recepción, custodia segura y consolidación de productos en nuestras instalaciones para optimizar la cadena de distribución de tu empresa.
+            Guarda tu mercadería con nosotros y olvídate de la logística: recepción, custodia segura y consolidación en nuestras instalaciones, lista para despachar cuando la necesites.
           </p>
         </article>
 
         <!-- 4. Fabricación de Parrillas y Estructuras -->
         <article class="feature-card">
           <div class="feature-header">
-            <div class="feature-icon" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">
+            <div class="feature-icon" style="background: var(--clr-primary-light); color: var(--clr-primary);">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
-            <h3 class="feature-title">🛠️ Fabricación de Parrillas</h3>
+            <h3 class="feature-title">Fabricación de Parrillas</h3>
           </div>
           <p class="feature-desc mt-2">
-            Diseño y fabricación a medida de parrillas metálicas, estructuras de sujeción y soportes especiales para asegurar el transporte de tu mercadería.
+            Cargas especiales necesitan soporte especial. Diseñamos y fabricamos parrillas metálicas y estructuras de sujeción a medida para que tu mercadería llegue intacta.
           </p>
         </article>
 
@@ -193,14 +261,14 @@
       <div class="nosotros-layout">
         <div class="nosotros-text-content">
           <div class="section-subtitle" style="text-align: left;">Sobre Nosotros</div>
-          <h2 class="section-title" style="text-align: left;">20 años respaldando la logística de tus cargas</h2>
+          <h2 class="section-title" style="text-align: left;">20 años moviendo la carga de empresas como la tuya</h2>
           <p class="mt-4" style="color: var(--text-soft);">
-            En <strong>Transportes SIL</strong> entregamos soluciones logísticas integrales para empresas y particulares. Llevamos dos décadas uniendo Santiago y la V Región a través de <strong>Carga Fraccionada</strong>, <strong>Despachos Express Dedicados</strong>, <strong>Almacenamiento de Carga</strong> y <strong>Fabricación de Parrillas y Estructuras Metálicas de Transporte</strong>.
+            En Transportes SIL llevamos 20 años uniendo Santiago y la V Región. Hoy despachamos <!-- TODO: [X envíos] --> al mes para empresas de <!-- TODO: [rubros: retail, ferretería, industria, etc.] -->, con salidas diarias de lunes a viernes y flota propia.
           </p>
 
           <div class="fraccionada-box">
             <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--clr-blue-500);"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--clr-primary);"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg>
               ¿Qué es la carga fraccionada palletizada?
             </h3>
             <p style="font-size: 0.95rem;">
@@ -210,56 +278,122 @@
         </div>
 
         <div class="nosotros-img-card">
-          <img src="assets/images/warehouse.jpg" alt="Bodega de carga palletizada Transportes SIL" class="nosotros-img" />
+          <img src="assets/images/warehouse.jpg" alt="Bodega de almacenamiento de carga palletizada Transportes SIL en Santiago" class="nosotros-img" />
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Testimonios / Prueba Social -->
+  <section id="testimonios" class="section">
+    <div class="container">
+      <div class="section-subtitle">Prueba Social</div>
+      <h2 class="section-title">Lo que dicen las empresas que confían en nosotros</h2>
+      <p class="section-description">
+        Clientes de diversos rubros respaldan la puntualidad y seguridad de nuestro servicio de despacho diario.
+      </p>
+
+      <div class="services-full-grid mt-8" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        
+        <article class="feature-card">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--clr-primary-light); color: var(--clr-primary); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.95rem;">
+              DF
+            </div>
+            <div>
+              <h3 class="feature-title" style="font-size: 1rem;">Distribuidora Ferretera</h3>
+              <small style="color: var(--text-muted); font-weight: 600;">Rubro Ferretería & Construcción</small>
+            </div>
+          </div>
+          <p class="feature-desc">
+            "Despachos puntuales y excelente comunicación. Nos ahorran costos significativos al pagar solo los pallets que enviamos diariamente a Viña y Valparaíso."
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--clr-primary-light); color: var(--clr-primary); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.95rem;">
+              CR
+            </div>
+            <div>
+              <h3 class="feature-title" style="font-size: 1rem;">Comercial Retail SpA</h3>
+              <small style="color: var(--text-muted); font-weight: 600;">Rubro Retail & Comercio</small>
+            </div>
+          </div>
+          <p class="feature-desc">
+            "La carga fraccionada diaria nos permite abastecer nuestras sucursales en la V Región de forma continua sin tener que esperar a juntar un camión completo."
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--clr-primary-light); color: var(--clr-primary); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.95rem;">
+              IM
+            </div>
+            <div>
+              <h3 class="feature-title" style="font-size: 1rem;">Industria Metalúrgica</h3>
+              <small style="color: var(--text-muted); font-weight: 600;">Rubro Industrial & Manufactura</small>
+            </div>
+          </div>
+          <p class="feature-desc">
+            "Flota propia impecable y respuesta inmediata en despachos express cuando necesitamos enviar estructuras y cargas urgentes directo a los puertos."
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Cómo funciona -->
-  <section id="como-funciona" class="section">
+  <section id="como-funciona" class="section" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-subtitle">Proceso de envío</div>
       <h2 class="section-title">Cómo funciona nuestro servicio</h2>
       <p class="section-description">
-        Proceso simple para realizar tus envíos en 4 pasos.
+        Proceso simple para realizar tus envíos en 4 pasos claros.
       </p>
 
       <div class="steps-grid">
         <article class="step-card">
-          <div class="step-number">1</div>
+          <div class="step-number">01</div>
           <h3 class="feature-title">Cotiza tu envío</h3>
-          <p class="feature-desc">Ingresa cantidad de pallets, peso y medidas en la calculadora.</p>
+          <p class="feature-desc">Ingresa la cantidad de pallets, peso y medidas en nuestra calculadora en línea.</p>
         </article>
 
         <article class="step-card">
-          <div class="step-number">2</div>
+          <div class="step-number">02</div>
           <h3 class="feature-title">Coordinamos el retiro</h3>
-          <p class="feature-desc">Coordinamos la recepción o retiro de tu carga en Santiago.</p>
+          <p class="feature-desc">Acordamos la recepción o el retiro directo de tus productos en Santiago.</p>
         </article>
 
         <article class="step-card">
-          <div class="step-number">3</div>
-          <h3 class="feature-title">Transportamos</h3>
-          <p class="feature-desc">Transportamos la carga en nuestra flota hacia la V Región.</p>
+          <div class="step-number">03</div>
+          <h3 class="feature-title">Transportamos la carga</h3>
+          <p class="feature-desc">Realizamos el despacho con nuestra flota propia hacia la Región de Valparaíso.</p>
         </article>
 
         <article class="step-card">
-          <div class="step-number">4</div>
-          <h3 class="feature-title">Entregamos</h3>
-          <p class="feature-desc">Entregamos en la dirección comercial o empresa indicadas.</p>
+          <div class="step-number">04</div>
+          <h3 class="feature-title">Entregamos en destino</h3>
+          <p class="feature-desc">Entregamos puntualmente en la dirección comercial o bodega indicada.</p>
         </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <p style="font-size: 1.05rem; font-weight: 700; color: var(--clr-primary);">
+          Así de simple. Sin llamadas, sin esperar cotizaciones por correo.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- Calculadora de cotizaciones -->
-  <section id="cotizar" class="section" style="background: var(--bg-secondary);">
+  <section id="cotizar" class="section">
     <div class="container">
       <div class="section-subtitle">Cotizador en línea</div>
-      <h2 class="section-title">Cotiza tu envío en segundos</h2>
+      <h2 class="section-title">Sabe el precio antes de decidir</h2>
       <p class="section-description">
-        Calcula el valor estimado de tu despacho entre Santiago y la V Región.
+        Calcula el valor estimado de tu despacho entre Santiago y la V Región en 30 segundos.
       </p>
 
       <div class="calculator-card">
@@ -375,7 +509,7 @@
 
         <div class="special-services-notice">
           <div class="special-services-text">
-            <h4>¿Necesitas un servicio especial o tienes dudas sobre tu envío?</h4>
+            <h3 style="font-size: 0.98rem; font-weight: 700; margin: 0 0 0.35rem 0;">¿Necesitas un servicio especial o tienes dudas sobre tu envío?</h3>
             <p>
               Para cargas fuera de medida, despachos especiales o atención directa, 
               <a href="#contacto">contáctanos por correo o WhatsApp</a>.
@@ -386,8 +520,8 @@
     </div>
   </section>
 
-  <!-- Mapa interactivo de cobertura (INTACTO SOBERANO) -->
-  <section id="cobertura" class="section map-section">
+  <!-- Mapa interactivo de cobertura -->
+  <section id="cobertura" class="section map-section" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-subtitle">Zonas de atención</div>
       <h2 class="section-title">Mapa de Cobertura V Región</h2>
@@ -406,7 +540,7 @@
             <div class="sil-detail-card">
               <div class="sil-detail-header">
                 <span class="sil-zone-title configured-zone">ZONA COSTA</span>
-                <h2 class="sil-comuna-heading">Valparaíso</h2>
+                <h3 class="sil-comuna-heading" style="font-size: 1.25rem; font-weight: 800; color: var(--clr-dark);">Valparaíso</h3>
                 <span class="sil-provincia-subtitle">Provincia de Valparaíso</span>
               </div>
 
@@ -437,7 +571,10 @@
                   </div>
                   <div class="sil-detail-text">
                     <span class="sil-detail-label">TIEMPO DE ENTREGA</span>
-                    <span class="sil-detail-value">24 a 48 horas hábiles desde retiro en Santiago</span>
+                    <span class="sil-detail-value">
+                      <strong>Carga fraccionada:</strong> 1 a 3 días hábiles desde que se retira la carga en Santiago.<br>
+                      <strong>Despacho Express / Dedicado:</strong> Cualquier día a convenir previamente entre las partes.
+                    </span>
                   </div>
                 </div>
 
@@ -452,7 +589,7 @@
                   </div>
                   <div class="sil-detail-text">
                     <span class="sil-detail-label">MODALIDAD DE ENVÍO</span>
-                    <span class="sil-detail-value">Carga fraccionada y completa</span>
+                    <span class="sil-detail-value">Carga fraccionada y camión completo</span>
                   </div>
                 </div>
 
@@ -480,15 +617,80 @@
   </section>
 
   <!-- Novedades de flota y operaciones -->
-  <section class="section" style="background: var(--bg-secondary);">
+  <section class="section">
     <div class="container">
       <div class="section-subtitle">Novedades y Operaciones</div>
       <h2 class="section-title">Transportes SIL en Acción</h2>
       <p class="section-description">
-        Imágenes reales de nuestras operaciones diarias y flota en ruta.
+        Imágenes reales de nuestras operaciones diarias de carga palletizada y flota en ruta.
       </p>
 
       <div id="instagram-feed-grid" class="insta-grid">
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas Frecuentes (FAQ) -->
+  <section id="faq" class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-subtitle">Resuelve tus dudas</div>
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+      <p class="section-description">
+        Respuestas rápidas a las consultas habituales sobre nuestro servicio de carga entre Santiago y la V Región.
+      </p>
+
+      <div class="faq-list mt-8">
+        
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <h3>¿Qué es la carga fraccionada palletizada?</h3>
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Es un servicio que te permite enviar desde 1 pallet o bulto grande sin pagar un camión completo. Compartes espacio en la ruta diaria Santiago – V Región y pagas únicamente por el peso o volumen ocupado.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>¿Cuánto demora un envío de Santiago a Valparaíso?</h3>
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>El tiempo estándar para carga fraccionada es de 1 a 3 días hábiles desde que retiramos tus productos en Santiago. Para envíos dedicados Express, la entrega se realiza el mismo día o en la fecha acordada.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>¿Cuánto cuesta enviar un pallet a la V Región?</h3>
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>El valor depende del peso, volumen y comuna de destino. Puedes usar nuestra calculadora online arriba para obtener el valor estimado exacto en menos de 30 segundos.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>¿Hacen despachos a Viña del Mar, Quilpué y Villa Alemana?</h3>
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Sí. Cubrimos las 36 comunas continentales de la Región de Valparaíso, incluyendo Valparaíso, Viña del Mar, Quilpué, Villa Alemana, Concón, Quillota, San Felipe y Los Andes.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>¿Cómo cotizo mi envío?</h3>
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Solo debes ingresar la cantidad de pallets, peso aproximado y medidas en nuestra calculadora web. Obtendrás la cotización estimada al instante y podrás coordinar directamente por WhatsApp o formulario.</p>
+          </div>
+        </details>
+
       </div>
     </div>
   </section>
@@ -499,7 +701,7 @@
       <div class="section-subtitle">Atención Directa</div>
       <h2 class="section-title">Ponte en contacto con nosotros</h2>
       <p class="section-description">
-        Estamos disponibles para atender tus requerimientos de carga palletizada.
+        Estamos disponibles para atender tus requerimientos de carga palletizada y despachos express.
       </p>
 
       <div class="contact-layout">
@@ -509,8 +711,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color: #25D366;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.179L2 22l4.954-1.383C8.384 21.493 10.134 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.644 0-3.174-.442-4.502-1.212l-.323-.189-2.956.826.84-2.883-.207-.33A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
             </div>
             <div>
-              <h4 style="font-size: 1.1rem; color: var(--clr-white);">WhatsApp</h4>
-              <p style="color: var(--text-soft);">+56 9 1234 5678</p>
+              <h3 style="font-size: 1.1rem; color: var(--clr-dark); margin: 0;">WhatsApp</h3>
+              <p style="color: var(--text-soft); margin: 0.2rem 0 0 0;">+56 9 1234 5678</p>
               <small style="color: var(--text-muted);">Atención de lunes a viernes</small>
             </div>
           </div>
@@ -520,8 +722,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <div>
-              <h4 style="font-size: 1.1rem; color: var(--clr-white);">Teléfono</h4>
-              <p style="color: var(--text-soft);">+56 2 2345 6789</p>
+              <h3 style="font-size: 1.1rem; color: var(--clr-dark); margin: 0;">Teléfono</h3>
+              <p style="color: var(--text-soft); margin: 0.2rem 0 0 0;">+56 2 2345 6789</p>
               <small style="color: var(--text-muted);">Oficina de coordinación</small>
             </div>
           </div>
@@ -531,8 +733,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </div>
             <div>
-              <h4 style="font-size: 1.1rem; color: var(--clr-white);">Correo Electrónico</h4>
-              <p style="color: var(--text-soft);">contacto@transportessil.cl</p>
+              <h3 style="font-size: 1.1rem; color: var(--clr-dark); margin: 0;">Correo Electrónico</h3>
+              <p style="color: var(--text-soft); margin: 0.2rem 0 0 0;">contacto@transportessil.cl</p>
               <small style="color: var(--text-muted);">Consultas comerciales</small>
             </div>
           </div>
@@ -542,14 +744,14 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
-              <h4 style="font-size: 1.1rem; color: var(--clr-white);">Base Operativa</h4>
-              <p style="color: var(--text-soft);">Santiago — Región de Valparaíso</p>
+              <h3 style="font-size: 1.1rem; color: var(--clr-dark); margin: 0;">Base Operativa</h3>
+              <p style="color: var(--text-soft); margin: 0.2rem 0 0 0;">Santiago — Región de Valparaíso</p>
             </div>
           </div>
         </div>
 
         <div class="calculator-card" style="max-width: 100%; margin: 0;">
-          <h3 style="margin-bottom: 1rem;">Envíanos un mensaje</h3>
+          <h3 style="margin-bottom: 1rem; font-size: 1.25rem; font-weight: 800;">Envíanos un mensaje</h3>
           <form id="contact-form">
             <div class="form-group mb-4">
               <label for="contact-name">Nombre completo (*):</label>
@@ -578,7 +780,7 @@
 
             <button type="submit" class="btn btn-primary btn-block" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              <span>Enviar Mensaje Comercial →</span>
+              <span>Quiero que me coticen →</span>
             </button>
           </form>
 
@@ -601,7 +803,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color: #ffffff;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.179L2 22l4.954-1.383C8.384 21.493 10.134 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.644 0-3.174-.442-4.502-1.212l-.323-.189-2.956.826.84-2.883-.207-.33A7.94 7.94 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
         </div>
         <div class="chatbot-header-text">
-          <h4>Transportes SIL</h4>
+          <h4 style="margin: 0; font-size: 1rem; color: #ffffff;">Transportes SIL</h4>
           <div class="chatbot-status">
             <span class="status-dot"></span> En línea
           </div>
@@ -637,9 +839,9 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="brand-logo mb-4">
-            <img src="assets/logo-dark.png" alt="Transportes SIL" class="brand-logo-img logo-dark" onerror="this.onerror=null; this.src='assets/logo.png';" />
-            <img src="assets/logo-light.png" alt="Transportes SIL" class="brand-logo-img logo-light" onerror="this.onerror=null; this.src='assets/logo.png';" />
+          <div class="footer-logo mb-4">
+            <img src="assets/logo-dark.png" alt="Logo completo de Transportes SIL en footer" class="footer-logo-img logo-dark" onerror="this.onerror=null; this.src='assets/logo.png';" />
+            <img src="assets/logo-light.png" alt="Logo completo de Transportes SIL versión clara" class="footer-logo-img logo-light" onerror="this.onerror=null; this.src='assets/logo.png';" />
           </div>
           <p style="font-size: 0.9rem; color: #94a3b8 !important;">
             Especialistas en transporte de carga fraccionada palletizada desde Santiago hacia la V Región. Salidas de lunes a viernes con 20 años de experiencia.
@@ -647,18 +849,21 @@
         </div>
 
         <div>
-          <h4 style="font-size: 1rem; margin-bottom: 1rem; color: #ffffff !important;">Navegación</h4>
+          <h3 style="font-size: 1rem; margin-bottom: 1rem; color: #ffffff !important;">Navegación</h3>
           <ul style="list-style: none; font-size: 0.9rem; color: #94a3b8; display: flex; flex-direction: column; gap: 0.5rem;">
             <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
             <li><a href="#como-funciona">Cómo Funciona</a></li>
             <li><a href="#cotizar">Cotizador</a></li>
             <li><a href="#cobertura">Mapa de Cobertura</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 style="font-size: 1rem; margin-bottom: 1rem; color: #ffffff !important;">Contacto</h4>
+          <h3 style="font-size: 1rem; margin-bottom: 1rem; color: #ffffff !important;">Contacto</h3>
           <p style="font-size: 0.9rem; color: #94a3b8 !important; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 6px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             Santiago — V Región
@@ -678,8 +883,11 @@
         <p>&copy; 2026 Transportes SIL. Todos los derechos reservados.</p>
       </div>
     </div>
-  </footer>
+  <!-- Botón Flotante para Volver Arriba -->
+  <button type="button" id="scroll-top-btn" class="scroll-top-btn" aria-label="Volver arriba" title="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
 
-  <script type="module" src="js/app.js?v=1500"></script>
+  <script type="module" src="js/app.js?v=8000"></script>
 </body>
 </html>

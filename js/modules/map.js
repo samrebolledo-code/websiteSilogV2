@@ -725,12 +725,74 @@ function showComunaDetail(info) {
         <span class="sil-provincia-subtitle">${provinciaName}</span>
       </div>
 
+      <div class="sil-detail-divider"></div>
+
+      <div class="sil-detail-list">
+        <div class="sil-detail-row">
+          <div class="sil-detail-icon">
+            <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <div class="sil-detail-text">
+            <span class="sil-detail-label">DÍAS DE ATENCIÓN</span>
+            <span class="sil-detail-value blue-highlight">Lunes a Viernes</span>
+          </div>
+        </div>
+
+        <div class="sil-detail-row">
+          <div class="sil-detail-icon">
+            <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="sil-detail-text">
+            <span class="sil-detail-label">TIEMPO DE ENTREGA</span>
+            <span class="sil-detail-value">
+              <strong>Carga fraccionada:</strong> 1 a 3 días hábiles desde que se retira la carga en Santiago.<br>
+              <strong>Despacho Express / Dedicado:</strong> Cualquier día a convenir previamente entre las partes.
+            </span>
+          </div>
+        </div>
+
+        <div class="sil-detail-row">
+          <div class="sil-detail-icon">
+            <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <div class="sil-detail-text">
+            <span class="sil-detail-label">MODALIDAD DE ENVÍO</span>
+            <span class="sil-detail-value">Carga fraccionada y camión completo</span>
+          </div>
+        </div>
+
+        <div class="sil-detail-row">
+          <div class="sil-detail-icon">
+            <svg class="detail-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="sil-detail-text">
+            <span class="sil-detail-label">COBERTURA</span>
+            <span class="sil-detail-value">${isConfigured ? `Habilitado para retiros en Santiago y entrega directa en ${comunaName}.` : `Consulta disponibilidad especial para despachos hacia ${comunaName}.`}</span>
+          </div>
+        </div>
+      </div>
+
       ${isConfigured ? `
-        <button class="btn btn-primary btn-block btn-quote-comuna sil-action-btn" data-comuna-id="${info.id}" data-comuna="${info.id}">
+        <button class="btn btn-primary btn-block btn-quote-comuna sil-action-btn" data-comuna-id="${info ? info.id : ''}" data-comuna="${info ? info.id : ''}">
           Cotizar mi envío a ${comunaName} →
         </button>
       ` : `
-        <a href="#contacto" class="btn btn-secondary btn-block sil-action-btn neutral-btn" data-comuna-id="${info.id}">
+        <a href="#contacto" class="btn btn-secondary btn-block sil-action-btn neutral-btn" data-comuna-id="${info ? info.id : ''}">
           Consultar disponibilidad en ${comunaName} →
         </a>
       `}
