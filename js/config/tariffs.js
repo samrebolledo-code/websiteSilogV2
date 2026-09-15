@@ -74,12 +74,12 @@ export const EXPRESS_VEHICLES = [
     id: "camion_12t",
     label: "Camión 12 toneladas",
     maxWeightKg: 12000,
-    surfaceM2: 16.56,
-    maxVolumeM3: 25.40,
-    lengthM: 6.90,
-    widthM: 2.40,
-    heightM: 1.55,
-    maxPallets: 13,
+    surfaceM2: 14.34,
+    maxVolumeM3: 21.50,
+    lengthM: 6.10,
+    widthM: 2.35,
+    heightM: 1.50,
+    maxPallets: 10,
     basePrice: 355000
   },
   {
@@ -154,7 +154,8 @@ export function calculateQuote(input) {
     return calculateFractionalQuote({
       pallets,
       totalWeightKg,
-      totalVolumeM3
+      totalVolumeM3,
+      distanceKm: input.distanceKm
     });
   }
 }
@@ -162,11 +163,18 @@ export function calculateQuote(input) {
 /**
  * Lógica para Carga Fraccionada:
  * Evaluará si la carga llena vehículos completos + sobrante fraccionado.
+ * Si se sugiere vehículo completo (vehiculo_unico o mixto), incluye costo de km adicionales según comuna.
  */
-function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3 }) {
+function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3, distanceKm }) {
   const options = [];
 
-  // Opción 1: Carga 100% Fraccionada (Sin vehículos completos)
+  const hasDistance = typeof distanceKm === 'number' && !isNaN(distanceKm) && distanceKm > 0;
+  const totalDistanceKm = hasDistance ? distanceKm : 260;
+  const includedKm = TARIFF_CONFIG.expressRates.includedKm;
+  const excessKm = Math.max(0, totalDistanceKm - includedKm);
+  const excessDistanceCost = excessKm * TARIFF_CONFIG.expressRates.ratePerExcessKm;
+
+  // Opción 1: Carga 100% Fraccionada (Sin vehículos completos, sin cobro de km excedente)
   const pureFrac = calculateSobranteFraccionado(pallets, totalWeightKg, totalVolumeM3);
   options.push({
     fullVehicles: [],
@@ -182,7 +190,7 @@ function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3 }) {
         options.push({
           fullVehicles: [v],
           sobrante: null,
-          totalPriceNet: v.basePrice,
+          totalPriceNet: v.basePrice + excessDistanceCost,
           type: "vehiculo_unico"
         });
       }
@@ -199,7 +207,7 @@ function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3 }) {
       const usedWeight = numVeh * vehicle.maxWeightKg;
       const usedVolume = numVeh * vehicle.maxVolumeM3;
       
-      const palletsPerVehicle = Math.max(1, Math.floor(vehicle.maxVolumeM3 / 1.44));
+      const palletsPerVehicle = vehicle.maxPallets || Math.max(1, Math.floor(vehicle.maxVolumeM3 / 1.44));
       const usedPallets = Math.min(pallets, numVeh * palletsPerVehicle);
 
       const remWeight = Math.max(0, totalWeightKg - usedWeight);
@@ -216,7 +224,7 @@ function calculateFractionalQuote({ pallets, totalWeightKg, totalVolumeM3 }) {
       }
 
       const fullVehiclesList = Array(numVeh).fill(vehicle);
-      const fullVehiclesCost = numVeh * vehicle.basePrice;
+      const fullVehiclesCost = numVeh * (vehicle.basePrice + excessDistanceCost);
       const totalPrice = fullVehiclesCost + sobrantePrice;
 
       options.push({
