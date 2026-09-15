@@ -41,7 +41,7 @@ export const EXPRESS_VEHICLES = [
     label: "Camión 5 toneladas",
     maxWeightKg: 5000,
     maxVolumeM3: 21.50,
-    basePrice: 187182
+    basePrice: 266252
   },
   {
     id: "camion_8t",
